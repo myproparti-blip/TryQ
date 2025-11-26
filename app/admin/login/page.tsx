@@ -52,7 +52,7 @@ export default function AdminLogin() {
             </div>
             <span className="text-2xl font-semibold text-white">Skitbit</span>
           </div>
-          <h1 className="text-4xl font-bold text-white mt-12">Welcome to Skitbit Admin</h1>
+          <h1 className="text-4xl font-bold text-white mt-12">Welcome to Try QAdmin</h1>
           <p className="text-purple-100 mt-4 max-w-md">
             Manage your website content, pricing, and settings from one central dashboard.
           </p>

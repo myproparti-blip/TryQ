@@ -16,7 +16,7 @@ export function FooterArchviz() {
             asChild
             className="rounded-full bg-lime-400 px-6 py-2 text-sm font-medium text-black shadow-[0_0_20px_rgba(163,230,53,0.35)] hover:bg-lime-300"
           >
-            <a href="https://wa.link/65mf3i" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/918238177000?text=Hi%20TryQ%20Tech%2C%20I%20would%20like%20to%20book%20a%20free%20consultation." target="_blank" rel="noopener noreferrer">
               Book a Free Consultation
             </a>
           </Button>
@@ -71,8 +71,8 @@ export function FooterArchviz() {
           <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={24} height={24} className="h-6 w-6" />
-                <span className="text-xl font-semibold text-white">Skitbit ArchViz</span>
+                <Image src="/icons/skitbit-white.svg" alt="Try Qlogo" width={24} height={24} className="h-6 w-6" />
+                <span className="text-xl font-semibold text-white">Try QArchViz</span>
               </div>
               <p className="max-w-sm text-sm text-neutral-400">
                 Photorealistic architecture visualization for launches, leasing and approvals.
@@ -111,7 +111,7 @@ export function FooterArchviz() {
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-500 sm:flex-row">
-            <p>© 2025 — Skitbit International Uk</p>
+            <p>Try Q Tech</p>
             <div className="flex items-center gap-6">
               <a href="#services" className="hover:text-lime-300">
                 Services

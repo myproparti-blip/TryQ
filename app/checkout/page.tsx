@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { AppverseFooter } from "@/components/appverse-footer"
 import { X, ArrowRight, ChevronLeft } from "lucide-react"
 
 interface OrderState {
@@ -65,7 +66,7 @@ export default function CheckoutPage() {
 
   // Add state for order configuration
   const [orderConfig, setOrderConfig] = useState({
-    whatsappNumber: "+918384092211",
+    whatsappNumber: "+918238177000",
     modelingOptions: {
       simple: { price_usd: 35, price_inr: 3000, description: "Basic shapes, minimal details" },
       medium: { price_usd: 60, price_inr: 5000, description: "Moderate details, textures" },
@@ -598,6 +599,8 @@ export default function CheckoutPage() {
           </div>
         </div>
       )}
+
+      <AppverseFooter />
     </div>
   )
 }

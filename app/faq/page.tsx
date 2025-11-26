@@ -47,7 +47,7 @@ export default function FAQPage() {
     },
     {
       q: "How do we get started with TryQ tech?",
-      a: "Start with a free consultation where we assess your needs, current infrastructure, and goals. We'll provide a tailored proposal with timelines and investment. Contact our team at hello@theskitbit.com.",
+      a: "Start with a free consultation where we assess your needs, current infrastructure, and goals. We'll provide a tailored proposal with timelines and investment. Contact our team at tryq@gmail.com.",
     },
   ];
 

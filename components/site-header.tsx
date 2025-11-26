@@ -1,25 +1,35 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
-import { Menu, Tag, HelpCircle, FileText, Info, ChevronDown, Building2, Package } from "lucide-react"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { useState } from "react"
+import { Menu, Tag, HelpCircle, FileText, Info, Building2, Package, BookOpen } from "lucide-react"
 
 export function SiteHeader() {
-  const [servicesOpen, setServicesOpen] = useState(false)
+  const pathname = usePathname()
+
+  const whatsappNumber = "+918238177000"
+  
+  const generateWhatsAppMessage = () => {
+    const message = `Hi TryQ Tech, I would like to chat with you about your services.`
+    return encodeURIComponent(message)
+  }
+
+  const handleChatWithUs = () => {
+    const whatsappMessage = generateWhatsAppMessage()
+    const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, "")}?text=${whatsappMessage}`
+    window.open(whatsappUrl, "_blank")
+  }
 
   const services = [
+    {
+      href: "/services",
+      label: "All Services",
+      icon: Building2,
+      description: "Complete enterprise IT solutions",
+    },
     {
       href: "/cloud-infrastructure",
       label: "Cloud Infrastructure",
@@ -41,9 +51,8 @@ export function SiteHeader() {
   ]
 
   const links = [
-    { href: "#pricing", label: "Pricing", icon: Tag },
     { href: "faq", label: "FAQ", icon: HelpCircle },
-    { href: "#blog", label: "Blog", icon: FileText },
+    { href: "training", label: "Training", icon: BookOpen },
     { href: "About", label: "About", icon: Info },
   ]
 
@@ -57,63 +66,46 @@ export function SiteHeader() {
             <span className="font-semibold tracking-wide text-white">TryQ tech</span>
           </Link>
 
-          {/* Desktop Nav with Services Dropdown */}
+          {/* Desktop Nav */}
           <nav className="hidden items-center gap-6 text-sm text-white/90 md:flex">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger
-                    className="bg-transparent text-white/90 hover:text-purple-300 data-[state=open]:text-purple-300
-                               hover:bg-transparent focus:bg-transparent
-                               data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent
-                               data-[active=true]:bg-transparent"
-                  >
-                    Services
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[280px] gap-2 p-3 bg-gray-950/95 backdrop-blur-xl border border-gray-800 rounded-lg">
-                      {services.map((service) => (
-                        <li key={service.href}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              href={service.href}
-                              className="group relative flex items-start gap-3 rounded-xl p-3 transition-all
-                                         hover:bg-white/5 hover:ring-1 hover:ring-purple-300/60
-                                         hover:shadow-[0_0_0_1px_rgba(168,85,247,0.25),0_0_20px_rgba(168,85,247,0.15)]
-                                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-300/70"
-                            >
-                              <service.icon className="h-5 w-5 text-purple-300 mt-0.5 shrink-0 group-hover:text-purple-200" />
-                              <div>
-                                <div className="text-sm font-medium text-white group-hover:text-purple-300">
-                                  {service.label}
-                                </div>
-                                <p className="text-xs text-gray-400 mt-0.5">{service.description}</p>
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-            {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-purple-300 transition-colors">
-                {l.label}
-              </Link>
-            ))}
+            <Link 
+              href="/services" 
+              className={`transition-colors pb-1 border-b-2 ${
+                pathname === "/services" 
+                  ? "text-purple-300 border-purple-300" 
+                  : "hover:text-purple-300 border-b-2 border-transparent"
+              }`}
+            >
+              Services
+            </Link>
+            {links.map((l) => {
+              const isActive = pathname.toLowerCase() === `/${l.href.toLowerCase()}` || pathname === "/" + l.href
+              return (
+                <Link 
+                  key={l.href} 
+                  href={l.href} 
+                  className={`transition-colors pb-1 border-b-2 ${
+                    isActive
+                      ? "text-purple-300 border-purple-300"
+                      : "hover:text-purple-300 border-b-2 border-transparent"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              )
+            })}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex">
             <Button
-              asChild
+              onClick={handleChatWithUs}
               className="bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5
                          hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
-                         transition-all"
+                         transition-all cursor-pointer group"
             >
-              <Link href="#contact">Chat With Us</Link>
+              <span className="group-hover:hidden">Chat With Us</span>
+              <span className="hidden group-hover:inline">👋 Chat With Us</span>
             </Button>
           </div>
 
@@ -138,61 +130,54 @@ export function SiteHeader() {
                 </div>
 
                 {/* Nav Links */}
-                <nav className="flex flex-col gap-1 mt-2 text-gray-200">
-                  <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
-                    <CollapsibleTrigger className="flex items-center justify-between w-full px-4 py-3 hover:bg-gray-900 hover:text-purple-300 transition-colors">
-                      <div className="flex items-center gap-3">
-                        <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
-                          <Building2 className="h-4 w-4" />
-                        </span>
-                        <span className="text-sm">Services</span>
-                      </div>
-                      <ChevronDown
-                        className={`h-4 w-4 text-gray-400 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-                      />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent>
-                      <div className="flex flex-col bg-gray-900/50 border-l-2 border-purple-300/30 ml-4">
-                        {services.map((service) => (
-                          <Link
-                            key={service.href}
-                            href={service.href}
-                            className="flex items-center gap-3 pl-8 pr-4 py-2.5 hover:bg-gray-900 hover:text-purple-300 transition-colors"
-                          >
-                            <service.icon className="h-4 w-4 text-purple-300/70" />
-                            <span className="text-sm">{service.label}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
+                 <nav className="flex flex-col gap-1 mt-2 text-gray-200">
+                   <Link
+                     href="/services"
+                     className={`flex items-center gap-3 px-4 py-3 transition-colors rounded-lg ${
+                       pathname === "/services"
+                         ? "bg-gray-900 text-purple-300 border-l-4 border-purple-300"
+                         : "hover:bg-gray-900 hover:text-purple-300"
+                     }`}
+                   >
+                     <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
+                       <Building2 className="h-4 w-4" />
+                     </span>
+                     <span className="text-sm">Services</span>
+                   </Link>
 
-                  {links.map((l) => (
-                    <Link
-                      key={l.href}
-                      href={l.href}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-purple-300 transition-colors"
-                    >
-                      <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
-                        <l.icon className="h-4 w-4" />
-                      </span>
-                      <span className="text-sm">{l.label}</span>
-                    </Link>
-                  ))}
-                </nav>
+                   {links.map((l) => {
+                     const isActive = pathname.toLowerCase() === `/${l.href.toLowerCase()}` || pathname === "/" + l.href
+                     return (
+                       <Link
+                         key={l.href}
+                         href={l.href}
+                         className={`flex items-center gap-3 px-4 py-3 transition-colors rounded-lg ${
+                           isActive
+                             ? "bg-gray-900 text-purple-300 border-l-4 border-purple-300"
+                             : "hover:bg-gray-900 hover:text-purple-300"
+                         }`}
+                       >
+                         <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
+                           <l.icon className="h-4 w-4" />
+                         </span>
+                         <span className="text-sm">{l.label}</span>
+                       </Link>
+                     )
+                   })}
+                 </nav>
 
-                {/* CTA Button at Bottom */}
-                <div className="mt-auto border-t border-gray-800 p-4">
-                  <Button
-                    asChild
-                    className="w-full bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5
-                               hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
-                               transition-all"
-                  >
-                    <Link href="https://wa.link/65mf3i">Get a Quote</Link>
-                  </Button>
-                </div>
-              </SheetContent>
+                 {/* CTA Button at Bottom */}
+                 <div className="mt-auto border-t border-gray-800 p-4">
+                   <Button
+                     asChild
+                     className="w-full bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5
+                                hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
+                                transition-all"
+                   >
+                     <Link href="https://wa.me/918238177000?text=Hi%20TryQ%20Tech%2C%20I%20would%20like%20to%20get%20a%20quote.">Get a Quote</Link>
+                   </Button>
+                 </div>
+               </SheetContent>
             </Sheet>
           </div>
         </div>

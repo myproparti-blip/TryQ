@@ -1,13 +1,27 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import LazyVideo from "./lazy-video"
 
 export function Hero() {
+  const whatsappNumber = "+918238177000"
+  
+  const generateWhatsAppMessage = () => {
+    const message = `Hi TryQ Tech, I am interested in your services and would like to learn more.`
+    return encodeURIComponent(message)
+  }
+
+  const handleChatWithUs = () => {
+    const whatsappMessage = generateWhatsAppMessage()
+    const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, "")}?text=${whatsappMessage}`
+    window.open(whatsappUrl, "_blank")
+  }
+
   const buttonNew = (
-    <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
-      <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
-        Chat With Us
-      </a>
+    <Button onClick={handleChatWithUs} className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300 cursor-pointer group">
+      <span className="group-hover:hidden">Chat With Us</span>
+      <span className="hidden group-hover:inline">👋 Chat With Us</span>
     </Button>
   )
 

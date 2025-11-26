@@ -5,7 +5,7 @@ import LazyVideo from "@/components/lazy-video"
 export function HeroArchviz() {
   const cta = (
     <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
-      <a href="https://wa.link/65mf3i" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/918238177000?text=Hi%20TryQ%20Tech%2C%20I%20want%20to%20start%20an%20architecture%20visualization%20project." target="_blank" rel="noopener noreferrer">
         Start ArchViz Project
       </a>
     </Button>
@@ -16,7 +16,7 @@ export function HeroArchviz() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center py-14 sm:py-20">
           <div className="mb-5 flex items-center gap-2">
-            <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={32} height={32} className="h-8 w-8" />
+            <Image src="/icons/skitbit-white.svg" alt="Try Q logo" width={32} height={32} className="h-8 w-8" />
             <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">archviz</p>
           </div>
 

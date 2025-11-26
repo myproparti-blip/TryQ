@@ -51,8 +51,8 @@ export function SiteHeaderArchviz() {
       <div className="container mx-auto max-w-4xl">
         <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full">
           <Link href="/3D-architecture-visualization-studio" className="flex items-center gap-1.5">
-            <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={20} height={20} className="h-5 w-5" />
-            <span className="font-semibold tracking-wide text-white">Skitbit ArchViz</span>
+            <Image src="/icons/skitbit-white.svg" alt="Try Qlogo" width={20} height={20} className="h-5 w-5" />
+            <span className="font-semibold tracking-wide text-white">Try QArchViz</span>
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm text-white/90 md:flex">
@@ -107,7 +107,7 @@ export function SiteHeaderArchviz() {
               asChild
               className="bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5 hover:bg-lime-300 hover:shadow-md hover:scale-[1.02] transition-all"
             >
-              <Link href="https://wa.link/65mf3i" target="_blank">
+              <Link href="https://wa.me/918238177000?text=Hi%20TryQ%20Tech%2C%20I%20need%20an%20architecture%20visualization%20quote." target="_blank">
                 Get ArchViz Quote
               </Link>
             </Button>
@@ -127,8 +127,8 @@ export function SiteHeaderArchviz() {
               </SheetTrigger>
               <SheetContent side="right" className="liquid-glass border-gray-800 p-0 w-64 flex flex-col">
                 <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
-                  <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={24} height={24} className="h-6 w-6" />
-                  <span className="font-semibold tracking-wide text-white text-lg">Skitbit ArchViz</span>
+                  <Image src="/icons/skitbit-white.svg" alt="Try Qlogo" width={24} height={24} className="h-6 w-6" />
+                  <span className="font-semibold tracking-wide text-white text-lg">Try QArchViz</span>
                 </div>
                 <nav className="flex flex-col gap-1 mt-2 text-gray-200">
                   <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
@@ -177,7 +177,7 @@ export function SiteHeaderArchviz() {
                     asChild
                     className="w-full bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5 hover:bg-lime-300 hover:shadow-md hover:scale-[1.02] transition-all"
                   >
-                    <Link href="https://wa.link/65mf3i" target="_blank">
+                    <Link href="https://wa.me/918238177000?text=Hi%20TryQ%20Tech%2C%20I%20want%20to%20start%20a%20new%20project." target="_blank">
                       Start a Project
                     </Link>
                   </Button>
