@@ -159,10 +159,10 @@ const defaultContent: ContentData = {
     },
     footer: {
         tagline: "Experience 3D animation like never before. We craft cinematic visuals for brands and products.",
-        copyright: "© 2025 — Try Q Tech",
+        copyright: "© 2025 — ENTERPRISE SOLUTIONS",
     },
     about: {
-        title: "About Try Q Tech",
+        title: "About ENTERPRISE SOLUTIONS",
         description: "Pioneering the future of 3D product animation for global brands.",
         mission: "To create stunning 3D animations that help brands tell their story and connect with their audience.",
         vision: "To be the world's leading 3D animation studio, known for creativity, quality, and innovation.",
