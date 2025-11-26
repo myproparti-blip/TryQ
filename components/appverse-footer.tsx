@@ -14,7 +14,7 @@ interface FooterContent {
 }
 
 const defaultContent: FooterContent = {
-  tagline: "Experience enterprise IT solutions like never before. We build scalable, secure systems for modern businesses.",
+  tagline: "Experience Try Q  solutions like never before. We build scalable, secure systems for modern businesses.",
   copyright: "© 2025 — TryQ tech International",
 }
 
@@ -251,7 +251,7 @@ export function AppverseFooter() {
           <div className="border-t border-white/5 pt-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
               <p>{content.copyright}</p>
-              <p>Built with modern technology for enterprise IT solutions</p>
+              <p>Built with modern technology for Try Q  solutions</p>
             </div>
           </div>
         </div>

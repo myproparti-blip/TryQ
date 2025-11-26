@@ -11,9 +11,9 @@ import Script from "next/script"
 export const metadata: Metadata = {
   title: " TryQ Tech",
   description:
-    "Comprehensive enterprise IT services including cloud solutions, cybersecurity, AI automation, infrastructure management, and digital transformation. Trusted by Fortune 500 companies.",
+    "Comprehensive Try Q  services including cloud solutions, cybersecurity, AI automation, infrastructure management, and digital transformation. Trusted by Fortune 500 companies.",
   openGraph: {
-    title: "Enterprise IT Services | Cloud, Security, AI & Infrastructure",
+    title: "Try Q  Services | Cloud, Security, AI & Infrastructure",
     description:
       "Discover our comprehensive IT services: cloud infrastructure, cybersecurity, AI-driven automation, and digital transformation solutions.",
     url: "https://theskitbit.com/services",
@@ -27,9 +27,9 @@ export default function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://theskitbit.com/services",
-    name: "TryQ Tech Enterprise IT Services",
+    name: "TryQ Tech Try Q  Services",
     description:
-      "Enterprise IT solutions including cloud infrastructure, cybersecurity, AI automation, and digital transformation",
+      "Try Q  solutions including cloud infrastructure, cybersecurity, AI automation, and digital transformation",
     url: "https://theskitbit.com/services",
     areaServed: [
       {

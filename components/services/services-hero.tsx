@@ -61,7 +61,7 @@ export function ServicesHero() {
 
                         <h1 className="mb-6 text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
                             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-                                Enterprise IT Services
+                                Try Q  Services
                             </span>
                             <span className="block text-white mt-2">Built for Scale & Security</span>
                         </h1>

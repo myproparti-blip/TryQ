@@ -18,9 +18,9 @@ export default function Page() {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://theskitbit.com/",
-        name: "TryQ tech | Enterprise IT Solutions Made Simple, Secure & Scalable",
+        name: "TryQ tech | Try Q  Solutions Made Simple, Secure & Scalable",
         description:
-            "From cloud infrastructure to AI-driven automation, TryQ tech delivers enterprise IT solutions that are reliable, secure, and built to transform your business.",
+            "From cloud infrastructure to AI-driven automation, TryQ tech delivers Try Q  solutions that are reliable, secure, and built to transform your business.",
         url: "https://theskitbit.com/",
         mainEntity: {
             "@type": "Organization",

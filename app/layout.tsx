@@ -11,9 +11,9 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "TryQ tech | Enterprise IT Solutions Made Simple, Secure & Scalable",
+  title: "TryQ tech | Try Q  Solutions Made Simple, Secure & Scalable",
   description:
-    "From cloud infrastructure to AI-driven automation, TryQ tech delivers enterprise IT solutions that are reliable, secure, and built to transform your business.",
+    "From cloud infrastructure to AI-driven automation, TryQ tech delivers Try Q  solutions that are reliable, secure, and built to transform your business.",
   generator: "v0.app",
 }
 

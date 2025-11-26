@@ -1,6 +1,6 @@
-# TryQ - Enterprise IT Solutions Platform
+# TryQ - Try Q  Solutions Platform
 
-A modern, premium Next.js website built with React, TypeScript, and Tailwind CSS featuring enterprise IT solutions, training courses, and blog with video content.
+A modern, premium Next.js website built with React, TypeScript, and Tailwind CSS featuring Try Q  solutions, training courses, and blog with video content.
 
 ## 🚀 Tech Stack
 
@@ -79,8 +79,8 @@ tryq/
 | About | `/About` | Company mission, values, team info |
 | Blog | `/blog` | Articles with embedded YouTube videos |
 | Training | `/training` | IT training courses and certifications |
-| Services | `/services` | Enterprise IT service offerings |
-| FAQ | `/faq` | Enterprise IT Q&A |
+| Services | `/services` | Try Q  service offerings |
+| FAQ | `/faq` | Try Q  Q&A |
 | Checkout | `/checkout` | Service order configuration |
 | 3D Rendering | `/3d-product-rendering` | 3D visualization services |
 | Architecture Studio | `/3D-architecture-visualization-studio` | ArchViz services |

@@ -28,7 +28,7 @@ export function SiteHeader() {
       href: "/services",
       label: "All Services",
       icon: Building2,
-      description: "Complete enterprise IT solutions",
+      description: "Complete Try Q  solutions",
     },
     {
       href: "/cloud-infrastructure",

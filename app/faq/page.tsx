@@ -3,8 +3,8 @@ import { AppverseFooter } from "@/components/appverse-footer"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
 export const metadata = {
-  title: "FAQ | TryQ tech - Enterprise IT Solutions",
-  description: "Frequently asked questions about TryQ tech enterprise IT solutions, cloud infrastructure, and digital transformation services.",
+  title: "FAQ | TryQ tech - Try Q  Solutions",
+  description: "Frequently asked questions about TryQ tech Try Q  solutions, cloud infrastructure, and digital transformation services.",
 }
 
 export default function FAQPage() {
@@ -64,7 +64,7 @@ export default function FAQPage() {
               <span className="block text-lime-300">Questions</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto">
-              Everything you need to know about TryQ tech's enterprise IT solutions, cloud infrastructure, and digital transformation services.
+              Everything you need to know about TryQ tech's Try Q  solutions, cloud infrastructure, and digital transformation services.
             </p>
           </div>
 
