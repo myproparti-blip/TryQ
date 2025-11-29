@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content"
         />
 
         {/* Font Preload */}
@@ -44,59 +44,79 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <style>{`
-         html, body {
-           touch-action: none;
+         html, body, #__next {
+           touch-action: none !important;
            width: 100%;
            height: 100%;
            overflow-x: hidden;
            user-select: none;
            -webkit-user-select: none;
            -webkit-touch-callout: none;
+           -webkit-text-size-adjust: 100% !important;
          }
          * {
-           touch-action: none;
+           touch-action: none !important;
+         }
+         input, textarea, select {
+           touch-action: auto;
          }
         `}</style>
         <Script id="prevent-zoom" strategy="beforeInteractive">
-         {`
-           // Disable all zoom functionality
-           document.documentElement.addEventListener('touchmove', (e) => {
-             if (e.touches.length > 1) {
-               e.preventDefault();
-             }
-           }, { passive: false });
+          {`
+            // Prevent all zoom on Android and iOS
+            function disableZoom() {
+              // Pinch zoom
+              document.addEventListener('touchmove', (e) => {
+                if (e.touches.length > 1) {
+                  e.preventDefault();
+                }
+              }, { passive: false });
 
-           // Prevent double-tap zoom
-           let lastTouchEnd = 0;
-           document.documentElement.addEventListener('touchend', (e) => {
-             const now = Date.now();
-             if (now - lastTouchEnd <= 300) {
-               e.preventDefault();
-             }
-             lastTouchEnd = now;
-           }, { passive: false });
+              // Double-tap zoom
+              let lastTouchEnd = 0;
+              document.addEventListener('touchend', (e) => {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                  e.preventDefault();
+                }
+                lastTouchEnd = now;
+              }, { passive: false });
 
-           // Prevent keyboard/mouse wheel zoom
-           document.documentElement.addEventListener('wheel', (e) => {
-             if (e.ctrlKey || e.metaKey) {
-               e.preventDefault();
-             }
-           }, { passive: false });
+              // Wheel + Ctrl/Cmd zoom
+              document.addEventListener('wheel', (e) => {
+                if (e.ctrlKey || e.metaKey) {
+                  e.preventDefault();
+                }
+              }, { passive: false });
 
-           // Prevent iOS gesture zoom
-           document.documentElement.addEventListener('gesturestart', (e) => {
-             e.preventDefault();
-           }, { passive: false });
+              // iOS gesture zoom
+              document.addEventListener('gesturestart', (e) => {
+                e.preventDefault();
+              }, { passive: false });
 
-           // Lock viewport scale
-           if (document.readyState === 'loading') {
-             document.addEventListener('DOMContentLoaded', () => {
-               document.documentElement.style.zoom = 1;
-             });
-           } else {
-             document.documentElement.style.zoom = 1;
-           }
-         `}
+              // Lock zoom level
+              document.documentElement.style.zoom = 1;
+              document.body.style.zoom = 1;
+            }
+
+            // Run immediately
+            disableZoom();
+
+            // Run again on DOM ready
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', disableZoom);
+            }
+
+            // Monitor for zoom changes and reset
+            const observer = new MutationObserver(() => {
+              document.documentElement.style.zoom = 1;
+              document.body.style.zoom = 1;
+            });
+            observer.observe(document.documentElement, { 
+              attributes: true, 
+              attributeFilter: ['style'] 
+            });
+          `}
         </Script>
 
         {/* Dynamic Favicon Script */}
