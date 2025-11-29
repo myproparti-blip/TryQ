@@ -541,26 +541,6 @@ export function PremiumTechDetailTemplate({
                 </div>
             </section>
 
-            {/* Related Technologies */}
-            <section className="relative z-10 py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-                <h2 className="text-2xl font-bold mb-8">Related Technologies & Solutions</h2>
-                <div className="flex flex-wrap gap-4">
-                    {relatedTechs.map((tech) => {
-                        const emoji = getTechEmoji(tech);
-                        return (
-                            <a
-                                key={tech}
-                                href="#"
-                                className="px-6 py-3 rounded-full bg-gradient-to-r from-white/10 to-white/5 border border-white/20 text-white font-medium hover:border-purple-400 hover:bg-purple-500/10 transition-all inline-flex items-center gap-2"
-                            >
-                                <span className="text-lg">{emoji}</span>
-                                {tech}
-                            </a>
-                        );
-                    })}
-                </div>
-            </section>
-
             {/* Bottom Border */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
         </div>
