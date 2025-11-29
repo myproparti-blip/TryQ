@@ -17,7 +17,7 @@ export default function AboutPage() {
     return (
         <>
             <SiteHeader />
-            <main className="min-h-screen bg-black text-white overflow-x-hidden">
+            <main className="min-h-screen text-white overflow-x-hidden">
                 {/* Enhanced Hero Section */}
                 <EnhancedHeroSection />
 

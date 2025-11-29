@@ -80,7 +80,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
+      <body className="bg-black">
         <Suspense fallback={null}>
           <div className="fixed inset-0 z-0 bg-black">
             <Plasma color="#8b5cf6" speed={0.8} direction="forward" scale={1.5} opacity={0.4} mouseInteractive={true} />

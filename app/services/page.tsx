@@ -4,7 +4,6 @@ import { ServiceSlider } from "@/components/services/service-slider"
 import { ServicePillars } from "@/components/services/service-pillars"
 import { ServiceGrid } from "@/components/services/service-grid"
 import { ServiceBenefits } from "@/components/services/service-benefits"
-import { ServiceCTA } from "@/components/services/service-cta"
 import { RelatedTechnologies } from "@/components/services/related-technologies"
 import { SiteHeader } from "@/components/site-header"
 import { AppverseFooter } from "@/components/appverse-footer"
@@ -73,7 +72,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <main className="min-h-screen text-white bg-black">
+      <main className="min-h-screen text-white">
         <SiteHeader />
         <ServicesHero />
         <ServiceSlider />
@@ -85,7 +84,6 @@ export default function ServicesPage() {
           title="Technology Stack We Master"
           description="Comprehensive expertise across the leading platforms and frameworks"
         />
-        <ServiceCTA />
         <AppverseFooter />
       </main>
 
