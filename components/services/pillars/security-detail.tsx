@@ -21,18 +21,18 @@ export default function SecurityDetail() {
             <div>
               <div className="inline-block mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30">
                 <p className="text-sm font-bold text-cyan-300 tracking-widest uppercase">
-                  Enterprise Protection
+                  Enterprise Infrastructure
                 </p>
               </div>
 
               <h1 className="text-6xl md:text-7xl font-black tracking-tight text-white mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Military-Grade Security
+                  Enterprise Reliability
                 </span>
               </h1>
 
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                SOC 2 certified. Zero-trust architecture. 256-bit encryption. Less than 5ms threat detection. Protect your most critical assets with enterprise-grade security.
+                Mission-critical uptime. Enterprise-grade infrastructure. Automated failover. Sub-100ms response times. Keep your operations running smoothly with highly reliable systems.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -40,19 +40,19 @@ export default function SecurityDetail() {
                   variant="cyan"
                   size="lg"
                 >
-                  Security Assessment →
+                  Performance Assessment →
                 </Chip>
                 <Chip variant="cyan" size="lg">
-                  Compliance Docs
+                  Infrastructure Docs
                 </Chip>
               </div>
 
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-4 mt-12">
                 {[
-                  { value: "SOC 2", label: "Certified" },
-                  { value: "Less than 5ms", label: "Detection" },
-                  { value: "256-bit", label: "Encryption" },
+                  { value: "99.99%", label: "Availability" },
+                  { value: "<100ms", label: "Response Time" },
+                  { value: "Auto", label: "Failover" },
                 ].map((stat, idx) => (
                   <div key={idx} className="p-4 rounded-lg border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-all">
                     <p className="text-2xl font-black text-cyan-400">{stat.value}</p>
@@ -81,39 +81,39 @@ export default function SecurityDetail() {
         </div>
       </section>
 
-      {/* Security Pillars */}
+      {/* Reliability Pillars */}
       <section className="py-24 px-4 border-t border-white/10">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-black text-white mb-16 text-center">
-            Five Pillars of Security
+            Five Pillars of Reliability
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               {
                 icon: <Lock className="w-8 h-8" />,
-                title: "Encryption",
-                items: ["AES 256-bit", "TLS 1.3", "End-to-end", "Key rotation"],
+                title: "Redundancy",
+                items: ["Multi-region", "Backup systems", "Load balancing", "Failover"],
               },
               {
                 icon: <Key className="w-8 h-8" />,
-                title: "Authentication",
-                items: ["OAuth 2.0", "SAML 2.0", "MFA", "Passwordless"],
+                title: "Performance",
+                items: ["CDN distribution", "Caching layer", "Optimization", "Monitoring"],
               },
               {
                 icon: <Eye className="w-8 h-8" />,
-                title: "Monitoring",
-                items: ["SIEM", "Log analysis", "Alerts", "Dashboards"],
+                title: "Observability",
+                items: ["Real-time metrics", "Log analysis", "Alerts", "Dashboards"],
               },
               {
                 icon: <AlertTriangle className="w-8 h-8" />,
-                title: "Detection",
-                items: ["Threat intel", "Anomalies", "Compliance", "Auditing"],
+                title: "Maintenance",
+                items: ["Zero downtime", "Planned updates", "Testing", "Scaling"],
               },
               {
                 icon: <Shield className="w-8 h-8" />,
-                title: "Compliance",
-                items: ["SOC 2", "HIPAA", "PCI-DSS", "GDPR"],
+                title: "Recovery",
+                items: ["RTO", "RPO", "Disaster recovery", "Backups"],
               },
             ].map((pillar, idx) => (
               <div
@@ -138,38 +138,38 @@ export default function SecurityDetail() {
         </div>
       </section>
 
-      {/* Threat Protection */}
+      {/* Performance Optimization */}
       <section className="py-24 px-4 border-t border-white/10">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-black text-white mb-12 text-center">
-            Multi-Layer Threat Protection
+            Performance Optimization Strategies
           </h2>
 
           <div className="space-y-4">
             {[
               {
-                threat: "DDoS Attacks",
-                protection: "Rate limiting, CDN filtering, traffic analysis, automatic mitigation",
+                threat: "Latency Reduction",
+                protection: "CDN distribution, edge caching, request optimization, compression",
               },
               {
-                threat: "SQL Injection",
-                protection: "Parameterized queries, input validation, WAF rules, vulnerability scanning",
+                threat: "Scalability",
+                protection: "Auto-scaling, load balancing, microservices, horizontal expansion",
               },
               {
-                threat: "XSS Attacks",
-                protection: "Content Security Policy, output encoding, DOM sanitization",
+                threat: "Database Performance",
+                protection: "Query optimization, indexing, replication, read replicas",
               },
               {
-                threat: "Unauthorized Access",
-                protection: "Zero-trust model, identity verification, least privilege access, MFA",
+                threat: "Resource Management",
+                protection: "Container orchestration, resource allocation, monitoring, tuning",
               },
               {
-                threat: "Data Breach",
-                protection: "Encryption at rest, data segmentation, access logs, incident response",
+                threat: "Availability Assurance",
+                protection: "Multi-region deployment, failover automation, health checks, recovery",
               },
               {
-                threat: "Compliance Violations",
-                protection: "Automated audits, policy enforcement, compliance reports, certifications",
+                threat: "Cost Efficiency",
+                protection: "Resource optimization, reserved capacity, auto-shutdown, monitoring",
               },
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-lg border border-white/10 bg-white/[0.02] hover:border-cyan-500/30 hover:bg-cyan-500/[0.02] transition-all duration-300 group">
@@ -188,38 +188,38 @@ export default function SecurityDetail() {
         </div>
       </section>
 
-      {/* Compliance & Certifications */}
+      {/* Infrastructure Standards */}
       <section className="py-24 px-4 border-t border-white/10 bg-gradient-to-b from-black to-black">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-black text-white mb-12 text-center">
-            Global Compliance & Certifications
+            Industry-Standard Infrastructure
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                cert: "SOC 2 Type II",
-                description: "Security, availability, processing integrity, confidentiality, and privacy",
+                cert: "99.99% Availability",
+                description: "Guaranteed uptime SLA with multi-region redundancy and automatic failover",
               },
               {
-                cert: "HIPAA Compliant",
-                description: "Healthcare data protection with BAA (Business Associate Agreement)",
+                cert: "Global CDN",
+                description: "Content delivery from 100+ edge locations worldwide",
               },
               {
-                cert: "PCI-DSS Level 1",
-                description: "Payment card industry compliance for processing transactions",
+                cert: "Enterprise Support",
+                description: "24/7/365 dedicated support with sub-15 minute response time",
               },
               {
-                cert: "GDPR Certified",
-                description: "EU data protection regulations with privacy impact assessments",
+                cert: "Auto-Scaling",
+                description: "Automatic resource scaling based on demand patterns",
               },
               {
-                cert: "ISO 27001",
-                description: "Information security management system certification",
+                cert: "Advanced Monitoring",
+                description: "Real-time analytics and performance monitoring dashboard",
               },
               {
-                cert: "FedRAMP Authorized",
-                description: "Federal Risk and Authorization Management Program approved",
+                cert: "Disaster Recovery",
+                description: "Comprehensive backup and recovery procedures",
               },
             ].map((item, idx) => (
               <div key={idx} className="p-8 rounded-xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 group">
@@ -238,26 +238,26 @@ export default function SecurityDetail() {
         </div>
       </section>
 
-      {/* Security Team */}
+      {/* Expert Support Team */}
       <section className="py-24 px-4 border-t border-white/10">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-black text-white mb-12 text-center">
-            Dedicated Security Team
+            Dedicated Expert Team
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                service: "Security Operations 24/7",
-                description: "Round-the-clock monitoring and incident response team",
+                service: "Infrastructure Management 24/7",
+                description: "Round-the-clock monitoring and operational support team",
               },
               {
-                service: "Penetration Testing",
-                description: "Regular security assessments and vulnerability testing",
+                service: "Performance Optimization",
+                description: "Regular optimization reviews and efficiency recommendations",
               },
               {
-                service: "Security Training",
-                description: "Team training on security best practices and compliance",
+                service: "Technical Training",
+                description: "Team training on best practices and platform expertise",
               },
             ].map((item, idx) => (
               <div key={idx} className="p-8 rounded-xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01]">

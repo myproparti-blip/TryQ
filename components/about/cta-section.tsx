@@ -68,7 +68,7 @@ export function CTASection() {
               </div>
               <div>
                 <h3 className="font-bold text-white">Sales Inquiry</h3>
-                <p className="text-sm text-slate-400">Enterprise solutions</p>
+                <p className="text-sm text-slate-400">TryQu Tech</p>
               </div>
             </div>
             <p className="text-slate-300 text-sm mb-4">
@@ -93,8 +93,8 @@ export function CTASection() {
             <p className="text-slate-300 text-sm mb-4">
               Get technical insights from our engineering leadership and solution architects.
             </p>
-            <a href="mailto:tryqu@gmail.com" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors duration-300 font-semibold text-sm">
-              tryqu@gmail.com
+            <a href="mailto:tryqutech@gmail.com" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors duration-300 font-semibold text-sm">
+              tryqutech@gmail.com
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

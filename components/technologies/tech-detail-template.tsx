@@ -136,7 +136,7 @@ export function TechDetailTemplate({
                 {/* Trust Section */}
                 <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
                     <p className="text-slate-300 mb-6">
-                        500+ companies rely on our <span className="text-purple-300 font-bold">top 1% tech talent</span>
+                        30+ companies rely on our <span className="text-purple-300 font-bold">top 1% tech talent</span>
                     </p>
                     <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
                         <span className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> 2-week team onboarding</span>

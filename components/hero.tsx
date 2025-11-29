@@ -101,8 +101,8 @@ function PhoneCard({
 
 const phoneData = [
   {
-    title: "Scalability",
-    sub: "Handle millions of transactions seamlessly.",
+    title: "Enterprise Scale",
+    sub: "Process millions of transactions with zero downtime.",
     tone: "results",
     gradient: "from-[#0b0b0b] via-[#0f172a] to-[#020617]",
     videoSrc:
@@ -110,15 +110,15 @@ const phoneData = [
     href: "/solutions/scalability",
   },
   {
-    title: "Speed",
-    sub: "Go live in days, not months.",
+    title: "Rapid Deployment",
+    sub: "Production-ready in weeks, comprehensive support included.",
     tone: "speed",
     gradient: "from-[#0b1a0b] via-[#052e16] to-[#022c22]",
     href: "/solutions/speed",
   },
   {
-    title: "Integration-Ready",
-    sub: "Connect with your existing systems seamlessly.",
+    title: "Seamless Integration",
+    sub: "Connect with legacy and modern systems without friction.",
     tone: "social",
     gradient: "from-[#001028] via-[#0b355e] to-[#052e5e]",
     videoSrc:
@@ -126,15 +126,15 @@ const phoneData = [
     href: "/solutions/integration",
   },
   {
-    title: "Reliability",
-    sub: "Enterprise-grade reliability & uptime guaranteed.",
+    title: "99.99% Availability",
+    sub: "Enterprise SLA-backed infrastructure with automated failover.",
     tone: "standout",
     gradient: "from-[#0b0b0b] via-[#1f2937] to-[#0b1220]",
     href: "/solutions/reliability",
   },
   {
-    title: "Security",
-    sub: "Military-grade encryption & compliance built-in.",
+    title: "SOC 2 Compliance",
+    sub: "Enterprise-grade security with continuous threat monitoring.",
     tone: "premium",
     gradient: "from-[#0b0b0b] via-[#111827] to-[#052e16]",
     href: "/solutions/security",

@@ -11,8 +11,8 @@ interface FeaturesContent {
 }
 
 const defaultContent: FeaturesContent = {
-  title: "What makes us the best IT partner for you.",
-  subtitle: "Discover our enterprise-first approach to digital transformation",
+  title: "Enterprise Digital Transformation at Scale",
+  subtitle: "Proven solutions for IT modernization, systems integration, cloud architecture, and business process optimization across Fortune 500 enterprises",
 }
 
 export function Features() {
@@ -40,12 +40,12 @@ export function Features() {
       </h2>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {/* Adaptability Card - Hidden on mobile */}
-        <Card className="hidden md:block liquid-glass border border-white/20">
-          <CardHeader>
-            <p className="text-[11px] tracking-widest text-white/80">ADAPTABILITY</p>
-            <CardTitle className="mt-1 text-xl text-white">Build systems that adapt to your growth</CardTitle>
-          </CardHeader>
+        {/* Enterprise Excellence Card - Hidden on mobile */}
+         <Card className="hidden md:block liquid-glass border border-white/20">
+           <CardHeader>
+             <p className="text-[11px] tracking-widest text-white/80">IT MODERNIZATION</p>
+             <CardTitle className="mt-1 text-xl text-white">Multi-cloud architecture with unified management and governance</CardTitle>
+           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
@@ -72,14 +72,14 @@ export function Features() {
           </CardContent>
         </Card>
 
-        {/* Client Success Card - Always visible */}
-        <Card className="liquid-glass border border-white/20">
-          <CardHeader>
-            <p className="text-[11px] tracking-widest text-white/80">CLIENT SUCCESS</p>
-            <CardTitle className="mt-1 text-xl text-white">
-              Their systems didn't just function, they transformed operations — our teams saw productivity gains instantly.
-            </CardTitle>
-          </CardHeader>
+        {/* Enterprise Transformation Card - Always visible */}
+         <Card className="liquid-glass border border-white/20">
+           <CardHeader>
+             <p className="text-[11px] tracking-widest text-white/80">ENTERPRISE TRACK RECORD</p>
+             <CardTitle className="mt-1 text-xl text-white">
+               4+ years delivering mission-critical solutions with 99.99% uptime, SOC 2 compliance, and zero-trust architecture.
+             </CardTitle>
+           </CardHeader>
           <CardContent>
             <div className="mb-6 flex items-end gap-4">
               <div className="text-5xl font-bold text-lime-300">4.9</div>

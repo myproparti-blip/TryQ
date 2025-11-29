@@ -12,7 +12,6 @@ export function MobileSpecializations() {
             title: 'Frontend Engineer',
             level: 'Intermediate',
             duration: '12 weeks',
-            salary: '$100k - $160k',
             image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop',
             description: 'Master modern frontend frameworks and build interactive user interfaces',
             students: 4200,
@@ -31,7 +30,6 @@ export function MobileSpecializations() {
             title: 'Backend Engineer',
             level: 'Intermediate',
             duration: '14 weeks',
-            salary: '$105k - $170k',
             image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop',
             description: 'Build scalable backend systems with modern frameworks and databases',
             students: 3800,
@@ -50,7 +48,6 @@ export function MobileSpecializations() {
             title: 'Full-Stack Developer',
             level: 'Advanced',
             duration: '18 weeks',
-            salary: '$130k - $200k',
             image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop',
             description: 'Master complete application development from frontend to backend',
             students: 3200,
@@ -69,7 +66,6 @@ export function MobileSpecializations() {
             title: 'Mobile App Developer',
             level: 'Advanced',
             duration: '16 weeks',
-            salary: '$115k - $185k',
             image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop',
             description: 'Develop native and cross-platform mobile applications',
             students: 2900,
@@ -88,7 +84,6 @@ export function MobileSpecializations() {
             title: 'DevOps Engineer',
             level: 'Advanced',
             duration: '12 weeks',
-            salary: '$120k - $190k',
             image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop',
             description: 'Master containerization, orchestration, and cloud deployment',
             students: 2100,
@@ -107,7 +102,6 @@ export function MobileSpecializations() {
             title: 'Security Engineer',
             level: 'Expert',
             duration: '14 weeks',
-            salary: '$140k - $220k',
             image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=400&fit=crop',
             description: 'Protect applications with enterprise-grade security practices',
             students: 1400,
@@ -173,9 +167,7 @@ export function MobileSpecializations() {
                                                 <Clock className="w-3 h-3 mr-1" />
                                                 {spec.duration}
                                             </Badge>
-                                            <Badge variant="secondary" className="text-xs bg-green-500/20 text-green-300 border-green-500/30">
-                                                {spec.salary}
-                                            </Badge>
+
                                         </div>
                                     </div>
                                 </div>

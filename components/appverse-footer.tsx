@@ -134,7 +134,7 @@ export function AppverseFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-neutral-400 hover:text-lime-300 transition-colors group"
-                    aria-label="Follow tryq tech on Twitter"
+                    aria-label="Follow TryQu Tech on Twitter"
                   >
                     <div className="p-1.5 rounded-lg bg-neutral-800 group-hover:bg-lime-400/10 transition-colors">
                       <Twitter className="h-3.5 w-3.5" />
@@ -148,7 +148,7 @@ export function AppverseFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-neutral-400 hover:text-lime-300 transition-colors group"
-                    aria-label="Subscribe to tryq tech on YouTube"
+                    aria-label="Subscribe to TryQu Tech on YouTube"
                   >
                     <div className="p-1.5 rounded-lg bg-neutral-800 group-hover:bg-lime-400/10 transition-colors">
                       <Youtube className="h-3.5 w-3.5" />
@@ -162,7 +162,7 @@ export function AppverseFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-neutral-400 hover:text-lime-300 transition-colors group"
-                    aria-label="Follow tryq tech on Instagram"
+                    aria-label="Follow TryQu Tech on Instagram"
                   >
                     <div className="p-1.5 rounded-lg bg-neutral-800 group-hover:bg-lime-400/10 transition-colors">
                       <Instagram className="h-3.5 w-3.5" />
@@ -176,7 +176,7 @@ export function AppverseFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-neutral-400 hover:text-lime-300 transition-colors group"
-                    aria-label="Follow tryq tech on Threads"
+                    aria-label="Follow TryQu Tech on Threads"
                   >
                     <div className="p-1.5 rounded-lg bg-neutral-800 group-hover:bg-lime-400/10 transition-colors">
                       <MessageCircle className="h-3.5 w-3.5" />

@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { usePageContext } from '@/hooks/use-page-context';
 import { getTechEmoji } from '@/lib/tech-emojis-config';
 
 export function HomeTechnologies() {
+    const { page } = usePageContext();
     const technologies = [
         'React',
         'Node.js',
@@ -28,6 +30,11 @@ export function HomeTechnologies() {
             .toLowerCase()
             .replace(/\s+/g, '-')
             .replace(/[^\w-]/g, '')}`;
+    }
+
+    // Only show on home page
+    if (page !== 'home') {
+        return null;
     }
 
     return (

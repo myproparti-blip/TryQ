@@ -9,17 +9,17 @@ import Script from "next/script"
 export const dynamic = "force-static"
 
 export const metadata = {
-  title: "Architectural Visualization Studio | 3D CGI Services by TryQ tech",
+  title: "Architectural Visualization Studio | 3D CGI Services by TryQu Tech",
   description:
-    "Explore TryQ tech’s architectural visualization services — from photoreal 3D renders to cinematic CGI walkthroughs that showcase your designs with stunning realism.",
+    "Explore TryQu Tech’s architectural visualization services — from photoreal 3D renders to cinematic CGI walkthroughs that showcase your designs with stunning realism.",
   alternates: {
-    canonical: "https://theTryQ tech.com/3D-architecture-visualization-studio",
+    canonical: "https://theTryQu Tech.com/3D-architecture-visualization-studio",
   },
   openGraph: {
-    title: "Architectural Visualization Studio | 3D CGI Services by TryQ tech",
+    title: "Architectural Visualization Studio | 3D CGI Services by TryQu Tech",
     description:
-      "Explore TryQ tech’s architectural visualization services — from photoreal 3D renders to cinematic CGI walkthroughs that showcase your designs with stunning realism.",
-    url: "https://theTryQ tech.com/3D-architecture-visualization-studio",
+      "Explore TryQu Tech’s architectural visualization services — from photoreal 3D renders to cinematic CGI walkthroughs that showcase your designs with stunning realism.",
+    url: "https://theTryQu Tech.com/3D-architecture-visualization-studio",
     type: "website",
   },
 }
@@ -28,11 +28,11 @@ export default function Page() {
   const pageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://theTryQ tech.com/3D-architecture-visualization-studio",
-    name: "Architectural Visualization Studio | 3D CGI Services by TryQ tech",
+    "@id": "https://theTryQu Tech.com/3D-architecture-visualization-studio",
+    name: "Architectural Visualization Studio | 3D CGI Services by TryQu Tech",
     description:
-      "Explore TryQ tech’s architectural visualization services — from photoreal 3D renders to cinematic CGI walkthroughs that showcase your designs with stunning realism.",
-    url: "https://theTryQ tech.com/3D-architecture-visualization-studio",
+      "Explore TryQu Tech’s architectural visualization services — from photoreal 3D renders to cinematic CGI walkthroughs that showcase your designs with stunning realism.",
+    url: "https://theTryQu Tech.com/3D-architecture-visualization-studio",
   }
 
   return (

@@ -1,5 +1,6 @@
 "use client"
 
+import { usePageContext } from "@/hooks/use-page-context"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import {
     Cloud,
@@ -17,78 +18,97 @@ import {
 } from "lucide-react"
 
 export function PremiumFeaturesGrid() {
-    const features = [
+    const { page } = usePageContext()
+    
+    const allFeatures = [
         {
             icon: Cloud,
-            title: "Multi-Cloud Architecture",
-            description: "Seamless deployment across AWS, Azure, and GCP with vendor lock-in protection",
+            title: "Multi-Cloud Infrastructure",
+            description: "Deploy across AWS, Azure, and GCP with unified management and orchestration",
+            category: "cloud",
         },
         {
             icon: Zap,
-            title: "Lightning-Fast Performance",
-            description: "99.99% uptime SLA with sub-millisecond latency optimization",
+            title: "99.99% Uptime SLA",
+            description: "Enterprise-grade availability with automated failover, load balancing, and redundancy",
+            category: "core",
         },
         {
             icon: Lock,
-            title: "Military-Grade Security",
-            description: "End-to-end encryption with compliance for HIPAA, SOC 2, ISO 27001",
+            title: "End-to-End Encryption",
+            description: "Military-grade TLS/SSL, key management, and data encryption at rest and in transit",
+            category: "core",
         },
         {
             icon: BarChart,
-            title: "AI-Powered Analytics",
-            description: "Real-time insights and predictive analytics for data-driven decisions",
+            title: "Performance Monitoring",
+            description: "Real-time infrastructure metrics, APM dashboards, and latency tracking",
+            category: "core",
         },
         {
             icon: Users,
-            title: "Dedicated Support Team",
-            description: "24/7 expert support with average response time under 15 minutes",
+            title: "Full-Stack Development",
+            description: "Complete frontend, backend, mobile, and API development with modern frameworks",
+            category: "core",
         },
         {
             icon: Cpu,
-            title: "Scalable Infrastructure",
-            description: "Auto-scaling capabilities handling 100x traffic spikes instantly",
+            title: "Auto-Scaling Infrastructure",
+            description: "Dynamic resource provisioning handling massive concurrent users and traffic spikes",
+            category: "cloud",
         },
         {
             icon: DatabaseIcon,
-            title: "Advanced Data Management",
-            description: "Intelligent caching, replication, and disaster recovery protocols",
+            title: "Database Replication & Backup",
+            description: "Automated backup, cross-region replication, point-in-time recovery, and disaster recovery",
+            category: "core",
         },
         {
             icon: Shield,
-            title: "DDoS Protection",
-            description: "Enterprise-grade protection against modern cyber threats",
+            title: "Security & Compliance",
+            description: "SOC 2 Type II, ISO 27001, GDPR compliance, vulnerability scanning, and penetration testing",
+            category: "core",
         },
         {
             icon: Code,
-            title: "API-First Design",
-            description: "RESTful and GraphQL APIs for seamless integrations",
+            title: "RESTful & GraphQL APIs",
+            description: "High-performance APIs with rate limiting, versioning, and comprehensive documentation",
+            category: "core",
         },
         {
             icon: Settings,
-            title: "Automated DevOps",
-            description: "CI/CD pipelines with continuous monitoring and optimization",
+            title: "Infrastructure as Code (IaC)",
+            description: "Terraform, CloudFormation, and Ansible for automated infrastructure provisioning and management",
+            category: "devops",
         },
         {
             icon: Layers,
-            title: "Microservices Ready",
-            description: "Containerized architecture for maximum flexibility and scalability",
+            title: "Containerization & Orchestration",
+            description: "Docker, Kubernetes, and container registries for scalable microservices architecture",
+            category: "cloud",
         },
         {
             icon: Workflow,
-            title: "Custom Workflows",
-            description: "Tailored automation solutions for your unique business needs",
+            title: "CI/CD Pipelines",
+            description: "Automated testing, building, and deployment with GitHub Actions, Jenkins, and GitLab CI",
+            category: "core",
         },
     ]
+
+    // Filter features based on current page
+    const features = page === 'home' 
+        ? allFeatures 
+        : allFeatures.filter(f => f.category === 'core')
 
     return (
         <section className="container mx-auto px-4 py-20">
             <div className="mb-16 text-center">
-                <p className="text-lime-300 font-semibold mb-4">ENTERPRISE FEATURES</p>
+                <p className="text-lime-300 font-semibold mb-4">ENTERPRISE CAPABILITIES</p>
                 <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-4">
-                    Premium Technology Stack
+                    Mission-Critical Infrastructure
                 </h2>
                 <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                    Industry-leading features designed for enterprise-scale operations and mission-critical workloads
+                    Proven enterprise capabilities for digital transformation, system integration, and business resilience at scale
                 </p>
             </div>
 

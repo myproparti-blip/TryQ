@@ -16,30 +16,30 @@ export function EnhancedMissionSection() {
 
   const missionCards: MissionCard[] = [
     {
-      title: 'Innovation',
-      description: 'Pioneering breakthrough technologies that redefine industry standards and create tomorrow\'s solutions.',
-      icon: '⚡',
+      title: 'Full Stack Development',
+      description: 'End-to-end solutions with React, Vue, Angular on frontend. Node.js, Python, Java on backend. Real-time databases and scalable APIs.',
+      icon: '💻',
       color: 'cyan',
       bgGradient: 'from-cyan-500/20 to-blue-500/10'
     },
     {
-      title: 'Security',
-      description: 'Enterprise-grade protection with zero-trust architecture and continuous threat intelligence.',
-      icon: '🔐',
+      title: 'Mobile App Development',
+      description: 'Native iOS & Android development. React Native & Flutter expertise. Cross-platform apps that perform flawlessly.',
+      icon: '📱',
       color: 'purple',
       bgGradient: 'from-purple-500/20 to-pink-500/10'
     },
     {
-      title: 'Cloud Native',
-      description: 'Scalable, resilient infrastructure built for the cloud-first era with microservices excellence.',
-      icon: '☁️',
+      title: 'MERN & Modern Web',
+      description: 'MongoDB, Express, React, Node.js specialization. Cloud deployment on AWS, Azure, GCP. DevOps & CI/CD pipelines.',
+      icon: '⚡',
       color: 'blue',
       bgGradient: 'from-blue-500/20 to-cyan-500/10'
     },
     {
-      title: 'Excellence',
-      description: 'Uncompromising commitment to quality, performance, and continuous improvement in every solution.',
-      icon: '✨',
+      title: 'Frontend Excellence',
+      description: 'Responsive design, performance optimization, accessibility standards. State management, testing, and production-ready code.',
+      icon: '🎨',
       color: 'pink',
       bgGradient: 'from-pink-500/20 to-purple-500/10'
     }
@@ -77,19 +77,19 @@ export function EnhancedMissionSection() {
     <section ref={sectionRef} className="relative py-24 bg-gradient-to-b from-black via-slate-900/5 to-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="mb-20 text-center max-w-3xl mx-auto">
-          <div className="inline-block mb-4 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 backdrop-blur-sm">
-            <span className="text-sm font-semibold text-cyan-400">CORE VALUES</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-blue-400">
-              What Drives Our Mission
-            </span>
-          </h2>
-          <p className="text-slate-300 text-lg leading-relaxed">
-            Built on a foundation of innovation, security, and excellence, we deliver solutions that transform enterprises and shape the future of technology.
-          </p>
-        </div>
+         <div className="mb-20 text-center max-w-3xl mx-auto">
+           <div className="inline-block mb-4 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 backdrop-blur-sm">
+             <span className="text-sm font-semibold text-cyan-400">WHAT WE SPECIALIZE IN</span>
+           </div>
+           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-blue-400">
+               Development Services for Every Project
+             </span>
+           </h2>
+           <p className="text-slate-300 text-lg leading-relaxed">
+             Expert developers in web, mobile, and full stack development. Delivering high-quality code and scalable solutions for startups to enterprises.
+           </p>
+         </div>
 
         {/* Mission Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
@@ -158,21 +158,21 @@ export function EnhancedMissionSection() {
 
         {/* Mission Statement Section */}
         <div className="relative rounded-3xl overflow-hidden border border-white/10 backdrop-blur-xl">
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
 
-          {/* Animated Border */}
-          <div className="absolute inset-0 rounded-3xl">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
-          </div>
+        {/* Animated Border */}
+        <div className="absolute inset-0 rounded-3xl">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
+        </div>
 
-          {/* Content */}
-          <div className="relative p-12 lg:p-16">
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <p className="text-xl lg:text-2xl font-semibold text-white leading-relaxed">
-                We believe technology should <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">empower humanity</span>, not limit it. Our mission is to create solutions that are not just innovative, but fundamentally transformative.
-              </p>
+        {/* Content */}
+        <div className="relative p-12 lg:p-16">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <p className="text-xl lg:text-2xl font-semibold text-white leading-relaxed">
+                  We deliver <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">high-quality development solutions</span> across all platforms. From responsive web applications to native mobile apps, we build products that users love. Our developers combine modern best practices with proven methodologies to create scalable, maintainable, and efficient code.
+                </p>
               <div className="flex justify-center gap-4 pt-6">
                 <div className="h-1 w-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
                 <div className="h-1 w-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>

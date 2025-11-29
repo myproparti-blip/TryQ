@@ -197,7 +197,7 @@ const trainingCourses: TrainingCourse[] = [
         id: 9,
         title: 'Cloud Architecture with AWS',
         subtitle: 'Enterprise Cloud Solutions',
-        description: 'Build cloud-native applications on AWS. Master EC2, Lambda, RDS, S3, and serverless architecture for scalable enterprise solutions.',
+        description: 'Build cloud-native applications on AWS. Master EC2, Lambda, RDS, S3, and serverless architecture for scalable TryQu Tech.',
         icon: '☁️',
         gradient: 'from-orange-400 to-red-500',
         glowColor: 'rgba(245, 101, 17, 0.4)',

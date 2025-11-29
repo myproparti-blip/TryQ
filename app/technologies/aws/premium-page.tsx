@@ -14,7 +14,7 @@ export default function AwsPremiumTechPage() {
         tagline: 'AWS Cloud Solutions Partner',
         heroTitle: 'Enterprise AWS Solutions & Cloud Infrastructure',
         heroSubtitle:
-            'Deploy scalable, secure, and cost-optimized cloud infrastructure on AWS. Our expert team has delivered 500+ AWS projects for Fortune 500 companies and innovative startups.',
+            'Deploy scalable, secure, and cost-optimized cloud infrastructure on AWS. Our expert team has delivered 30+ AWS projects for Fortune 500 companies and innovative startups.',
         heroDescription:
             'From migration and infrastructure design to serverless applications and AI/ML on AWS, we deliver comprehensive cloud solutions. Our AWS expertise spans compute, storage, databases, networking, security, and emerging technologies.',
         rating: 4.9,
@@ -24,7 +24,7 @@ export default function AwsPremiumTechPage() {
         overviewDescription:
             'Amazon Web Services is the leading cloud platform, powering the world\'s most demanding applications. We architect, build, and optimize AWS solutions that deliver performance, security, and cost-efficiency. Our approach combines deep technical expertise with best practices for production-ready systems.',
         overviewHighlights: [
-            '200+ AWS services for any cloud requirement',
+            '20+ AWS services for any cloud requirement',
             'Global infrastructure for low-latency, high-availability deployments',
             'Enterprise-grade security and compliance',
         ],
@@ -236,7 +236,7 @@ export default function AwsPremiumTechPage() {
                 description: 'Available in 30+ regions with 100+ availability zones worldwide.',
             },
             {
-                stat: '200+ services available',
+                stat: '20+ services available',
                 description: 'Comprehensive coverage of compute, storage, networking, AI/ML, and emerging tech.',
             },
             {

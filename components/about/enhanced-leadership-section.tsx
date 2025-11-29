@@ -49,16 +49,16 @@ export function EnhancedLeadershipSection() {
       ]
     },
     {
-      name: 'David Park',
-      title: 'VP Product',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop',
-      bio: 'Product visionary leading AI/ML initiatives',
-      expertise: ['AI/ML', 'Product', 'UX'],
-      social: [
-        { platform: 'LinkedIn', url: '#' },
-        { platform: 'Twitter', url: '#' }
-      ]
-    },
+       name: 'David Park',
+       title: 'VP Product',
+       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop',
+       bio: 'Product strategist building intuitive developer experiences',
+       expertise: ['Product', 'Development', 'UX'],
+       social: [
+         { platform: 'LinkedIn', url: '#' },
+         { platform: 'Twitter', url: '#' }
+       ]
+     },
     {
       name: 'Lisa Wang',
       title: 'VP Engineering',

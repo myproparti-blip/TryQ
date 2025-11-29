@@ -2,19 +2,19 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { usePageContext } from "@/hooks/use-page-context"
 import {
-  Cloud,
-  Shield,
   Zap,
   Code2,
   Database,
   Network,
-  Brain,
   BarChart3,
   Lock,
   Globe,
   Cpu,
   Settings,
+  Palette,
+  Monitor,
 } from "lucide-react"
 
 interface ServiceCard {
@@ -24,150 +24,275 @@ interface ServiceCard {
   benefits: string[]
   metrics: { label: string; value: string }[]
   image: string
+  category: "core" | "cloud" | "analytics" | "devops" | "specialty"
 }
 
-const services: ServiceCard[] = [
-  {
-    icon: <Cloud className="w-8 h-8" />,
-    title: "Cloud Solutions",
-    description: "Enterprise-grade cloud infrastructure on AWS, Azure, and Google Cloud",
-    benefits: ["Cost optimization", "Scalability", "Global availability"],
-    metrics: [
-      { label: "Uptime", value: "99.99%" },
-      { label: "Regions", value: "6+" },
-    ],
-    image: "/images/archviz/client-love-1.jpg",
-  },
-  {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Security & Compliance",
-    description: "Advanced threat detection, compliance management, and security operations",
-    benefits: ["Zero-trust architecture", "SIEM monitoring", "Compliance automation"],
-    metrics: [
-      { label: "Detection", value: "<5ms" },
-      { label: "Compliance", value: "SOC 2" },
-    ],
-    image: "/images/archviz/client-love-2.jpg",
-  },
-  {
-    icon: <Brain className="w-8 h-8" />,
-    title: "AI & Machine Learning",
-    description: "Custom ML models and AI-powered automation for intelligent operations",
-    benefits: ["Predictive analytics", "Natural language processing", "Computer vision"],
-    metrics: [
-      { label: "Accuracy", value: "98%+" },
-      { label: "Models", value: "50+" },
-    ],
-    image: "/images/intuitive-1.png",
-  },
+const allServices: ServiceCard[] = [
   {
     icon: <Code2 className="w-8 h-8" />,
-    title: "Custom Development",
-    description: "Full-stack applications built with cutting-edge technologies",
-    benefits: ["Microservices", "API-first design", "Containerization"],
+    title: "Custom Application Development",
+    description: "End-to-end enterprise software development with modern frameworks and best practices",
+    benefits: ["Full-stack development", "Agile methodology", "Quality assurance", "Post-launch support"],
     metrics: [
-      { label: "Speed", value: "2x faster" },
-      { label: "Reliability", value: "99.9%" },
-    ],
-    image: "/images/intuitive-2.png",
-  },
-  {
-    icon: <Database className="w-8 h-8" />,
-    title: "Data & Analytics",
-    description: "Big data solutions and real-time analytics platforms",
-    benefits: ["Data warehousing", "ETL pipelines", "Real-time dashboards"],
-    metrics: [
-      { label: "Volume", value: "100s TB" },
-      { label: "Latency", value: "<1s" },
-    ],
-    image: "/images/top-rated-1.png",
-  },
-  {
-    icon: <Network className="w-8 h-8" />,
-    title: "Infrastructure",
-    description: "Network optimization, server management, and disaster recovery",
-    benefits: ["Load balancing", "CDN integration", "Backup automation"],
-    metrics: [
-      { label: "Availability", value: "99.95%" },
-      { label: "Recovery", value: "<1hr" },
-    ],
-    image: "/images/top-rated-2.png",
-  },
-  {
-    icon: <Lock className="w-8 h-8" />,
-    title: "Identity & Access",
-    description: "Comprehensive IAM solutions with advanced authentication",
-    benefits: ["MFA", "Role-based access", "Audit logging"],
-    metrics: [
-      { label: "Auth Speed", value: "<100ms" },
-      { label: "Protocols", value: "OAuth 2.0" },
-    ],
-    image: "/images/archviz/client-love-1.jpg",
-  },
-  {
-    icon: <Globe className="w-8 h-8" />,
-    title: "API Management",
-    description: "API gateway, versioning, and developer portal management",
-    benefits: ["Rate limiting", "Analytics", "Monetization"],
-    metrics: [
-      { label: "Throughput", value: "1M+ req/s" },
-      { label: "Latency", value: "<50ms" },
-    ],
-    image: "/images/archviz/client-love-2.jpg",
-  },
-  {
-    icon: <Cpu className="w-8 h-8" />,
-    title: "DevOps & CI/CD",
-    description: "Automated deployment pipelines and infrastructure as code",
-    benefits: ["GitOps", "Container orchestration", "Blue-green deployments"],
-    metrics: [
-      { label: "Deploy Time", value: "<5min" },
-      { label: "Success Rate", value: "99.8%" },
+      { label: "Projects", value: "200+" },
+      { label: "Success Rate", value: "99.2%" },
     ],
     image: "/images/intuitive-1.png",
+    category: "core",
   },
   {
     icon: <BarChart3 className="w-8 h-8" />,
-    title: "Business Intelligence",
-    description: "Data visualization and insights for informed decision-making",
-    benefits: ["Custom dashboards", "KPI tracking", "Predictive reporting"],
+    title: "Quality Assurance & Testing",
+    description: "Comprehensive testing services including automated testing, performance testing, and UAT coordination",
+    benefits: ["Test automation", "Performance testing", "Load testing", "Regression testing"],
     metrics: [
-      { label: "Data Sources", value: "100+" },
-      { label: "Query Speed", value: "Instant" },
+      { label: "Test Coverage", value: "90%+" },
+      { label: "Bug Detection", value: "Pre-release" },
     ],
     image: "/images/intuitive-2.png",
+    category: "core",
   },
   {
-    icon: <Settings className="w-8 h-8" />,
-    title: "Consulting & Strategy",
-    description: "Strategic IT planning and digital transformation guidance",
-    benefits: ["Tech stack selection", "Architecture design", "Roadmap planning"],
+    icon: <Cpu className="w-8 h-8" />,
+    title: "DevOps & CI/CD Pipelines",
+    description: "CI/CD automation, continuous integration, deployment pipelines, and infrastructure as code",
+    benefits: ["Git-based workflows", "Automated deployments", "Test automation", "Pipeline monitoring"],
     metrics: [
-      { label: "Projects", value: "500+" },
-      { label: "ROI", value: "3.5x avg" },
+      { label: "Deployment Frequency", value: "Daily" },
+      { label: "Time to Production", value: "<1hr" },
     ],
-    image: "/images/top-rated-1.png",
+    image: "/images/intuitive-1.png",
+    category: "devops",
+  },
+  {
+    icon: <Database className="w-8 h-8" />,
+    title: "Backend & API Development",
+    description: "Scalable backend systems with microservices, REST APIs, and GraphQL implementation",
+    benefits: ["Microservices architecture", "RESTful & GraphQL APIs", "Event-driven systems", "Database optimization"],
+    metrics: [
+      { label: "API Endpoints", value: "500+" },
+      { label: "Throughput", value: "10k req/s" },
+    ],
+    image: "/images/intuitive-2.png",
+    category: "core",
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Web Application Development",
+    description: "Responsive web applications with React, Angular, Vue, and modern JavaScript frameworks",
+    benefits: ["Progressive web apps", "SEO optimization", "Performance tuning", "Accessibility compliance"],
+    metrics: [
+      { label: "Page Speed", value: "<2s load" },
+      { label: "Lighthouse Score", value: "95+" },
+    ],
+    image: "/images/archviz/client-love-1.jpg",
+    category: "core",
   },
   {
     icon: <Zap className="w-8 h-8" />,
-    title: "24/7 Support & Monitoring",
-    description: "Round-the-clock support with SLA guarantees",
-    benefits: ["Instant response", "Proactive monitoring", "Escalation support"],
+    title: "Mobile App Development",
+    description: "iOS, Android, and cross-platform mobile applications with native performance and optimization",
+    benefits: ["Native & cross-platform", "App store optimization", "Push notifications", "Analytics integration"],
     metrics: [
-      { label: "Response", value: "<15min" },
-      { label: "Availability", value: "24/7/365" },
+      { label: "Apps Delivered", value: "150+" },
+      { label: "Avg Rating", value: "4.8★" },
+    ],
+    image: "/images/intuitive-2.png",
+    category: "core",
+  },
+  {
+    icon: <Lock className="w-8 h-8" />,
+    title: "Application Security & Testing",
+    description: "Secure coding practices, OWASP compliance, penetration testing, and vulnerability management",
+    benefits: ["Code analysis", "Penetration testing", "Security audits", "Compliance frameworks"],
+    metrics: [
+      { label: "CVSS Score", value: "<3.0" },
+      { label: "Testing Coverage", value: "100%" },
+    ],
+    image: "/images/intuitive-1.png",
+    category: "core",
+  },
+  {
+    icon: <Monitor className="w-8 h-8" />,
+    title: "Performance Testing & Optimization",
+    description: "Load testing, stress testing, and performance optimization for scalable applications",
+    benefits: ["Load testing", "Stress testing", "Bottleneck analysis", "Performance tuning"],
+    metrics: [
+      { label: "Response Time", value: "<100ms" },
+      { label: "Concurrent Users", value: "100k+" },
     ],
     image: "/images/top-rated-2.png",
+    category: "core",
   },
-]
+  {
+    icon: <Settings className="w-8 h-8" />,
+    title: "Software Architecture & Design",
+    description: "Domain-driven design, design patterns, technical documentation, and system design",
+    benefits: ["Architecture review", "Design patterns", "Technical specs", "Scalability planning"],
+    metrics: [
+      { label: "Design Review", value: "Pre-dev" },
+      { label: "Technical Debt", value: "-70%" },
+    ],
+    image: "/images/top-rated-1.png",
+    category: "core",
+  },
+  {
+    icon: <Code2 className="w-8 h-8" />,
+    title: "Legacy Code Refactoring",
+    description: "Code modernization, technical debt reduction, and codebase optimization",
+    benefits: ["Code cleanup", "Performance boost", "Maintainability", "Documentation"],
+    metrics: [
+      { label: "Cyclomatic Complexity", value: "-40%" },
+      { label: "Code Quality", value: "+50%" },
+    ],
+    image: "/images/intuitive-2.png",
+    category: "core",
+  },
+  {
+    icon: <Palette className="w-8 h-8" />,
+    title: "Database Development & Optimization",
+    description: "Database design, optimization, indexing strategies, and performance tuning",
+    benefits: ["Schema design", "Query optimization", "Indexing strategies", "Backup automation"],
+    metrics: [
+      { label: "Query Performance", value: "-60%" },
+      { label: "Database Size", value: "Optimized" },
+    ],
+    image: "/images/top-rated-1.png",
+    category: "specialty",
+  },
+  {
+    icon: <Network className="w-8 h-8" />,
+    title: "Microservices & Container Tech",
+    description: "Docker containerization, Kubernetes orchestration, and service mesh implementation",
+    benefits: ["Container optimization", "Kubernetes management", "Service mesh", "Helm charting"],
+    metrics: [
+      { label: "Container Density", value: "+80%" },
+      { label: "Orchestration", value: "K8s native" },
+    ],
+    image: "/images/intuitive-2.png",
+    category: "core",
+  },
+  {
+    icon: <Settings className="w-8 h-8" />,
+    title: "Unit Testing & Test Driven Development",
+    description: "Comprehensive unit testing frameworks, TDD practices, and test suite management",
+    benefits: ["Unit test creation", "Jest/Vitest setup", "Coverage reporting", "Mocking & stubbing"],
+    metrics: [
+      { label: "Test Coverage", value: "85%+" },
+      { label: "Assertion Rate", value: "High" },
+    ],
+    image: "/images/top-rated-1.png",
+    category: "core",
+  },
+  {
+    icon: <Zap className="w-8 h-8" />,
+    title: "Integration Testing",
+    description: "End-to-end integration testing, API testing, and workflow validation",
+    benefits: ["API testing", "Component integration", "Data flow validation", "System testing"],
+    metrics: [
+      { label: "Test Scenarios", value: "500+" },
+      { label: "Coverage", value: "Comprehensive" },
+    ],
+    image: "/images/intuitive-1.png",
+    category: "core",
+  },
+  {
+    icon: <Monitor className="w-8 h-8" />,
+    title: "Continuous Monitoring & Logging",
+    description: "Application monitoring, error tracking, and logging infrastructure setup",
+    benefits: ["Log aggregation", "Error tracking", "Real-time alerts", "Performance metrics"],
+    metrics: [
+      { label: "Uptime", value: "99.99%" },
+      { label: "Alert Response", value: "<5min" },
+    ],
+    image: "/images/intuitive-2.png",
+    category: "devops",
+  },
+  {
+    icon: <Network className="w-8 h-8" />,
+    title: "Cloud Infrastructure & DevOps",
+    description: "Multi-cloud deployment with automated management, monitoring, and optimization",
+    benefits: ["Infrastructure as Code", "CI/CD automation", "Container orchestration", "Cost optimization"],
+    metrics: [
+      { label: "Availability", value: "99.99%" },
+      { label: "RTO", value: "<30min" },
+    ],
+    image: "/images/top-rated-2.png",
+    category: "cloud",
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "API Management & Integration",
+    description: "RESTful API design, documentation, versioning, and third-party integration services",
+    benefits: ["API design", "OpenAPI specs", "Rate limiting", "API monitoring"],
+    metrics: [
+      { label: "API Availability", value: "99.95%" },
+      { label: "Integration Speed", value: "Rapid" },
+    ],
+    image: "/images/intuitive-1.png",
+    category: "core",
+  },
+  {
+    icon: <Cpu className="w-8 h-8" />,
+    title: "Automated Testing & Continuous Quality",
+    description: "Test automation frameworks, test data management, and quality metrics reporting",
+    benefits: ["Test automation", "Test frameworks", "Quality dashboards", "Regression automation"],
+    metrics: [
+      { label: "Automation Rate", value: "80%+" },
+      { label: "Test Execution Time", value: "-50%" },
+    ],
+    image: "/images/intuitive-2.png",
+    category: "core",
+  },
+  {
+    icon: <Lock className="w-8 h-8" />,
+    title: "Security Testing & Compliance",
+    description: "Vulnerability assessments, security testing, and compliance verification services",
+    benefits: ["Penetration testing", "OWASP mapping", "Compliance audits", "Security documentation"],
+    metrics: [
+      { label: "Vulnerabilities Found", value: "100%" },
+      { label: "Remediation Time", value: "Fast" },
+    ],
+    image: "/images/intuitive-1.png",
+    category: "core",
+  },
+  {
+    icon: <Code2 className="w-8 h-8" />,
+    title: "Frontend Development & UI/UX",
+    description: "Modern frontend frameworks, responsive design, and user experience optimization",
+    benefits: ["React/Vue/Angular", "Responsive design", "Accessibility (WCAG)", "Performance optimization"],
+    metrics: [
+      { label: "Components Built", value: "1000+" },
+      { label: "Performance Score", value: "98+" },
+    ],
+    image: "/images/intuitive-2.png",
+    category: "core",
+  },
+  {
+    icon: <Settings className="w-8 h-8" />,
+    title: "Infrastructure as Code & Automation",
+    description: "Infrastructure automation, terraform management, and configuration as code solutions",
+    benefits: ["Terraform IaC", "Ansible automation", "Scripting", "Environment provisioning"],
+    metrics: [
+      { label: "Infrastructure Automation", value: "95%+" },
+      { label: "Provisioning Time", value: "<10min" },
+    ],
+    image: "/images/top-rated-1.png",
+    category: "devops",
+  },
+  ]
 
 export function ServiceGrid() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const { page } = usePageContext()
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  // Filter services based on current page context
+  const services = page === 'services' ? allServices : allServices
 
   return (
     <section className="py-24 px-4 bg-black relative">
@@ -178,9 +303,9 @@ export function ServiceGrid() {
 
       <div className="relative container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-black tracking-tight text-white mb-4">Complete Service Suite</h2>
+          <h2 className="text-5xl font-black tracking-tight text-white mb-4">Our Service Offerings</h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Everything you need for enterprise digital transformation
+            Comprehensive IT development, testing, and DevOps solutions for modern enterprises
           </p>
         </div>
 
@@ -190,7 +315,7 @@ export function ServiceGrid() {
               key={index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`group relative p-6 rounded-xl border transition-all duration-500 cursor-pointer overflow-hidden ${
+              className={`group relative p-6 rounded-xl border transition-all duration-500 overflow-hidden ${
                 hoveredIndex === index
                   ? "border-cyan-400/50 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 shadow-lg shadow-cyan-400/20"
                   : "border-white/10 bg-white/[0.02] hover:border-white/20"

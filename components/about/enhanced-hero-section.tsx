@@ -60,42 +60,32 @@ export function EnhancedHeroSection() {
             <div className="group relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 blur"></div>
               <div className="relative px-4 py-2 rounded-full border border-cyan-500/50 bg-cyan-500/10 backdrop-blur-sm hover:bg-cyan-500/20 transition-all duration-300 cursor-pointer">
-                <span className="text-sm font-semibold text-cyan-400">⚡ ENGINEERING THE FUTURE</span>
-              </div>
+                 <span className="text-sm font-semibold text-cyan-400">TryQu Tech</span>
+               </div>
             </div>
           </div>
 
           {/* Main Headline with Letter Spacing */}
-          <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-tight">
-            <span className="block">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-blue-400 animate-pulse">
-                Elevating
-              </span>
-            </span>
-            <span className="block">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-                Innovation
-              </span>
-            </span>
-            <span className="block text-slate-400 mt-2">
-              Across the Digital Frontier
-            </span>
-          </h1>
+           <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-tight">
+             <span className="block text-slate-400 mt-2">
+               Full Stack, Frontend, Mobile & MERN Development
+             </span>
+           </h1>
 
-          {/* Enhanced Subheading */}
-          <p className="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Architecting transformative technology solutions that empower enterprises to lead in an AI-driven world. 
-            <span className="text-cyan-400 font-semibold"> Over a decade of excellence </span>
-            in cloud infrastructure, cybersecurity, and intelligent systems.
-          </p>
+           {/* Enhanced Subheading */}
+           <p className="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+             <span className="text-cyan-400 font-semibold">Specializing in modern web and mobile development</span> with expertise across React, Vue, Angular, Node.js, Python, and more. We deliver scalable solutions that drive business growth.
+             <span className="text-cyan-400 font-semibold"> Our experienced team </span>
+             stays current with cutting-edge technologies while maintaining best practices in performance and security.
+           </p>
         </div>
 
         {/* Floating Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-24">
           {[
-            { number: '500+', label: 'Enterprise Clients Worldwide', color: 'cyan', icon: '🏢' },
-            { number: '10+', label: 'Years of Industry Leadership', color: 'purple', icon: '⭐' },
-            { number: '99.99%', label: 'Infrastructure Uptime', color: 'pink', icon: '✓' }
+            { number: '15+', label: 'Technologies Mastered', color: 'cyan', icon: '✓' },
+            { number: '18+', label: 'Enterprise Clients', color: 'purple', icon: '⭐' },
+            { number: '99.99%', label: 'Service Reliability', color: 'pink', icon: '🛡️' }
           ].map((stat, idx) => (
             <div
               key={idx}

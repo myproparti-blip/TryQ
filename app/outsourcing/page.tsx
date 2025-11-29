@@ -35,42 +35,50 @@ export default function OutsourcingPage() {
         {
             icon: DollarSign,
             title: "Cost Optimization",
-            description: "Reduce development costs by 40-60% while maintaining premium quality. Access world-class talent in cost-efficient markets without compromising on expertise or delivery standards."
+            description: "Reduce development costs by 40-60% while maintaining premium quality. Access world-class talent in cost-efficient markets without compromising on expertise or delivery standards.",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
         },
         {
             icon: TrendingUp,
             title: "Speed to Market",
-            description: "Accelerate product launches with dedicated teams working across multiple time zones. Deploy features faster with experienced developers who follow agile methodologies."
+            description: "Accelerate product launches with dedicated teams working across multiple time zones. Deploy features faster with experienced developers who follow agile methodologies.",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
         },
         {
             icon: Users,
             title: "Access to Global Talent",
-            description: "Tap into a worldwide pool of specialized engineers, architects, and QA experts. Hire professionals with expertise in cutting-edge technologies without geographical limitations."
+            description: "Tap into a worldwide pool of specialized engineers, architects, and QA experts. Hire professionals with expertise in cutting-edge technologies without geographical limitations.",
+            image: "https://images.unsplash.com/photo-1600267185393-e158a98703de?w=800&h=600&fit=crop"
         },
         {
             icon: Clock,
             title: "24/7 Development Continuity",
-            description: "Achieve round-the-clock development through distributed teams across time zones. Your project progresses continuously, maximizing productivity and reducing time-to-market."
+            description: "Achieve round-the-clock development through distributed teams across time zones. Your project progresses continuously, maximizing productivity and reducing time-to-market.",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
         },
         {
             icon: Zap,
             title: "Focus on Core Business",
-            description: "Eliminate distractions from non-core technical operations. Your internal teams concentrate on strategic initiatives while expert outsourcing partners handle development execution."
+            description: "Eliminate distractions from non-core technical operations. Your internal teams concentrate on strategic initiatives while expert outsourcing partners handle development execution.",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
         },
         {
             icon: Shield,
             title: "Enterprise Security & Compliance",
-            description: "Maintain ISO 27001, SOC 2, GDPR, and HIPAA compliance standards. Access partners with proven security frameworks, robust infrastructure, and dedicated security protocols."
+            description: "Maintain ISO 27001, SOC 2, GDPR, and HIPAA compliance standards. Access partners with proven security frameworks, robust infrastructure, and dedicated security protocols.",
+            image: "https://images.unsplash.com/photo-1600267185393-e158a98703de?w=800&h=600&fit=crop"
         },
         {
             icon: BarChart3,
             title: "Scalability & Flexibility",
-            description: "Scale development capacity up or down based on project demands without lengthy hiring cycles. Quickly adapt to changing business requirements and market opportunities."
+            description: "Scale development capacity up or down based on project demands without lengthy hiring cycles. Quickly adapt to changing business requirements and market opportunities.",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
         },
         {
             icon: Target,
             title: "Reduced Time-to-Hire",
-            description: "Replace months of recruitment with immediate access to vetted, experienced developers. Start productive work within days instead of waiting through lengthy hiring processes."
+            description: "Replace months of recruitment with immediate access to vetted, experienced developers. Start productive work within days instead of waiting through lengthy hiring processes.",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
         }
     ]
 
@@ -87,7 +95,7 @@ export default function OutsourcingPage() {
                 "Quick onboarding and ramp-up"
             ],
             useCase: "Best for: Companies needing specific expertise for short-term projects or skill augmentation",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop"
+            image: "https://images.unsplash.com/photo-1600267185393-e158a98703de?w=800&h=600&fit=crop"
         },
         {
             title: "Dedicated Teams",
@@ -101,7 +109,7 @@ export default function OutsourcingPage() {
                 "Predictable cost structure"
             ],
             useCase: "Best for: Mid-to-long term projects requiring stability and deeper integration",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop"
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
         },
         {
             title: "Full Project Outsourcing",
@@ -115,7 +123,7 @@ export default function OutsourcingPage() {
                 "Comprehensive support and maintenance"
             ],
             useCase: "Best for: Companies seeking complete project delivery without internal development capacity",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop"
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
         }
     ]
 
@@ -241,7 +249,7 @@ export default function OutsourcingPage() {
         },
         {
             title: "Enterprise SaaS: Legacy System Modernization",
-            challenge: "Fortune 500 company needed to migrate 15-year-old monolithic application to cloud without disrupting operations. 200+ employees dependent on the system.",
+            challenge: "Fortune 500 company needed to migrate 15-year-old monolithic application to cloud without disrupting operations. 20+ employees dependent on the system.",
             solution: "Phased migration approach with parallel systems. Outsourced team of 12 developers gradually refactored code to microservices using Node.js and AWS while maintaining 99.99% uptime.",
             result: "Completed in 18 months, reduced infrastructure costs by 45%, improved feature deployment speed from quarterly to weekly"
         },
@@ -249,7 +257,7 @@ export default function OutsourcingPage() {
             title: "HealthTech Platform: HIPAA-Compliant Patient Management",
             challenge: "Medical startup required HIPAA-compliant platform for patient data management with strict security and privacy requirements.",
             solution: "Specialized healthcare tech team implemented end-to-end encryption, audit logging, and role-based access control. Built with React, Node.js, PostgreSQL, and AWS HIPAA-eligible services.",
-            result: "Achieved HIPAA certification in 4 months, onboarded 500+ healthcare providers, scaled to manage 100,000+ patient records"
+            result: "Achieved HIPAA certification in 4 months, onboarded 30+ healthcare providers, scaled to manage 100,000+ patient records"
         }
     ]
 
@@ -284,8 +292,6 @@ export default function OutsourcingPage() {
         }
     ]
 
-
-
     return (
         <>
             <SiteHeader />
@@ -305,7 +311,7 @@ export default function OutsourcingPage() {
                                 <div className="inline-block mb-6">
                                     <span className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/50 text-purple-300 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
                                         <Sparkles className="w-4 h-4" />
-                                        TryQu Tech Premium
+                                        TryQu Tech
                                     </span>
                                 </div>
 
@@ -317,18 +323,6 @@ export default function OutsourcingPage() {
                                 <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                                     Launch faster with experienced development teams. Scale from MVP to market-ready products at startup-friendly rates. Get quality engineering without the overhead of hiring. Start shipping in weeks, not months.
                                 </p>
-
-                                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                                    <Button
-                                        onClick={() => setChatModalOpen(true)}
-                                        className="bg-gradient-to-r from-lime-400 to-lime-500 text-black font-semibold rounded-lg px-8 py-3 text-lg
-                                    hover:shadow-xl hover:shadow-lime-500/50 hover:scale-[1.02]
-                                    transition-all cursor-pointer flex items-center gap-2 justify-center"
-                                    >
-                                        Schedule a Call <ArrowRight className="w-4 h-4" />
-                                    </Button>
-
-                                </div>
 
                                 {/* Trust badges */}
                                 <div className="flex flex-wrap items-center gap-6 pt-8 border-t border-gray-700">
@@ -352,7 +346,7 @@ export default function OutsourcingPage() {
                                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-2xl blur-2xl"></div>
                                 <div className="relative bg-gradient-to-br from-gray-900/50 to-black border border-purple-500/20 rounded-2xl overflow-hidden p-2">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop"
+                                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=800&fit=crop"
                                         alt="Development Team"
                                         width={500}
                                         height={500}
@@ -458,177 +452,96 @@ export default function OutsourcingPage() {
                             <p className="text-gray-400 text-lg">Why 70% of Fortune 500 companies use outsourcing for software development</p>
                         </div>
 
-                        <div className="space-y-6">
+                        <div className="grid lg:grid-cols-2 gap-8">
                             {benefits.map((benefit, i) => {
                                 const Icon = benefit.icon
+                                const imageUrl = (benefit as any).image
                                 const detailedBenefits: Record<number, string[]> = {
                                     0: [
                                         "Senior developer salary: $120K-180K/year",
                                         "Full benefits, taxes, HR: +30-40% overhead",
-                                        "Office space/equipment: $5K-10K/employee/year",
-                                        "Outsourced equivalent: $36K-72K/year",
-                                        "Savings: 50-60% reduction in annual costs"
+                                        "Office space/equipment: $5K-10K/employee/year"
                                     ],
                                     1: [
                                         "Traditional hiring-to-productive: 3-6 months",
                                         "Outsourcing recruitment to first sprint: 2-4 weeks",
-                                        "Continuous delivery vs quarterly releases",
-                                        "Agile methodology enables rapid feature deployment",
-                                        "Time-to-market advantage: reach customers 2-3 months earlier"
+                                        "Continuous delivery vs quarterly releases"
                                     ],
                                     2: [
                                         "Access 250+ specialized engineers globally",
                                         "AI/ML experts, blockchain specialists, cloud architects",
-                                        "Rare skills: expensive or unavailable in local markets",
-                                        "Specialized knowledge in your industry (FinTech, HealthTech, etc)",
-                                        "Instant access vs 6-12 month recruitment cycles"
+                                        "Rare skills: expensive or unavailable in local markets"
                                     ],
                                     3: [
                                         "Distributed teams across timezones (PST, EST, UTC, IST, AEST)",
                                         "When US sleeps, Asia teams work; when Asia sleeps, Europe works",
-                                        "Feature development never stops—continuous momentum",
-                                        "Reduced sequential dependencies, faster sprints",
-                                        "30-40% acceleration in total project timeline"
+                                        "Feature development never stops—continuous momentum"
                                     ],
                                     4: [
                                         "Internal engineering focuses on product differentiation",
                                         "Outsourcing handles infrastructure, maintenance, scaling",
-                                        "Strategic team designs features; partners implement them",
-                                        "Leadership concentrates on market, customers, revenue",
-                                        "Better resource allocation and organizational focus"
+                                        "Strategic team designs features; partners implement them"
                                     ],
                                     5: [
                                         "Pre-built security frameworks and compliance infrastructure",
                                         "Regular security audits, penetration testing, vulnerability management",
-                                        "HIPAA, GDPR, PCI DSS, SOC 2 compliance built-in",
-                                        "Data encryption, secure DevOps pipelines, incident response",
-                                        "Regulatory confidence without building from scratch"
+                                        "HIPAA, GDPR, PCI DSS, SOC 2 compliance built-in"
                                     ],
                                     6: [
                                         "Start with 3 engineers, scale to 10 in 2 weeks, back to 5 next month",
                                         "No hiring bottlenecks, no severance/layoff complexity",
-                                        "Resource pool scales elastically with project demands",
-                                        "Seasonal projects, spike periods handled seamlessly",
-                                        "Flexible, responsive to market changes"
+                                        "Resource pool scales elastically with project demands"
                                     ],
                                     7: [
                                         "Typical hiring process: 3-4 weeks sourcing, 4-8 weeks interviews",
                                         "Outsourcing: 3-5 days assessment, resource allocation, onboarding",
-                                        "Pre-vetted developers with proven track records",
-                                        "Start development immediately, no ramp-up delays",
-                                        "Immediate productivity vs months of learning curve"
+                                        "Pre-vetted developers with proven track records"
                                     ]
                                 }
                                 return (
                                     <div key={i} className="group relative">
-                                        <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/0 via-purple-600/5 to-pink-600/0 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-1000"></div>
-                                        <div className="relative bg-gray-900/50 border border-gray-800/50 rounded-xl p-8 hover:border-purple-500/50 transition-all">
-                                            <div className="flex items-start gap-4 mb-6">
-                                                <div className="p-3 bg-gradient-to-br from-purple-500/30 to-pink-500/20 rounded-lg mt-1 group-hover:scale-110 transition-transform">
-                                                    <Icon className="w-6 h-6 text-purple-300" />
+                                        <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/20 via-purple-600/10 to-pink-600/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-1000"></div>
+                                        <div className="relative bg-gradient-to-br from-gray-900/60 to-gray-950/60 border border-gray-800/50 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all h-full">
+                                            {imageUrl && (
+                                                <div className="relative h-48 overflow-hidden">
+                                                    <Image
+                                                        src={imageUrl}
+                                                        alt={benefit.title}
+                                                        width={600}
+                                                        height={300}
+                                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                        unoptimized
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
                                                 </div>
-                                                <div className="flex-1">
-                                                    <h3 className="text-2xl font-semibold mb-2 text-white group-hover:text-purple-300 transition-colors">{benefit.title}</h3>
-                                                    <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
-                                                </div>
-                                            </div>
+                                            )}
 
-                                            <div className="ml-16 bg-gradient-to-r from-purple-500/5 to-transparent p-4 rounded-lg border border-purple-500/10">
-                                                <p className="text-sm font-semibold text-purple-300 mb-3">How This Works in Practice:</p>
-                                                <ul className="space-y-2">
-                                                    {detailedBenefits[i]?.map((point, j) => (
-                                                        <li key={j} className="text-sm text-gray-300 flex items-start gap-2">
-                                                            <span className="text-purple-400 mt-0.5">•</span>
-                                                            <span>{point}</span>
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                            <div className="p-6">
+                                                <div className="flex items-start gap-3 mb-5">
+                                                    <div className="p-2.5 bg-gradient-to-br from-purple-500/40 to-pink-500/30 rounded-lg group-hover:scale-110 transition-transform flex-shrink-0">
+                                                        <Icon className="w-5 h-5 text-purple-300" />
+                                                    </div>
+                                                    <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">{benefit.title}</h3>
+                                                </div>
+
+                                                <p className="text-sm text-gray-300 leading-relaxed mb-5">{benefit.description}</p>
+
+                                                <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/5 p-4 rounded-lg border border-purple-500/20 space-y-2">
+                                                    <p className="text-xs font-bold text-purple-400 uppercase tracking-wider">In Practice:</p>
+                                                    <ul className="space-y-2">
+                                                        {detailedBenefits[i]?.slice(0, 3).map((point, j) => (
+                                                            <li key={j} className="text-xs text-gray-300 flex items-start gap-2">
+                                                                <span className="text-purple-400 font-bold mt-0.5">✓</span>
+                                                                <span>{point}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 )
                             })}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Why Companies Choose Outsourcing */}
-                <section className="py-20 px-4 border-t border-gray-800">
-                    <div className="container mx-auto max-w-4xl">
-                        <h2 className="text-4xl font-bold mb-12">Why Companies Choose Outsourcing</h2>
-
-                        <div className="space-y-8">
-                            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-8">
-                                <div className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-purple-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Strategic Focus on Core Business</h3>
-                                        <p className="text-gray-300">
-                                            Leadership teams can concentrate on product vision, market strategy, and customer success while outsourcing partners handle technical execution. This separation of concerns accelerates strategic initiatives and improves organizational agility.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-8">
-                                <div className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-purple-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Access to Global Expertise & Specialization</h3>
-                                        <p className="text-gray-300">
-                                            Geographic limitations disappear when you outsource. You access expertise in emerging technologies, niche specializations, and rare skill sets that may be unavailable or expensive in your local market. Partners maintain teams with deep expertise across industries and technologies.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-8">
-                                <div className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-purple-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Predictable, Scalable Costs</h3>
-                                        <p className="text-gray-300">
-                                            Eliminate unpredictable costs associated with hiring, training, benefits, and infrastructure. Outsourcing provides transparent pricing models where you pay for what you use. Scale resources up or down without financial penalties or long-term commitments.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-8">
-                                <div className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-purple-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Faster Time-to-Market</h3>
-                                        <p className="text-gray-300">
-                                            Launch products weeks faster with experienced teams ready to execute immediately. Eliminate 3-6 month hiring cycles. Experienced outsourcing partners have proven processes, established best practices, and the ability to start productive development within days.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-8">
-                                <div className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-purple-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Mitigated Technical & Business Risk</h3>
-                                        <p className="text-gray-300">
-                                            Professional outsourcing partners carry technical risk through quality guarantees and SLAs. Leverage their institutional knowledge of what works, avoid costly technical mistakes, and benefit from battle-tested architectural patterns. Security compliance and regulatory adherence are built-in.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-8">
-                                <div className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-purple-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">Round-the-Clock Development Velocity</h3>
-                                        <p className="text-gray-300">
-                                            Global teams distributed across multiple time zones mean your product development never stops. While your local team sleeps, offshore teams continue work. This follow-the-sun model dramatically accelerates development cycles and reduces time-to-market.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -641,7 +554,7 @@ export default function OutsourcingPage() {
                             <p className="text-gray-400 text-lg">Choose the model that fits your project needs and organizational structure</p>
                         </div>
 
-                        <div className="space-y-10">
+                        <div className="space-y-12">
                             {engagementModels.map((model, i) => {
                                 const Icon = model.icon
                                 const imageUrl = (model as any).image
@@ -673,71 +586,79 @@ export default function OutsourcingPage() {
                                 }
                                 return (
                                     <div key={i}>
-                                        <div className="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all">
-                                            {/* Image Section */}
-                                            {imageUrl && (
-                                                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-900 to-black">
-                                                    <Image
-                                                        src={imageUrl}
-                                                        alt={model.title}
-                                                        width={600}
-                                                        height={300}
-                                                        className="w-full h-full object-cover"
-                                                        unoptimized
-                                                    />
-                                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-                                                    <div className="absolute top-4 right-4 p-3 bg-purple-500/20 rounded-lg border border-purple-500/50">
-                                                        <Icon className="w-6 h-6 text-purple-400" />
-                                                    </div>
-                                                </div>
-                                            )}
-
-                                            <div className="p-8">
-                                                <div className="mb-6">
-                                                    {!imageUrl && (
-                                                        <div className="p-3 bg-purple-500/20 rounded-lg w-fit mb-4">
-                                                            <Icon className="w-6 h-6 text-purple-400" />
-                                                        </div>
-                                                    )}
-                                                    <h3 className="text-3xl font-bold mb-2">{model.title}</h3>
-                                                    <p className="text-gray-300 text-lg mb-4">{model.description}</p>
-                                                </div>
-
-                                                <div className="grid md:grid-cols-2 gap-8 mb-8">
+                                        <div className="bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-gray-800 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all shadow-xl hover:shadow-2xl hover:shadow-purple-500/10">
+                                            <div className="grid lg:grid-cols-2 gap-0">
+                                                {/* Left Content */}
+                                                <div className="p-8 lg:p-10 flex flex-col justify-between order-2 lg:order-1">
                                                     <div>
-                                                        <p className="text-sm text-gray-500 mb-3 font-semibold uppercase tracking-wide">KEY BENEFITS:</p>
-                                                        <ul className="space-y-3">
-                                                            {model.benefits.map((benefit, j) => (
-                                                                <li key={j} className="flex items-start gap-3 text-gray-300">
-                                                                    <CheckCircle className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
-                                                                    <span className="text-sm">{benefit}</span>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
+                                                        <div className="inline-flex items-center gap-3 mb-4">
+                                                            <div className="p-3 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-lg border border-purple-500/50">
+                                                                <Icon className="w-6 h-6 text-purple-400" />
+                                                            </div>
+                                                            <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">Model {i + 1}</span>
+                                                        </div>
+                                                        <h3 className="text-3xl lg:text-4xl font-bold mb-3 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">{model.title}</h3>
+                                                        <p className="text-gray-300 text-lg mb-8 leading-relaxed">{model.description}</p>
                                                     </div>
 
-                                                    <div className="bg-gradient-to-br from-purple-500/5 to-pink-500/5 border border-purple-500/20 rounded-lg p-6">
-                                                        <p className="text-sm text-gray-500 mb-3 font-semibold uppercase tracking-wide">REAL-WORLD SCENARIOS:</p>
-                                                        <ul className="space-y-4 text-sm text-gray-300">
-                                                            {detailedExplanations[i]?.scenarios.map((scenario, j) => (
-                                                                <li key={j} className="flex gap-2">
-                                                                    <span className="text-purple-400 font-bold">→</span>
-                                                                    <span>{scenario}</span>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
+                                                    <div className="space-y-6">
+                                                        <div>
+                                                            <p className="text-xs text-purple-400 mb-4 font-bold uppercase tracking-wider">Key Benefits</p>
+                                                            <ul className="space-y-3">
+                                                                {model.benefits.map((benefit, j) => (
+                                                                    <li key={j} className="flex items-start gap-3 text-gray-300 group">
+                                                                        <div className="p-1 bg-purple-500/20 rounded group-hover:bg-purple-500/40 transition-colors flex-shrink-0 mt-1">
+                                                                            <CheckCircle className="w-4 h-4 text-purple-300" />
+                                                                        </div>
+                                                                        <span className="text-sm group-hover:text-white transition-colors">{benefit}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+
+                                                        <div className="bg-gradient-to-br from-blue-500/5 to-cyan-500/5 border border-blue-500/20 rounded-xl p-4 hover:border-blue-500/50 transition-colors">
+                                                            <p className="text-xs text-blue-400 font-bold mb-2 uppercase tracking-wider">Control Level</p>
+                                                            <p className="text-gray-300 text-sm leading-relaxed">{detailedExplanations[i]?.comparison}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="grid md:grid-cols-2 gap-6">
-                                                    <div className="bg-blue-500/5 border border-blue-500/20 rounded-lg p-4">
-                                                        <p className="text-xs text-blue-400 font-semibold mb-2">LEVEL OF CONTROL</p>
-                                                        <p className="text-gray-300 text-sm">{detailedExplanations[i]?.comparison}</p>
+                                                {/* Right Image */}
+                                                {imageUrl && (
+                                                    <div className="relative overflow-hidden order-1 lg:order-2 h-96 lg:h-auto min-h-96">
+                                                        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20"></div>
+                                                        <Image
+                                                            src={imageUrl}
+                                                            alt={model.title}
+                                                            width={600}
+                                                            height={500}
+                                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                                            unoptimized
+                                                        />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                                        <div className="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-md border border-white/10 rounded-lg p-5 hover:border-purple-400/50 transition-colors">
+                                                            <p className="text-xs text-purple-300 font-bold mb-1 uppercase tracking-wide">Use Case</p>
+                                                            <p className="text-sm text-gray-200 leading-relaxed">{model.useCase}</p>
+                                                        </div>
                                                     </div>
-                                                    <div className="bg-green-500/5 border border-green-500/20 rounded-lg p-4">
-                                                        <p className="text-xs text-green-400 font-semibold mb-2">USE CASE</p>
-                                                        <p className="text-gray-300 text-sm">{model.useCase}</p>
-                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Expanded Scenarios */}
+                                            <div className="border-t border-gray-800/50 bg-gradient-to-r from-purple-500/5 to-pink-500/5 px-8 lg:px-10 py-8">
+                                                <p className="text-xs text-purple-400 mb-5 font-bold uppercase tracking-wider flex items-center gap-2">
+                                                    <Sparkles className="w-4 h-4" />
+                                                    Real-World Scenarios
+                                                </p>
+                                                <div className="grid sm:grid-cols-3 gap-6">
+                                                    {detailedExplanations[i]?.scenarios.map((scenario, j) => (
+                                                        <div key={j} className="bg-gray-900/50 border border-gray-700 rounded-lg p-5 hover:border-purple-500/50 hover:bg-gray-900/80 transition-all group">
+                                                            <div className="flex gap-3 items-start">
+                                                                <div className="text-purple-400 font-bold text-lg mt-0.5 group-hover:scale-125 transition-transform">→</div>
+                                                                <p className="text-sm text-gray-300 group-hover:text-white transition-colors leading-relaxed">{scenario}</p>
+                                                            </div>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </div>
                                         </div>
@@ -780,161 +701,6 @@ export default function OutsourcingPage() {
                                     ))}
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Our Process */}
-                <section className="py-20 px-4 border-t border-gray-800">
-                    <div className="container mx-auto max-w-5xl">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl font-bold mb-4">Our Proven Engagement Process</h2>
-                            <p className="text-gray-400 text-lg">Five strategic phases ensuring project success and seamless delivery</p>
-                        </div>
-
-                        <div className="space-y-8">
-                            {process.map((phase, i) => {
-                                const Icon = phase.icon
-                                const detailedSteps: Record<number, { activities: string[], duration: string, deliverables: string[] }> = {
-                                    0: {
-                                        activities: [
-                                            "Technical requirements gathering—understand your current stack, architecture, pain points",
-                                            "Business goals alignment—define success metrics, timelines, budget constraints",
-                                            "Team skill assessment—identify what expertise is needed (frontend, backend, DevOps, QA, etc.)",
-                                            "Competitive analysis—review existing codebase, performance benchmarks, architectural decisions",
-                                            "Risk identification—flag potential challenges, compliance requirements, technical dependencies"
-                                        ],
-                                        duration: "5-10 business days",
-                                        deliverables: [
-                                            "Discovery document outlining scope, timeline, and resource needs",
-                                            "Recommended engagement model (Staff Augmentation, Dedicated Team, or Full Project)",
-                                            "Proposed team composition and skill matrix",
-                                            "Budget estimate with cost breakdown"
-                                        ]
-                                    },
-                                    1: {
-                                        activities: [
-                                            "Candidate selection—identify engineers matching your requirements from our talent pool",
-                                            "Background verification—technical assessments, reference checks, security clearances",
-                                            "Cultural fit evaluation—ensure alignment with your values and communication style",
-                                            "Onboarding preparation—documentation review, codebase access setup, dev environment configuration",
-                                            "Introduction kickoff—meet your team, discuss expectations, clarify questions"
-                                        ],
-                                        duration: "10-15 business days",
-                                        deliverables: [
-                                            "Team introduction and background profiles",
-                                            "Onboarding checklist and knowledge transfer schedule",
-                                            "Communication plan and project management tool setup (Jira, GitHub, Slack, etc.)",
-                                            "Access credentials and environment setup for all systems"
-                                        ]
-                                    },
-                                    2: {
-                                        activities: [
-                                            "Sprint planning—design features and requirements for upcoming sprints (1-2 week cycles)",
-                                            "Daily standups—15-min syncs on progress, blockers, and coordination",
-                                            "Code reviews—peer reviews ensuring quality, consistency, and knowledge sharing",
-                                            "Continuous integration—automated testing, builds, and deployments",
-                                            "Transparent communication—weekly reports, Slack updates, demo sessions"
-                                        ],
-                                        duration: "Ongoing (typically 3-18 months based on project scope)",
-                                        deliverables: [
-                                            "Working software delivered in regular sprints (weekly, bi-weekly, or monthly)",
-                                            "Clean, documented code with automated test coverage",
-                                            "Regular progress reports and KPI tracking",
-                                            "Architecture documentation and technical decision logs"
-                                        ]
-                                    },
-                                    3: {
-                                        activities: [
-                                            "Automated testing—unit tests, integration tests, end-to-end tests covering 80%+ code coverage",
-                                            "Manual QA—exploratory testing, edge cases, user experience validation",
-                                            "Security testing—OWASP vulnerability scanning, penetration testing, security audits",
-                                            "Performance optimization—load testing, database optimization, CDN configuration",
-                                            "UAT support—user acceptance testing with your stakeholders, bug fixes, refinements"
-                                        ],
-                                        duration: "2-4 weeks before production launch",
-                                        deliverables: [
-                                            "QA test plans and comprehensive test coverage reports",
-                                            "Security audit report with remediation details",
-                                            "Performance benchmarks and optimization recommendations",
-                                            "UAT sign-off and production readiness checklist"
-                                        ]
-                                    },
-                                    4: {
-                                        activities: [
-                                            "Deployment planning—migration strategy, rollback procedures, zero-downtime deployment approach",
-                                            "Production deployment—coordinated launch with your team, live monitoring, incident response",
-                                            "Comprehensive documentation—API docs, architecture diagrams, runbooks, troubleshooting guides",
-                                            "Knowledge transfer—training sessions for your ops team on system management and troubleshooting",
-                                            "Ongoing support—24/7 availability for critical issues, regular maintenance, performance optimization"
-                                        ],
-                                        duration: "Ongoing after launch",
-                                        deliverables: [
-                                            "Complete technical documentation and runbooks",
-                                            "Architecture diagrams and system design docs",
-                                            "Trained team ready to maintain and operate the system",
-                                            "Maintenance plan and SLA-backed support agreement"
-                                        ]
-                                    }
-                                }
-                                return (
-                                    <div key={i}>
-                                        <div className="flex gap-6">
-                                            <div className="flex flex-col items-center">
-                                                <div className="w-14 h-14 rounded-full bg-purple-500/20 border-2 border-purple-500 flex items-center justify-center font-bold text-lg text-purple-300 flex-shrink-0">
-                                                    {phase.step}
-                                                </div>
-                                                {i < process.length - 1 && (
-                                                    <div className="w-1 h-96 bg-gradient-to-b from-purple-500/50 to-transparent mt-2"></div>
-                                                )}
-                                            </div>
-                                            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8 flex-1 mb-4">
-                                                {Icon && (
-                                                    <div className="flex items-center gap-3 mb-3">
-                                                        <Icon className="w-5 h-5 text-purple-400" />
-                                                        <h3 className="text-2xl font-bold">{phase.title}</h3>
-                                                    </div>
-                                                )}
-                                                {!Icon && <h3 className="text-2xl font-bold mb-3">{phase.title}</h3>}
-                                                <p className="text-gray-300 leading-relaxed mb-6">{phase.description}</p>
-
-                                                <div className="space-y-6">
-                                                    <div>
-                                                        <p className="text-sm font-semibold text-purple-300 mb-3 uppercase tracking-wide">Key Activities</p>
-                                                        <ul className="space-y-2">
-                                                            {detailedSteps[i]?.activities.map((activity, j) => (
-                                                                <li key={j} className="text-sm text-gray-300 flex gap-2">
-                                                                    <span className="text-purple-400 mt-0.5">✓</span>
-                                                                    <span>{activity}</span>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-
-                                                    <div className="grid sm:grid-cols-2 gap-4">
-                                                        <div className="bg-blue-500/5 border border-blue-500/20 rounded-lg p-4">
-                                                            <p className="text-xs text-blue-400 font-semibold mb-1 uppercase">Duration</p>
-                                                            <p className="text-gray-300 text-sm font-medium">{detailedSteps[i]?.duration}</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div>
-                                                        <p className="text-sm font-semibold text-green-300 mb-3 uppercase tracking-wide">Deliverables</p>
-                                                        <ul className="space-y-2">
-                                                            {detailedSteps[i]?.deliverables.map((deliverable, j) => (
-                                                                <li key={j} className="text-sm text-gray-300 flex gap-2">
-                                                                    <span className="text-green-400 mt-0.5">◆</span>
-                                                                    <span>{deliverable}</span>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            })}
                         </div>
                     </div>
                 </section>
@@ -983,8 +749,6 @@ export default function OutsourcingPage() {
                     </div>
                 </section>
 
-
-
                 {/* Client Logos */}
                 <section className="py-20 px-4 border-t border-gray-800">
                     <div className="container mx-auto max-w-5xl">
@@ -1010,56 +774,6 @@ export default function OutsourcingPage() {
                                     <p className="text-gray-400 text-sm font-medium text-center">{company}</p>
                                 </div>
                             ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Trust & Credibility */}
-                <section className="py-20 px-4 border-t border-gray-800">
-                    <div className="container mx-auto max-w-4xl">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl font-bold mb-4">Trusted by Global Enterprises</h2>
-                            <p className="text-gray-400 text-lg">Industry recognition and compliance certifications</p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-8">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <Award className="w-6 h-6 text-purple-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-lg font-bold mb-2">Certifications & Compliance</h3>
-                                        <ul className="space-y-2 text-gray-300 text-sm">
-                                            <li>✓ ISO 27001:2013 (Information Security Management)</li>
-                                            <li>✓ SOC 2 Type II Compliant</li>
-                                            <li>✓ GDPR & CCPA Compliant</li>
-                                            <li>✓ HIPAA Eligible Infrastructure</li>
-                                            <li>✓ PCI DSS Level 1 Compliance</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-xl p-8">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <TrendingUp className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h3 className="text-lg font-bold mb-2">Performance Guarantees</h3>
-                                        <ul className="space-y-2 text-gray-300 text-sm">
-                                            <li>✓ 98%+ Client Satisfaction Rate</li>
-                                            <li>✓ 99.5% On-Time Delivery Record</li>
-                                            <li>✓ Average Code Quality: A+ Grade</li>
-                                            <li>✓ 24/7 Support & Incident Response</li>
-                                            <li>✓ Comprehensive SLA Coverage</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-8 bg-gray-900/50 border border-gray-800 rounded-xl p-8 text-center">
-                            <p className="text-gray-300 mb-4">
-                                Our team of 15+ expert developers has delivered 500+ projects globally, managing $2B+ in outsourced development for 150+ clients across every major industry vertical.
-                            </p>
                         </div>
                     </div>
                 </section>
@@ -1100,112 +814,6 @@ export default function OutsourcingPage() {
                     </div>
                 </section>
 
-                {/* Related Technologies */}
-                <section className="py-20 px-4 border-t border-gray-800">
-                    <div className="container mx-auto max-w-5xl">
-                        <div className="text-center mb-12">
-                            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
-                                Similar Technologies & Solutions
-                            </h2>
-                            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Explore the complete range of technologies and development services we specialize in</p>
-                        </div>
-
-                        <div className="flex flex-wrap gap-4 justify-center">
-                            {[
-                                'React', 'Next.js', 'Vue.js', 'Angular', 'TypeScript', 'Node.js', 'Python',
-                                'Django', 'FastAPI', 'PostgreSQL', 'MongoDB', 'AWS', 'Docker', 'Kubernetes',
-                                'GraphQL', 'REST APIs', 'Microservices', 'Cloud Solutions'
-                            ].map((tech) => (
-                                <Link
-                                    key={tech}
-                                    href={`/technologies/${tech.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}`}
-                                    className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/30 text-white font-medium hover:border-purple-400 hover:bg-purple-500/20 transition-all inline-flex items-center gap-2 group"
-                                >
-                                    <span className="group-hover:scale-110 transition-transform">🚀</span>
-                                    <span className="group-hover:text-purple-300 transition-colors">{tech}</span>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Final CTA */}
-                <section className="py-20 px-4 border-t border-gray-800">
-                    <div className="container mx-auto max-w-4xl">
-                        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600/30 via-pink-600/20 to-purple-900/30 border border-purple-500/40 p-12 sm:p-16 text-center group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-
-                            <div className="absolute inset-0 overflow-hidden rounded-3xl">
-                                <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-                                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                            </div>
-
-                            <div className="relative z-10">
-                                <div className="inline-block mb-4">
-                                    <span className="text-xs font-semibold text-pink-400 uppercase tracking-widest bg-pink-500/10 px-4 py-1.5 rounded-full border border-pink-500/20">Final Step</span>
-                                </div>
-                                <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">Ready to Transform Your Development?</h2>
-                                <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                                    Join 150+ global enterprises that have accelerated innovation through strategic software outsourcing. Let's discuss how we can help achieve your technology goals.
-                                </p>
-
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                                    <Button
-                                        onClick={() => setChatModalOpen(true)}
-                                        className="bg-gradient-to-r from-lime-400 to-lime-500 text-black font-semibold rounded-lg px-8 py-3 text-lg
-                                                   hover:shadow-2xl hover:shadow-lime-500/50 hover:scale-[1.05]
-                                                   transition-all cursor-pointer flex items-center gap-2 justify-center"
-                                    >
-                                        Talk to Our Experts <ArrowRight className="w-4 h-4" />
-                                    </Button>
-                                    <Button
-                                        variant="outline"
-                                        className="border-purple-400/50 text-white font-semibold rounded-lg px-8 py-3 text-lg
-                                                   hover:bg-purple-500/20 hover:border-purple-400 transition-all cursor-pointer"
-                                    >
-                                        Request a Proposal
-                                    </Button>
-                                </div>
-
-                                <div className="flex flex-wrap items-center justify-center gap-4 pt-8 border-t border-white/10 text-sm text-gray-400">
-                                    <div className="flex items-center gap-2">
-                                        <CheckCircle className="w-4 h-4 text-green-400" />
-                                        Response within 24 hours
-                                    </div>
-                                    <span>•</span>
-                                    <div>No commitment required</div>
-                                    <span>•</span>
-                                    <div>Confidential consultation</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Footer CTA */}
-                <section className="py-16 px-4 border-t border-gray-800">
-                    <div className="container mx-auto max-w-4xl text-center">
-                        <p className="text-gray-400 mb-6">
-                            Have specific questions about software outsourcing? Our team is ready to help.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button
-                                onClick={() => setChatModalOpen(true)}
-                                className="bg-purple-600 text-white font-medium rounded-lg px-6 py-2.5
-                           hover:bg-purple-700 transition-all cursor-pointer"
-                            >
-                                WhatsApp Us
-                            </Button>
-                            <Button
-                                variant="outline"
-                                className="border-gray-600 text-gray-300 font-medium rounded-lg px-6 py-2.5
-                           hover:border-gray-500 hover:text-white transition-all cursor-pointer"
-                            >
-                                <Link href="mailto:hello@tryqu.com">Email Us</Link>
-                            </Button>
-                        </div>
-                    </div>
-                </section>
             </main>
             <AppverseFooter />
             <ChatWithUsModal isOpen={chatModalOpen} onClose={() => setChatModalOpen(false)} />

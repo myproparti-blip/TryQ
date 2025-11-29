@@ -4,8 +4,8 @@ import { AppverseFooter } from "@/components/appverse-footer"
 import SecurityDetail from "@/components/services/pillars/security-detail"
 
 export const metadata: Metadata = {
-  title: "Security Services | Enterprise Protection",
-  description: "Military-grade protection with zero-trust architecture. SOC 2 certified with 256-bit encryption.",
+  title: "Reliability Services | Enterprise Performance",
+  description: "Enterprise-grade reliability with automatic failover. 99.99% uptime SLA guarantee.",
 }
 
 export default function SecurityPage() {

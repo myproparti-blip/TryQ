@@ -25,43 +25,43 @@ export function AwardsSection() {
   }, []);
 
   const awards = [
-    {
-      year: '2024',
-      title: 'Best Cloud Infrastructure Provider',
-      org: 'Tech Excellence Awards',
-      icon: '🏆',
-    },
-    {
-      year: '2024',
-      title: 'Innovation Leader in AI/ML',
-      org: 'Global Tech Summit',
-      icon: '⚡',
-    },
-    {
-      year: '2023',
-      title: 'Cybersecurity Excellence',
-      org: 'InfoSec Global Conference',
-      icon: '🛡️',
-    },
-    {
-      year: '2023',
-      title: 'Best Employer in Tech',
-      org: 'Great Place to Work',
-      icon: '👥',
-    },
-    {
-      year: '2023',
-      title: 'Fastest Growing Company',
-      org: 'Fortune 500 Tech Rankings',
-      icon: '📈',
-    },
-    {
-      year: '2022',
-      title: 'Customer Choice Award',
-      org: 'G2 Software Reviews',
-      icon: '⭐',
-    },
-  ];
+     {
+       year: '2024',
+       title: 'Best Web Development Agency',
+       org: 'Tech Excellence Awards',
+       icon: '🏆',
+     },
+     {
+       year: '2024',
+       title: 'Top MERN Stack Developer',
+       org: 'Developer Community Awards',
+       icon: '⚡',
+     },
+     {
+       year: '2023',
+       title: 'Mobile Development Excellence',
+       org: 'Mobile App Conference',
+       icon: '📱',
+     },
+     {
+       year: '2023',
+       title: 'Best Code Quality',
+       org: 'Developer Forum',
+       icon: '💻',
+     },
+     {
+       year: '2023',
+       title: 'Client Satisfaction Leader',
+       org: 'Tech Review Platforms',
+       icon: '⭐',
+     },
+     {
+       year: '2022',
+       title: 'Full Stack Solutions Provider',
+       org: 'Tech Awards',
+       icon: '🚀',
+     },
+   ];
 
   const partners = [
     { name: 'TechInnovate', logo: '🔵' },

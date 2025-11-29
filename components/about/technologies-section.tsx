@@ -25,43 +25,43 @@ export function TechnologiesSection() {
   }, []);
 
   const technologies = [
-    {
-      category: 'Artificial Intelligence',
-      icon: Cpu,
-      color: 'from-yellow-400 to-orange-500',
-      techs: ['TensorFlow', 'PyTorch', 'Large Language Models', 'Computer Vision', 'NLP', 'Reinforcement Learning'],
-    },
-    {
-      category: 'Cloud Infrastructure',
-      icon: Cloud,
-      color: 'from-blue-400 to-cyan-500',
-      techs: ['Kubernetes', 'Docker', 'Terraform', 'AWS', 'Azure', 'Google Cloud'],
-    },
-    {
-      category: 'Cybersecurity',
-      icon: Shield,
-      color: 'from-red-400 to-pink-500',
-      techs: ['Zero Trust Architecture', 'Quantum-Safe Encryption', 'SIEM', 'Intrusion Detection', 'EDR', 'API Security'],
-    },
-    {
-      category: 'Data & Analytics',
-      icon: Database,
-      color: 'from-purple-400 to-indigo-500',
-      techs: ['Apache Spark', 'BigQuery', 'Elasticsearch', 'DataLake', 'Real-time Analytics', 'Data Pipeline'],
-    },
-    {
-      category: 'Software Development',
-      icon: Code2,
-      color: 'from-green-400 to-emerald-500',
-      techs: ['TypeScript', 'Go', 'Rust', 'Java', 'React', 'Next.js'],
-    },
-    {
-      category: 'DevOps & Automation',
-      icon: Zap,
-      color: 'from-pink-400 to-rose-500',
-      techs: ['CI/CD Pipelines', 'GitOps', 'Infrastructure as Code', 'Prometheus', 'ELK Stack', 'Automation'],
-    },
-  ];
+     {
+       category: 'Frontend Development',
+       icon: Code2,
+       color: 'from-cyan-400 to-blue-500',
+       techs: ['React', 'Vue.js', 'Angular', 'TypeScript', 'Tailwind CSS', 'Next.js'],
+     },
+     {
+       category: 'Backend Development',
+       icon: Cloud,
+       color: 'from-purple-400 to-indigo-500',
+       techs: ['Node.js', 'Python', 'Java', 'Express.js', 'Django', 'GraphQL'],
+     },
+     {
+       category: 'Mobile Development',
+       icon: Shield,
+       color: 'from-pink-400 to-rose-500',
+       techs: ['React Native', 'Flutter', 'iOS', 'Android', 'Kotlin', 'Swift'],
+     },
+     {
+       category: 'Databases & APIs',
+       icon: Database,
+       color: 'from-green-400 to-emerald-500',
+       techs: ['MongoDB', 'PostgreSQL', 'REST APIs', 'GraphQL', 'Firebase', 'MySQL'],
+     },
+     {
+       category: 'MERN Stack',
+       icon: Cpu,
+       color: 'from-yellow-400 to-orange-500',
+       techs: ['MongoDB', 'Express', 'React', 'Node.js', 'Real-time Data', 'Full Stack'],
+     },
+     {
+       category: 'DevOps & Cloud',
+       icon: Zap,
+       color: 'from-blue-400 to-cyan-500',
+       techs: ['AWS', 'Docker', 'Kubernetes', 'CI/CD Pipelines', 'Git', 'GitHub Actions'],
+     },
+   ];
 
   return (
     <section ref={ref} className="relative py-24 lg:py-32 bg-black overflow-hidden">

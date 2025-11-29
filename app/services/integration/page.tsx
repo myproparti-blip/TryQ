@@ -5,7 +5,7 @@ import IntegrationDetail from "@/components/services/pillars/integration-detail"
 
 export const metadata: Metadata = {
   title: "Integration Ready Services | Seamless Connectivity",
-  description: "Connect with 500+ APIs and third-party platforms. Real-time data sync with 99.9% uptime.",
+  description: "Connect with 30+ APIs and third-party platforms. Real-time data sync with 99.9% uptime.",
 }
 
 export default function IntegrationPage() {

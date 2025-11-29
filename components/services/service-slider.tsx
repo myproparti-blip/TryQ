@@ -17,55 +17,37 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: "Cloud Infrastructure",
-    description: "Scalable, secure cloud solutions built for enterprise demands",
-    features: ["Multi-cloud management", "Auto-scaling", "99.99% uptime SLA", "Disaster recovery"],
-    icon: "☁️",
-    gradient: "from-cyan-500 to-blue-500",
-    image: "/images/archviz/client-love-1.jpg",
-  },
-  {
-    id: 2,
-    title: "Cybersecurity",
-    description: "Advanced threat detection and protection for your digital assets",
-    features: ["24/7 threat monitoring", "Penetration testing", "Compliance management", "Incident response"],
-    icon: "🛡️",
-    gradient: "from-green-500 to-emerald-500",
-    image: "/images/archviz/client-love-2.jpg",
-  },
-  {
-    id: 3,
-    title: "AI & Automation",
-    description: "Intelligent automation to streamline operations and drive growth",
-    features: ["Machine learning models", "RPA solutions", "Predictive analytics", "Data intelligence"],
-    icon: "⚡",
-    gradient: "from-purple-500 to-pink-500",
+    title: "Enterprise Architecture Design",
+    description: "Strategic technology roadmaps aligned with business objectives and operational needs",
+    features: ["Solution design", "Reference architecture", "Technology stack selection", "Risk assessment"],
+    icon: "🏗️",
+    gradient: "from-pink-500 to-rose-500",
     image: "/images/intuitive-1.png",
   },
   {
-    id: 4,
-    title: "Application Development",
-    description: "Custom enterprise applications built with modern architecture",
-    features: ["Full-stack development", "Microservices", "API integration", "Performance optimization"],
-    icon: "💻",
+    id: 2,
+    title: "System Integration & Modernization",
+    description: "Seamless integration of legacy and modern systems with minimal business disruption",
+    features: ["API-first integration", "Legacy system bridging", "Data migration", "Middleware implementation"],
+    icon: "🔗",
     gradient: "from-orange-500 to-red-500",
     image: "/images/intuitive-2.png",
   },
   {
-    id: 5,
-    title: "Infrastructure Management",
-    description: "End-to-end management of your IT infrastructure",
-    features: ["Network optimization", "Server management", "Database administration", "Backup & recovery"],
-    icon: "🔧",
+    id: 3,
+    title: "Cloud Infrastructure & DevOps",
+    description: "Multi-cloud deployment with automated management, monitoring, and optimization",
+    features: ["Infrastructure as Code", "CI/CD automation", "Container orchestration", "Cost optimization"],
+    icon: "☁️",
     gradient: "from-indigo-500 to-blue-500",
     image: "/images/top-rated-1.png",
   },
   {
-    id: 6,
-    title: "Digital Transformation",
-    description: "Complete modernization of your business and technology",
-    features: ["Legacy modernization", "Process optimization", "Digital workflows", "Change management"],
-    icon: "🚀",
+    id: 4,
+    title: "Digital Transformation Strategy",
+    description: "Comprehensive business process optimization and digital capability development",
+    features: ["Process mapping", "Change management", "Organizational alignment", "Capability development"],
+    icon: "📊",
     gradient: "from-violet-500 to-purple-500",
     image: "/images/top-rated-2.png",
   },
@@ -105,8 +87,8 @@ export function ServiceSlider() {
     <section className="py-24 px-4 bg-gradient-to-b from-black to-blue-950/10">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-black tracking-tight text-white mb-4">Our Core Services</h2>
-          <p className="text-lg text-gray-400">Navigate through our comprehensive service offerings</p>
+          <h2 className="text-5xl font-black tracking-tight text-white mb-4">Enterprise Service Portfolio</h2>
+          <p className="text-lg text-gray-400">Comprehensive solutions for IT modernization and digital transformation</p>
         </div>
 
         <div className="relative">
@@ -146,15 +128,14 @@ export function ServiceSlider() {
               </div>
 
               {/* Right: Image/Visual */}
-              <div className="relative hidden lg:flex items-center justify-center overflow-hidden rounded-xl">
+              <div className="relative hidden lg:flex items-center justify-center overflow-hidden rounded-xl min-h-[500px]">
                 <div className={`absolute inset-0 bg-gradient-to-r ${current.gradient} opacity-10 blur-3xl`} />
                 <div className="relative w-full h-full flex items-center justify-center p-8">
-                  <div className="relative w-80 h-80 flex items-center justify-center">
+                  <div className="relative w-96 h-96 flex items-center justify-center flex-shrink-0">
                     <Image
                       src={current.image}
                       alt={current.title}
-                      width={320}
-                      height={320}
+                      fill
                       className="object-cover rounded-lg shadow-2xl"
                       priority
                       onError={(e) => {
@@ -216,7 +197,7 @@ export function ServiceSlider() {
                   setIsAutoPlay(false)
                   setTimeout(() => setIsAutoPlay(true), 3000)
                 }}
-                className={`min-w-max px-4 py-3 rounded-lg border transition-all duration-300 cursor-pointer ${
+                className={`min-w-max px-4 py-3 rounded-lg border transition-all duration-300 ${
                   idx === currentIndex
                     ? "border-cyan-400 bg-cyan-400/20 text-white"
                     : "border-white/10 bg-white/5 text-gray-400 hover:bg-white/10"

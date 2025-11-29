@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePageContext } from '@/hooks/use-page-context';
 import { getTechEmoji } from '@/lib/tech-emojis-config';
 
 interface RelatedTechnologiesProps {
@@ -14,6 +15,7 @@ export function RelatedTechnologies({
     title = "Explore Related Technologies", 
     description = "Discover the technologies and solutions we specialize in" 
 }: RelatedTechnologiesProps) {
+    const { page } = usePageContext();
     // Helper function to convert tech names to URL paths
     function getTechPath(techName: string): string {
         return `/technologies/${techName

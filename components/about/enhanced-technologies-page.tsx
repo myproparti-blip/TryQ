@@ -32,14 +32,136 @@ const getIconComponent = (iconName: string) => {
         aws: <Cloud className="w-6 h-6" />,
         typescript: <BookOpen className="w-6 h-6" />,
         angular: <Code2 className="w-6 h-6" />,
+        swift: <Code2 className="w-6 h-6" />,
+        kotlin: <Code2 className="w-6 h-6" />,
     };
     return iconMap[iconName] || <Code2 className="w-6 h-6" />;
 };
 
+// First, extract the tech folders list and create a template for missing techs
+const missingTechs = [
+    { id: 'swift', name: 'Swift', category: 'Mobile Development' },
+    { id: 'kotlin', name: 'Kotlin', category: 'Mobile Development' },
+    { id: 'flutter', name: 'Flutter', category: 'Mobile Development' },
+    { id: 'react-native', name: 'React Native', category: 'Mobile Development' },
+    { id: 'nodejs', name: 'Node.js', category: 'Backend Runtime' },
+    { id: 'expressjs', name: 'Express.js', category: 'Backend Framework' },
+    { id: 'nestjs', name: 'NestJS', category: 'Backend Framework' },
+    { id: 'fastapi', name: 'FastAPI', category: 'Backend Framework' },
+    { id: 'django', name: 'Django', category: 'Backend Framework' },
+    { id: 'graphql', name: 'GraphQL', category: 'API Technology' },
+    { id: 'mongodb', name: 'MongoDB', category: 'Database' },
+    { id: 'postgresql', name: 'PostgreSQL', category: 'Database' },
+    { id: 'firebase', name: 'Firebase', category: 'Backend-as-a-Service' },
+    { id: 'docker', name: 'Docker', category: 'Containerization' },
+    { id: 'kubernetes', name: 'Kubernetes', category: 'Orchestration' },
+    { id: 'aws', name: 'AWS', category: 'Cloud Platform' },
+    { id: 'typescript', name: 'TypeScript', category: 'Language' },
+    { id: 'tailwind-css', name: 'Tailwind CSS', category: 'Styling' },
+    { id: 'jest', name: 'Jest', category: 'Testing' },
+    { id: 'cypress', name: 'Cypress', category: 'Testing' },
+    { id: 'nuxtjs', name: 'Nuxt.js', category: 'Frontend Framework' },
+    { id: 'material-ui', name: 'Material-UI', category: 'UI Library' },
+    { id: 'chakra-ui', name: 'Chakra UI', category: 'UI Library' },
+    { id: 'ionic', name: 'Ionic', category: 'Mobile Framework' },
+    { id: 'rxjs', name: 'RxJS', category: 'Reactive Programming' },
+    { id: 'tensorflow', name: 'TensorFlow', category: 'Machine Learning' },
+    { id: 'microservices', name: 'Microservices', category: 'Architecture' },
+    { id: 'terraform', name: 'Terraform', category: 'Infrastructure as Code' },
+    { id: 'jenkins', name: 'Jenkins', category: 'CI/CD' },
+];
+
+const createTechStub = (tech: typeof missingTechs[0]): Technology => ({
+    id: tech.id,
+    name: tech.name,
+    icon: 'react',
+    category: tech.category,
+    tagline: `Professional ${tech.name} development services`,
+    description: `We provide expert ${tech.name} development services tailored to your business needs. Our experienced team ensures scalable, performant solutions.`,
+    image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+    rating: 4.7,
+    reviews: 0,
+    features: [
+        'Expert Implementation',
+        'Best Practices',
+        'Performance Optimization',
+        'Scalable Architecture',
+        'Production Ready',
+        'Team Training',
+        'Ongoing Support',
+        'Quality Assurance',
+    ],
+    useCases: [
+        'Enterprise Applications',
+        'Scalable Solutions',
+        'Custom Development',
+        'Integration Projects',
+        'Migration Services',
+        'Performance Optimization',
+    ],
+    benefits: [
+        'Expert Developers',
+        'Proven Expertise',
+        'Quality Assurance',
+        'Timely Delivery',
+        'Cost Effective',
+        'Ongoing Support',
+    ],
+    stats: [
+        { label: 'Active Projects', value: '50+' },
+        { label: 'Team Members', value: '25+' },
+        { label: 'Client Satisfaction', value: '99%' },
+        { label: 'Years Experience', value: '10+' },
+    ],
+    ecosystem: [
+        {
+            category: 'Tools & Libraries',
+            items: ['Ecosystem tools', 'Supporting libraries', 'Development utilities'],
+        },
+        {
+            category: 'Integration',
+            items: ['Third-party services', 'API integrations', 'Platform tools'],
+        },
+    ],
+    whyChoose: [
+        {
+            title: 'Expert Team',
+            description: 'Certified professionals with extensive experience',
+        },
+        {
+            title: 'Quality First',
+            description: 'Rigorous testing and quality assurance processes',
+        },
+        {
+            title: 'Scalable Solutions',
+            description: 'Built for growth and long-term success',
+        },
+        {
+            title: 'Dedicated Support',
+            description: 'Ongoing support and maintenance included',
+        },
+    ],
+    faq: [
+        {
+            question: `What makes us different for ${tech.name}?`,
+            answer: `Our team brings deep expertise in ${tech.name} with a proven track record of delivering high-quality solutions that scale.`,
+        },
+        {
+            question: `How long does ${tech.name} development typically take?`,
+            answer: `Timeline depends on project scope. We work in agile sprints with transparent communication and regular updates.`,
+        },
+        {
+            question: `Do you provide post-launch support?`,
+            answer: `Yes, we offer comprehensive maintenance, monitoring, and support packages tailored to your needs.`,
+        },
+    ],
+    relatedTechs: [],
+});
+
 const technologiesData: Technology[] = [
     {
-        id: 'react',
-        name: 'React',
+         id: 'react',
+         name: 'React',
         icon: 'react',
         category: 'Frontend',
         tagline: 'A JavaScript library for building user interfaces with reusable components',
@@ -127,10 +249,367 @@ const technologiesData: Technology[] = [
         relatedTechs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'Material-UI', 'Chakra UI', 'Jest'],
     },
     {
+        id: 'nextjs',
+        name: 'Next.js',
+        icon: 'react',
+        category: 'Frontend Framework',
+        tagline: 'The React Framework for Production',
+        description: 'Next.js is a powerful React framework that enables you to build full-stack web applications with server-side rendering, static generation, and API routes. It provides excellent developer experience with features like automatic code splitting, fast refresh, and built-in optimizations.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.9,
+        reviews: 2100,
+        features: [
+            'Server-Side Rendering',
+            'Static Site Generation',
+            'API Routes',
+            'Automatic Code Splitting',
+            'Built-in Image Optimization',
+            'File-Based Routing',
+            'Fast Refresh',
+            'Vercel Deployment Ready',
+        ],
+        useCases: [
+            'E-commerce Sites',
+            'Content Management Systems',
+            'Full-Stack Applications',
+            'Static Websites',
+            'Real-time Applications',
+            'Jamstack Solutions',
+        ],
+        benefits: [
+            'Improved SEO',
+            'Better Performance',
+            'Faster Initial Load Times',
+            'Simplified Backend Integration',
+            'Excellent Developer Experience',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '125K+' },
+            { label: 'Weekly NPM Downloads', value: '4M+' },
+            { label: 'Companies Using', value: '500+' },
+            { label: 'Release Cadence', value: 'Monthly' },
+        ],
+        ecosystem: [
+            {
+                category: 'Deployment',
+                items: ['Vercel', 'Netlify', 'AWS', 'Docker'],
+            },
+            {
+                category: 'Styling',
+                items: ['Tailwind CSS', 'CSS Modules', 'Styled Components'],
+            },
+            {
+                category: 'Database',
+                items: ['PostgreSQL', 'MongoDB', 'Firebase', 'Prisma'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Full-Stack Capability',
+                description: 'Build complete applications without leaving React ecosystem',
+            },
+            {
+                title: 'SEO Optimized',
+                description: 'Built-in server-side rendering and static generation for better SEO',
+            },
+            {
+                title: 'Performance First',
+                description: 'Automatic optimizations for images, bundles, and delivery',
+            },
+            {
+                title: 'Vercel Integration',
+                description: 'Seamless deployment and edge functions with Vercel',
+            },
+        ],
+        faq: [
+            {
+                question: 'Should I use SSR, SSG, or ISR?',
+                answer: 'SSG is best for static content, SSR for dynamic content, and ISR for content that updates occasionally. Choose based on your update frequency.',
+            },
+            {
+                question: 'Can I use Next.js for backend APIs?',
+                answer: 'Yes, API routes in Next.js provide a full backend solution for handling requests and connecting to databases.',
+            },
+            {
+                question: 'What is App Router vs Pages Router?',
+                answer: 'App Router is the new default providing better performance and features. Pages Router is the legacy approach but still supported.',
+            },
+        ],
+        relatedTechs: ['React', 'TypeScript', 'Tailwind CSS', 'Prisma', 'Vercel'],
+    },
+    {
+        id: 'angular',
+        name: 'Angular',
+        icon: 'angular',
+        category: 'Frontend Framework',
+        tagline: 'Enterprise-grade TypeScript framework',
+        description: 'Angular is a comprehensive, full-featured framework maintained by Google for building dynamic, scalable web applications. Built with TypeScript, it provides everything needed for large-scale enterprise development.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.7,
+        reviews: 1850,
+        features: [
+            'Two-Way Data Binding',
+            'Dependency Injection',
+            'RxJS Integration',
+            'Built-in Testing Tools',
+            'Module System',
+            'Powerful CLI',
+            'Form Validation',
+            'HTTP Client',
+        ],
+        useCases: [
+            'Enterprise Applications',
+            'Complex Dashboards',
+            'Real-time Collaboration Tools',
+            'Progressive Web Apps',
+            'Large Team Projects',
+            'Full-Stack Applications',
+        ],
+        benefits: [
+            'Complete Framework',
+            'Strong TypeScript Support',
+            'Excellent Tooling',
+            'Great for Large Teams',
+            'Comprehensive Documentation',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '97K+' },
+            { label: 'Weekly NPM Downloads', value: '2M+' },
+            { label: 'Companies Using', value: '3000+' },
+            { label: 'Active Contributors', value: '1000+' },
+        ],
+        ecosystem: [
+            {
+                category: 'UI Libraries',
+                items: ['Angular Material', 'ng-bootstrap', 'PrimeNG', 'Clarity'],
+            },
+            {
+                category: 'State Management',
+                items: ['NgRx', 'Akita', 'RxJS', 'Signals'],
+            },
+            {
+                category: 'Testing',
+                items: ['Jasmine', 'Karma', 'Cypress', 'Protractor'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Complete Solution',
+                description: 'Everything you need for enterprise development included',
+            },
+            {
+                title: 'Strong TypeScript',
+                description: 'Built from ground up with TypeScript for type safety',
+            },
+            {
+                title: 'Google Backed',
+                description: 'Maintained by Google with strong community support',
+            },
+            {
+                title: 'Enterprise Ready',
+                description: 'Trusted by Fortune 500 companies worldwide',
+            },
+        ],
+        faq: [
+            {
+                question: 'Is Angular too heavy?',
+                answer: 'Angular has a larger bundle size than React or Vue, but modern optimization techniques and lazy loading minimize impact.',
+            },
+            {
+                question: 'What is RxJS?',
+                answer: 'RxJS is a reactive programming library used extensively in Angular for handling async operations and events.',
+            },
+            {
+                question: 'Should I use Angular Signals?',
+                answer: 'Signals are a modern alternative to zone.js for change detection. They provide better performance and cleaner syntax.',
+            },
+        ],
+        relatedTechs: ['TypeScript', 'RxJS', 'Angular Material', 'NestJS'],
+    },
+    {
+        id: 'vue',
+        name: 'Vue.js',
+        icon: 'angular',
+        category: 'Frontend Framework',
+        tagline: 'Progressive framework for building user interfaces',
+        description: 'Vue.js is a progressive JavaScript framework for building user interfaces. Known for its gentle learning curve and flexible architecture, Vue works great for both small and large applications.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 1950,
+        features: [
+            'Reactive Data Binding',
+            'Component System',
+            'Single File Components',
+            'Vue Router',
+            'Pinia State Management',
+            'Composition API',
+            'Directive System',
+            'Built-in Transitions',
+        ],
+        useCases: [
+            'Single Page Applications',
+            'Progressive Web Apps',
+            'Dashboard Applications',
+            'Interactive Websites',
+            'Mobile Apps with NativeScript',
+            'Startup Projects',
+        ],
+        benefits: [
+            'Easy to Learn',
+            'Gentle Learning Curve',
+            'Excellent Documentation',
+            'Flexible Architecture',
+            'Great Performance',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '207K+' },
+            { label: 'Weekly NPM Downloads', value: '3M+' },
+            { label: 'Companies Using', value: '2000+' },
+            { label: 'Developer Satisfaction', value: '93%' },
+        ],
+        ecosystem: [
+            {
+                category: 'Framework Extensions',
+                items: ['Vue Router', 'Pinia', 'Nuxt', 'Vite'],
+            },
+            {
+                category: 'UI Libraries',
+                items: ['Vuetify', 'Element Plus', 'Bootstrap Vue', 'Quasar'],
+            },
+            {
+                category: 'Testing',
+                items: ['Vitest', 'Vue Test Utils', 'Cypress', 'Playwright'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Gentle Learning Curve',
+                description: 'Easy to learn for beginners while powerful for experts',
+            },
+            {
+                title: 'Flexible Architecture',
+                description: 'Use as little or as much framework as you need',
+            },
+            {
+                title: 'Excellent DX',
+                description: 'Great developer experience with clear documentation',
+            },
+            {
+                title: 'Growing Ecosystem',
+                description: 'Rich ecosystem with Nuxt, Pinia, and Vue Router',
+            },
+        ],
+        faq: [
+            {
+                question: 'Should I use Composition API or Options API?',
+                answer: 'Composition API is more flexible and better for larger projects. Options API is simpler for small components.',
+            },
+            {
+                question: 'What is Nuxt?',
+                answer: 'Nuxt is a meta-framework for Vue that adds SSR, SSG, and full-stack capabilities similar to Next.js for React.',
+            },
+            {
+                question: 'Is Vue as popular as React?',
+                answer: 'Vue has fewer job openings but passionate community. React has more jobs but Vue is easier to learn.',
+            },
+        ],
+        relatedTechs: ['Nuxt', 'Vue Router', 'Pinia', 'Vite'],
+    },
+    {
+        id: 'svelte',
+        name: 'Svelte',
+        icon: 'angular',
+        category: 'Frontend Framework',
+        tagline: 'A radical new approach to building user interfaces',
+        description: 'Svelte is a compiler that takes your declarative components and converts them into imperative code. This unique approach results in incredibly fast, lightweight applications with less boilerplate.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 1200,
+        features: [
+            'Compiler Approach',
+            'Reactive Declarations',
+            'Two-Way Binding',
+            'Scoped Styles',
+            'Transitions & Animations',
+            'Stores for State',
+            'Minimal Boilerplate',
+            'Tiny Bundle Size',
+        ],
+        useCases: [
+            'High-Performance Web Apps',
+            'Real-Time Applications',
+            'Progressive Web Apps',
+            'Mobile Apps with Capacitor',
+            'Data Visualizations',
+            'Interactive Dashboards',
+        ],
+        benefits: [
+            'Smallest Bundle Size',
+            'Best Performance',
+            'Less Code to Write',
+            'Simpler Mental Model',
+            'Great Developer Experience',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '80K+' },
+            { label: 'Weekly NPM Downloads', value: '500K+' },
+            { label: 'Bundle Size vs React', value: '30% smaller' },
+            { label: 'Satisfaction Rate', value: '97%' },
+        ],
+        ecosystem: [
+            {
+                category: 'Meta-Frameworks',
+                items: ['SvelteKit', 'Routify', 'Elder.js'],
+            },
+            {
+                category: 'UI Libraries',
+                items: ['Svelte Material UI', 'SvelteUI', 'Skeleton'],
+            },
+            {
+                category: 'Testing',
+                items: ['Vitest', 'Testing Library', 'Cypress'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Blazing Fast',
+                description: 'Compiler-based approach results in faster runtime performance',
+            },
+            {
+                title: 'Smaller Bundles',
+                description: 'Less JavaScript shipped to browser means faster load times',
+            },
+            {
+                title: 'Simpler Code',
+                description: 'Write less code with Svelte\'s intuitive syntax',
+            },
+            {
+                title: 'Growing Ecosystem',
+                description: 'SvelteKit provides full-stack capabilities',
+            },
+        ],
+        faq: [
+            {
+                question: 'What is SvelteKit?',
+                answer: 'SvelteKit is Svelte\'s meta-framework providing routing, SSR, SSG, and API routes similar to Next.js.',
+            },
+            {
+                question: 'Is Svelte hard to learn?',
+                answer: 'No, Svelte is actually easier to learn than React or Vue. Its syntax is closer to vanilla HTML, CSS, and JavaScript.',
+            },
+            {
+                question: 'Can I use Svelte for large applications?',
+                answer: 'Yes, many large applications use Svelte successfully. SvelteKit provides the structure and features needed for scaling.',
+            },
+        ],
+        relatedTechs: ['SvelteKit', 'Vite', 'TypeScript'],
+    },
+
+    {
         id: 'python',
         name: 'Python',
         icon: 'python',
-        category: 'Backend',
+        category: 'Backend Language',
         tagline: 'A versatile, high-level programming language for web, data, and AI applications',
         description: 'Python is a versatile, high-level programming language known for its simplicity and readability. It excels in web development, data science, artificial intelligence, and automation, making it one of the most popular languages worldwide.',
         image: 'https://images.unsplash.com/photo-1526374965328-7f5c713a6170?w=800&h=500&fit=crop',
@@ -214,7 +693,97 @@ const technologiesData: Technology[] = [
                 answer: 'Absolutely! Python is the de facto standard for ML with TensorFlow, PyTorch, and scikit-learn being the leading libraries.',
             },
         ],
-        relatedTechs: ['Django', 'FastAPI', 'PostgreSQL', 'TensorFlow'],
+        relatedTechs: ['Django', 'FastAPI', 'PostgreSQL', 'TensorFlow', 'Pytest'],
+    },
+    {
+        id: 'typescript',
+        name: 'TypeScript',
+        icon: 'typescript',
+        category: 'Language',
+        tagline: 'JavaScript with static typing for safer, more maintainable code',
+        description: 'TypeScript is a superset of JavaScript that adds static typing and advanced features. It provides better tooling, error detection, and code maintainability, making it ideal for large-scale applications.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.9,
+        reviews: 2200,
+        features: [
+            'Static Type Checking',
+            'Object-Oriented Features',
+            'Interfaces & Generics',
+            'Decorators Support',
+            'Excellent IDE Support',
+            'Compile-time Error Detection',
+            'Easy Integration with JavaScript',
+            'Active Type Definition Community',
+        ],
+        useCases: [
+            'Enterprise Applications',
+            'Large Codebases',
+            'Type-Safe APIs',
+            'Frontend Development',
+            'Backend Development',
+            'Full-Stack Applications',
+            'Library Development',
+        ],
+        benefits: [
+            'Catch Errors Early',
+            'Improved Code Quality',
+            'Better IDE Autocomplete',
+            'Easier Refactoring',
+            'Enhanced Team Collaboration',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '96K+' },
+            { label: 'Weekly NPM Downloads', value: '14M+' },
+            { label: 'Companies Using', value: '5000+' },
+            { label: 'Developer Satisfaction', value: '95%' },
+        ],
+        ecosystem: [
+            {
+                category: 'Frameworks',
+                items: ['Angular', 'NestJS', 'Next.js', 'Svelte', 'Vue'],
+            },
+            {
+                category: 'Tools',
+                items: ['Webpack', 'Babel', 'Vite', 'esbuild', 'tsup'],
+            },
+            {
+                category: 'Type Definitions',
+                items: ['DefinitelyTyped', '@types packages', 'Built-in types', 'Declaration files'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Type Safety',
+                description: 'Catch type-related errors at compile time, not runtime',
+            },
+            {
+                title: 'Better Tooling',
+                description: 'Superior IDE support with intelligent autocomplete and refactoring',
+            },
+            {
+                title: 'Industry Standard',
+                description: 'Adopted by major tech companies and frameworks',
+            },
+            {
+                title: 'Improved Productivity',
+                description: 'Write code faster with better error detection and documentation',
+            },
+        ],
+        faq: [
+            {
+                question: 'Does TypeScript make code slower?',
+                answer: 'No, TypeScript compiles to JavaScript and has no runtime overhead. The only cost is during development (compilation) which is very fast.',
+            },
+            {
+                question: 'Should I use TypeScript for everything?',
+                answer: 'TypeScript is excellent for large projects and teams. For small scripts or rapid prototyping, plain JavaScript might be faster to work with.',
+            },
+            {
+                question: 'How long does it take to learn TypeScript?',
+                answer: 'If you know JavaScript, learning TypeScript basics takes about 2-4 weeks. Mastering advanced features might take 2-3 months of practice.',
+            },
+        ],
+        relatedTechs: ['React', 'Node.js', 'Angular', 'Next.js', 'NestJS'],
     },
     {
         id: 'nodejs',
@@ -318,7 +887,7 @@ const technologiesData: Technology[] = [
         rating: 4.7,
         reviews: 2650,
         features: [
-            '200+ Services',
+            '20+ Services',
             'Global Infrastructure',
             'High Availability & Durability',
             'Auto-Scaling Capabilities',
@@ -347,7 +916,7 @@ const technologiesData: Technology[] = [
         stats: [
             { label: 'Cloud Market Share', value: '32%' },
             { label: 'Global Regions', value: '30+' },
-            { label: 'Services Available', value: '200+' },
+            { label: 'Services Available', value: '20+' },
             { label: 'Customer Count', value: '1M+' },
         ],
         ecosystem: [
@@ -371,7 +940,7 @@ const technologiesData: Technology[] = [
             },
             {
                 title: 'Comprehensive Services',
-                description: '200+ services covering every aspect of cloud computing',
+                description: '20+ services covering every aspect of cloud computing',
             },
             {
                 title: 'Global Infrastructure',
@@ -528,7 +1097,7 @@ const technologiesData: Technology[] = [
             { label: 'GitHub Stars', value: '93K+' },
             { label: 'Weekly NPM Downloads', value: '2M+' },
             { label: 'Companies Using', value: '3000+' },
-            { label: 'Active Contributors', value: '1500+' },
+            { label: 'Active Contributors', value: '130+' },
         ],
         ecosystem: [
             {
@@ -718,7 +1287,7 @@ const technologiesData: Technology[] = [
             { label: 'GitHub Stars', value: '60K+' },
             { label: 'Weekly NPM Downloads', value: '7M+' },
             { label: 'Companies Using', value: '2000+' },
-            { label: 'Community Packages', value: '500+' },
+            { label: 'Community Packages', value: '30+' },
         ],
         ecosystem: [
             {
@@ -1020,7 +1589,7 @@ const technologiesData: Technology[] = [
         stats: [
             { label: 'GitHub Stars', value: '79K+' },
             { label: 'Weekly NPM Downloads', value: '500K+' },
-            { label: 'Companies Using', value: '500+' },
+            { label: 'Companies Using', value: '30+' },
             { label: 'Developer Satisfaction', value: '98%' },
         ],
         ecosystem: [
@@ -1425,7 +1994,7 @@ const technologiesData: Technology[] = [
             { label: 'GitHub Stars', value: '37K+' },
             { label: 'Weekly NPM Downloads', value: '2M+' },
             { label: 'Companies Using', value: '1000+' },
-            { label: 'Community Packages', value: '200+' },
+            { label: 'Community Packages', value: '20+' },
         ],
         ecosystem: [
             {
@@ -1487,16 +2056,1701 @@ const technologiesData: Technology[] = [
         ],
         relatedTechs: ['React', 'TypeScript', 'Emotion', 'Framer Motion', 'Material-UI'],
     },
+    {
+        id: 'swift',
+        name: 'Swift',
+        icon: 'react',
+        category: 'Mobile',
+        tagline: 'Modern programming language for iOS, macOS, watchOS, and tvOS',
+        description: 'Swift is Apple\'s modern, safe programming language for building native iOS, macOS, and other Apple platform applications. It combines performance with modern language features and developer experience.',
+        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 1650,
+        features: [
+            'Modern Language Syntax',
+            'Memory Safety',
+            'SwiftUI Framework',
+            'Async/Await',
+            'Type Inference',
+            'Pattern Matching',
+            'Protocol-Oriented',
+            'Excellent Performance',
+        ],
+        useCases: [
+            'iOS App Development',
+            'macOS Applications',
+            'watchOS Apps',
+            'tvOS Applications',
+            'Cross-Platform Apps',
+            'Real-time Applications',
+            'Performance-Critical Apps',
+        ],
+        benefits: [
+            'Native Performance',
+            'Developer-Friendly Syntax',
+            'Safety & Error Prevention',
+            'Rapid Development',
+            'Great Tooling',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '67K+' },
+            { label: 'App Store Apps', value: '2M+' },
+            { label: 'Companies Using', value: '5000+' },
+            { label: 'Developer Community', value: '1M+' },
+        ],
+        ecosystem: [
+            {
+                category: 'UI Frameworks',
+                items: ['SwiftUI', 'UIKit', 'AppKit', 'Combine'],
+            },
+            {
+                category: 'Data & Networking',
+                items: ['URLSession', 'Codable', 'Core Data', 'CloudKit'],
+            },
+            {
+                category: 'Testing',
+                items: ['XCTest', 'Quick', 'Nimble', 'XCUITest'],
+            },
+            {
+                category: 'Tools & Libraries',
+                items: ['Xcode', 'Swift Package Manager', 'CocoaPods', 'Carthage'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Native Performance',
+                description: 'Swift delivers native performance optimized for Apple hardware',
+            },
+            {
+                title: 'Modern Syntax',
+                description: 'Clean, expressive syntax with modern language features',
+            },
+            {
+                title: 'Memory Safe',
+                description: 'Built-in memory safety prevents entire classes of bugs',
+            },
+            {
+                title: 'Apple Ecosystem',
+                description: 'Seamlessly integrate with the entire Apple platform ecosystem',
+            },
+        ],
+        faq: [
+            {
+                question: 'What is SwiftUI?',
+                answer: 'SwiftUI is Apple\'s modern declarative UI framework for building interfaces across all Apple platforms.',
+            },
+            {
+                question: 'Can Swift run on Linux?',
+                answer: 'Yes, Swift is open-source and can run on Linux servers for backend development.',
+            },
+            {
+                question: 'How does Swift compare to Objective-C?',
+                answer: 'Swift is modern, safer, and more performant than Objective-C with much better developer experience.',
+            },
+            {
+                question: 'Is Swift good for game development?',
+                answer: 'Yes, Swift works well with SpriteKit and GameplayKit for 2D/3D games.',
+            },
+        ],
+        relatedTechs: ['iOS', 'SwiftUI', 'Xcode', 'Firebase', 'ARKit', 'Core Data'],
+    },
+    {
+        id: 'kotlin',
+        name: 'Kotlin',
+        icon: 'react',
+        category: 'Mobile',
+        tagline: 'Modern programming language for Android and JVM platforms',
+        description: 'Kotlin is Google\'s officially supported language for Android development. It runs on the JVM, providing interoperability with Java while offering modern syntax and safety features.',
+        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 1450,
+        features: [
+            'Concise Syntax',
+            'Null Safety',
+            'Extension Functions',
+            'Coroutines',
+            'Data Classes',
+            'Sealed Classes',
+            'Scope Functions',
+            'Full Java Interop',
+        ],
+        useCases: [
+            'Android App Development',
+            'Backend Services',
+            'Multi-platform Apps',
+            'Microservices',
+            'Data Processing',
+            'Real-time Applications',
+            'Enterprise Systems',
+        ],
+        benefits: [
+            'Less Boilerplate',
+            'Type Safety',
+            'Java Interoperability',
+            'Modern Language Features',
+            'Rapid Development',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '48K+' },
+            { label: 'Play Store Apps', value: '6M+' },
+            { label: 'Companies Using', value: '6000+' },
+            { label: 'Developer Community', value: '2M+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Android Framework',
+                items: ['Jetpack Compose', 'Android Framework', 'Material Design', 'Hilt'],
+            },
+            {
+                category: 'Data & Async',
+                items: ['Coroutines', 'Room Database', 'Retrofit', 'Flow'],
+            },
+            {
+                category: 'Testing',
+                items: ['JUnit', 'Espresso', 'Mockito', 'Robolectric'],
+            },
+            {
+                category: 'Tools',
+                items: ['Android Studio', 'Gradle', 'Kotlin Compiler', 'kotlinc'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Google Supported',
+                description: 'Official Google language for Android with full framework support',
+            },
+            {
+                title: 'Less Code',
+                description: 'Significantly reduce boilerplate compared to Java',
+            },
+            {
+                title: 'Safe by Default',
+                description: 'Null safety prevents common programming errors',
+            },
+            {
+                title: 'Java Compatible',
+                description: 'Use existing Java libraries without rewriting',
+            },
+        ],
+        faq: [
+            {
+                question: 'What is Jetpack Compose?',
+                answer: 'Jetpack Compose is Android\'s modern declarative UI framework for building native interfaces.',
+            },
+            {
+                question: 'Is Kotlin replacing Java?',
+                answer: 'Kotlin is the preferred language for Android, but Java still works. New projects should use Kotlin.',
+            },
+            {
+                question: 'What are Coroutines?',
+                answer: 'Coroutines enable lightweight asynchronous programming, simplifying async code compared to callbacks.',
+            },
+            {
+                question: 'Can Kotlin be used for backend development?',
+                answer: 'Yes, with frameworks like Spring Boot, Ktor, and others for building JVM backend services.',
+            },
+        ],
+        relatedTechs: ['Android', 'Jetpack Compose', 'Firebase', 'Room Database', 'Coroutines'],
+    },
+    {
+        id: 'django',
+        name: 'Django',
+        icon: 'python',
+        category: 'Web Framework',
+        tagline: 'The web framework for perfectionists with deadlines',
+        description: 'Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It handles much of the complexity of web development, letting developers focus on writing apps without reinventing the wheel.',
+        image: 'https://images.unsplash.com/photo-1526374965328-7f5c713a6170?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 2400,
+        features: [
+            'ORM Database',
+            'Admin Panel',
+            'Authentication',
+            'URL Routing',
+            'Template Engine',
+            'Form Validation',
+            'Security Features',
+            'Scalability',
+        ],
+        useCases: [
+            'Full-Stack Web Apps',
+            'Content Management Systems',
+            'REST APIs',
+            'Enterprise Applications',
+            'Real-time Features',
+            'Data Processing',
+        ],
+        benefits: [
+            'Batteries Included',
+            'Rapid Development',
+            'Built-in Admin',
+            'Security First',
+            'Great Documentation',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '76K+' },
+            { label: 'Weekly Downloads', value: '2M+' },
+            { label: 'Companies Using', value: '10K+' },
+            { label: 'App Ecosystem', value: 'Mature' },
+        ],
+        ecosystem: [
+            {
+                category: 'Core',
+                items: ['Django ORM', 'Django Admin', 'Django Forms', 'Django Templates'],
+            },
+            {
+                category: 'API & REST',
+                items: ['Django REST Framework', 'GraphQL', 'Serializers'],
+            },
+            {
+                category: 'Database',
+                items: ['PostgreSQL', 'MySQL', 'SQLite', 'Oracle'],
+            },
+            {
+                category: 'Testing & Tools',
+                items: ['pytest-django', 'Factory Boy', 'Coverage', 'Black'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Batteries Included',
+                description: 'Everything needed for web development built-in',
+            },
+            {
+                title: 'Rapid Development',
+                description: 'Convention over configuration speeds up development',
+            },
+            {
+                title: 'Security Focused',
+                description: 'Built-in protection against common web vulnerabilities',
+            },
+            {
+                title: 'Scalable',
+                description: 'Used by Instagram, Spotify, and other major services',
+            },
+        ],
+        faq: [
+            {
+                question: 'Django vs FastAPI?',
+                answer: 'Django is full-featured and opinionated. FastAPI is lightweight for APIs. Choose based on project scope.',
+            },
+            {
+                question: 'Is Django still relevant?',
+                answer: 'Absolutely. Django is mature, stable, and perfect for medium to large applications.',
+            },
+            {
+                question: 'Can Django be used for APIs?',
+                answer: 'Yes, Django REST Framework makes it excellent for building APIs.',
+            },
+        ],
+        relatedTechs: ['Python', 'PostgreSQL', 'Django REST Framework', 'Celery'],
+    },
+    {
+        id: 'fastapi',
+        name: 'FastAPI',
+        icon: 'python',
+        category: 'Web Framework',
+        tagline: 'Modern, fast web framework for building APIs with Python',
+        description: 'FastAPI is a modern, fast (high-performance) web framework for building APIs with Python 3.6+ based on standard Python type hints. It\'s one of the fastest Python web frameworks and ideal for building microservices and APIs.',
+        image: 'https://images.unsplash.com/photo-1526374965328-7f5c713a6170?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 1800,
+        features: [
+            'Auto API Documentation',
+            'Data Validation',
+            'Async Support',
+            'Type Hints',
+            'OAuth2',
+            'CORS Handling',
+            'Background Tasks',
+            'WebSocket Support',
+        ],
+        useCases: [
+            'REST APIs',
+            'Microservices',
+            'Real-time APIs',
+            'GraphQL APIs',
+            'Background Jobs',
+            'Data Processing',
+        ],
+        benefits: [
+            'High Performance',
+            'Easy to Learn',
+            'Auto Documentation',
+            'Type Safety',
+            'Developer Friendly',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '75K+' },
+            { label: 'Weekly Downloads', value: '5M+' },
+            { label: 'Growing Adoption', value: 'Rapid' },
+            { label: 'Async Support', value: '100%' },
+        ],
+        ecosystem: [
+            {
+                category: 'Database',
+                items: ['SQLAlchemy', 'Tortoise ORM', 'Databases', 'AsyncPG'],
+            },
+            {
+                category: 'Validation',
+                items: ['Pydantic', 'Validation', 'Serialization'],
+            },
+            {
+                category: 'Testing',
+                items: ['pytest', 'TestClient', 'httpx'],
+            },
+            {
+                category: 'Deployment',
+                items: ['Uvicorn', 'Gunicorn', 'Docker', 'Heroku'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'High Performance',
+                description: 'One of the fastest Python web frameworks',
+            },
+            {
+                title: 'Auto Documentation',
+                description: 'Automatic interactive API documentation',
+            },
+            {
+                title: 'Async Native',
+                description: 'Built-in async support for high concurrency',
+            },
+            {
+                title: 'Type Safe',
+                description: 'Leverages Python type hints for validation',
+            },
+        ],
+        faq: [
+            {
+                question: 'FastAPI vs Flask?',
+                answer: 'FastAPI is faster, has auto docs, and async support. Flask is simpler for small apps.',
+            },
+            {
+                question: 'Is FastAPI production ready?',
+                answer: 'Yes, many companies use FastAPI in production.',
+            },
+            {
+                question: 'Can FastAPI do WebSockets?',
+                answer: 'Yes, WebSocket support is built-in.',
+            },
+        ],
+        relatedTechs: ['Python', 'Pydantic', 'SQLAlchemy', 'Uvicorn'],
+    },
+    {
+        id: 'nestjs',
+        name: 'NestJS',
+        icon: 'nodejs',
+        category: 'Backend Framework',
+        tagline: 'Progressive Node.js framework for building efficient server-side applications',
+        description: 'NestJS is a progressive Node.js framework for building efficient, scalable, and maintainable server-side applications. It uses modern JavaScript/TypeScript and combines elements of OOP, FP, and FRP.',
+        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 1600,
+        features: [
+            'TypeScript First',
+            'Modular Architecture',
+            'Dependency Injection',
+            'Middleware System',
+            'Guards & Interceptors',
+            'Pipes & Validation',
+            'GraphQL Support',
+            'Microservices Ready',
+        ],
+        useCases: [
+            'Enterprise APIs',
+            'Microservices',
+            'Real-time Applications',
+            'Scalable Backends',
+            'GraphQL Servers',
+            'WebSocket Apps',
+        ],
+        benefits: [
+            'TypeScript Native',
+            'Architecture Pattern',
+            'Highly Scalable',
+            'Great for Teams',
+            'Excellent Docs',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '68K+' },
+            { label: 'Weekly NPM Downloads', value: '1.5M+' },
+            { label: 'Companies Using', value: '3000+' },
+            { label: 'Module Ecosystem', value: '500+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Database',
+                items: ['TypeORM', 'Prisma', 'Mongoose', 'Sequelize'],
+            },
+            {
+                category: 'Testing',
+                items: ['Jest', 'Testing Library', 'Supertest'],
+            },
+            {
+                category: 'API',
+                items: ['GraphQL', '@nestjs/graphql', 'Apollo', 'TypeGraphQL'],
+            },
+            {
+                category: 'Queues & Events',
+                items: ['Bull', 'RabbitMQ', 'Redis', 'CQRS'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'TypeScript Native',
+                description: 'Built for TypeScript with full type safety',
+            },
+            {
+                title: 'Architectural Pattern',
+                description: 'Follows proven architectural patterns and best practices',
+            },
+            {
+                title: 'Modular Design',
+                description: 'Modular architecture scales with project complexity',
+            },
+            {
+                title: 'Enterprise Ready',
+                description: 'Used by major companies for production systems',
+            },
+        ],
+        faq: [
+            {
+                question: 'NestJS vs Express?',
+                answer: 'NestJS provides structure and architecture. Express is minimal. NestJS is better for large apps.',
+            },
+            {
+                question: 'Is NestJS opinionated?',
+                answer: 'Yes, but flexibility is available. It encourages best practices.',
+            },
+            {
+                question: 'Learning curve?',
+                answer: 'Moderate if you know Node. Steeper for beginners due to patterns used.',
+            },
+        ],
+        relatedTechs: ['TypeScript', 'TypeORM', 'Prisma', 'GraphQL', 'RabbitMQ'],
+    },
+    {
+        id: 'express',
+        name: 'Express.js',
+        icon: 'nodejs',
+        category: 'Web Framework',
+        tagline: 'Fast, unopinionated, minimalist web framework for Node.js',
+        description: 'Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It\'s the de facto standard for Node.js backend development.',
+        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop',
+        rating: 4.7,
+        reviews: 3200,
+        features: [
+            'Minimalist Design',
+            'Routing',
+            'Middleware Support',
+            'HTTP Utilities',
+            'Template Engines',
+            'Error Handling',
+            'Request Parsing',
+            'Response Formatting',
+        ],
+        useCases: [
+            'REST APIs',
+            'Web Applications',
+            'Single Page Apps',
+            'Microservices',
+            'Real-time Apps',
+            'Content Servers',
+        ],
+        benefits: [
+            'Simple & Lightweight',
+            'Flexible Architecture',
+            'Great Ecosystem',
+            'Easy to Learn',
+            'Perfect for MVPs',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '65K+' },
+            { label: 'Weekly NPM Downloads', value: '20M+' },
+            { label: 'Companies Using', value: '10K+' },
+            { label: 'Middleware Packages', value: '1000+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Database',
+                items: ['Mongoose', 'Sequelize', 'TypeORM', 'Prisma'],
+            },
+            {
+                category: 'Authentication',
+                items: ['Passport', 'JWT', 'OAuth', 'Bcrypt'],
+            },
+            {
+                category: 'Validation',
+                items: ['Joi', 'Express Validator', 'Yup'],
+            },
+            {
+                category: 'Testing',
+                items: ['Jest', 'Mocha', 'Chai', 'Supertest'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Minimal & Flexible',
+                description: 'Build what you need without bloat',
+            },
+            {
+                title: 'Huge Ecosystem',
+                description: '1000+ middleware packages available',
+            },
+            {
+                title: 'Easy to Learn',
+                description: 'Simple API, great for beginners',
+            },
+            {
+                title: 'Proven',
+                description: 'Trusted by thousands of companies',
+            },
+        ],
+        faq: [
+            {
+                question: 'Express for large apps?',
+                answer: 'Yes, but consider structure. NestJS provides more patterns for large apps.',
+            },
+            {
+                question: 'Express performance?',
+                answer: 'Excellent performance. Similar to other Node frameworks.',
+            },
+            {
+                question: 'Async/await support?',
+                answer: 'Yes, full async/await support in modern Node versions.',
+            },
+        ],
+        relatedTechs: ['Node.js', 'MongoDB', 'PostgreSQL', 'JWT', 'Passport'],
+    },
+    {
+        id: 'mongodb',
+        name: 'MongoDB',
+        icon: 'python',
+        category: 'Database',
+        tagline: 'The most popular NoSQL database for modern applications',
+        description: 'MongoDB is a document-oriented NoSQL database that stores data in flexible, JSON-like documents. It\'s perfect for applications that require flexibility in data structure and fast iteration.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+        rating: 4.6,
+        reviews: 2800,
+        features: [
+            'Document Store',
+            'Schema Flexibility',
+            'Horizontal Scaling',
+            'Replication',
+            'Aggregation Pipeline',
+            'Indexing',
+            'Full-Text Search',
+            'Transactions',
+        ],
+        useCases: [
+            'Web Applications',
+            'Mobile Backends',
+            'Real-time Analytics',
+            'IoT Applications',
+            'Content Management',
+            'User Profiles',
+        ],
+        benefits: [
+            'Flexible Schema',
+            'Developer Friendly',
+            'Horizontal Scaling',
+            'High Performance',
+            'Rich Query Language',
+        ],
+        stats: [
+            { label: 'Global Users', value: '5M+' },
+            { label: 'Companies Using', value: '15K+' },
+            { label: 'Cloud Deployments', value: 'Millions' },
+            { label: 'Query Language', value: 'MongoDB Query' },
+        ],
+        ecosystem: [
+            {
+                category: 'Drivers',
+                items: ['MongoDB Node.js', 'Mongoose', 'MongoDB Python', 'Motor'],
+            },
+            {
+                category: 'Cloud',
+                items: ['MongoDB Atlas', 'Cloud Backup', 'Realm'],
+            },
+            {
+                category: 'Tools',
+                items: ['MongoDB Compass', 'MongoDBCLI', 'Enterprise Server'],
+            },
+            {
+                category: 'Integration',
+                items: ['REST API', 'GraphQL', 'Functions', 'Triggers'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Flexible Schema',
+                description: 'Perfect for evolving data structures',
+            },
+            {
+                title: 'Developer Friendly',
+                description: 'Works naturally with JSON and JavaScript',
+            },
+            {
+                title: 'Scalable',
+                description: 'Horizontal scaling built-in',
+            },
+            {
+                title: 'Managed Cloud',
+                description: 'MongoDB Atlas provides managed hosting',
+            },
+        ],
+        faq: [
+            {
+                question: 'MongoDB vs SQL?',
+                answer: 'MongoDB offers flexibility; SQL offers structure. Choose based on needs.',
+            },
+            {
+                question: 'ACID transactions?',
+                answer: 'Yes, MongoDB 4.0+ supports ACID transactions.',
+            },
+            {
+                question: 'Production ready?',
+                answer: 'Absolutely, used by millions in production.',
+            },
+        ],
+        relatedTechs: ['Node.js', 'Express', 'Mongoose', 'React'],
+    },
+    {
+        id: 'postgresql',
+        name: 'PostgreSQL',
+        icon: 'python',
+        category: 'Database',
+        tagline: 'The World\'s Most Advanced Open Source Relational Database',
+        description: 'PostgreSQL is a powerful, open source object-relational database system with over 30 years of development. It\'s known for reliability, feature richness, and performance.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+        rating: 4.9,
+        reviews: 3100,
+        features: [
+            'ACID Compliance',
+            'Complex Queries',
+            'JSON Support',
+            'Full-Text Search',
+            'Replication',
+            'Extension System',
+            'Window Functions',
+            'Partitioning',
+        ],
+        useCases: [
+            'Web Applications',
+            'Data Warehouses',
+            'Analytics Platforms',
+            'Financial Systems',
+            'Real-time Applications',
+            'Government Systems',
+        ],
+        benefits: [
+            'Reliability',
+            'Advanced Features',
+            'Open Source',
+            'Community Support',
+            'Excellent Performance',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '20K+' },
+            { label: 'Global Companies', value: '20K+' },
+            { label: 'Years in Development', value: '30+' },
+            { label: 'Data Type Support', value: '40+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Drivers',
+                items: ['psycopg2', 'node-postgres', 'JDBC', 'PDO'],
+            },
+            {
+                category: 'ORMs',
+                items: ['Sequelize', 'TypeORM', 'Django ORM', 'Prisma'],
+            },
+            {
+                category: 'Tools',
+                items: ['pgAdmin', 'DBeaver', 'psql', 'pg_dump'],
+            },
+            {
+                category: 'Extensions',
+                items: ['PostGIS', 'TimescaleDB', 'pg_trgm', 'hstore'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'ACID Compliance',
+                description: 'Guaranteed data integrity',
+            },
+            {
+                title: 'Advanced Features',
+                description: 'JSON, arrays, full-text search, and more',
+            },
+            {
+                title: 'Reliable',
+                description: 'Battle-tested for decades',
+            },
+            {
+                title: 'Open Source',
+                description: 'Free and community-supported',
+            },
+        ],
+        faq: [
+            {
+                question: 'PostgreSQL vs MySQL?',
+                answer: 'PostgreSQL is more advanced and feature-rich. MySQL is simpler but less powerful.',
+            },
+            {
+                question: 'Is PostgreSQL fast?',
+                answer: 'Yes, very fast for most workloads. Excellent query optimizer.',
+            },
+            {
+                question: 'Can I use JSON in PostgreSQL?',
+                answer: 'Yes, excellent JSON support with operators and functions.',
+            },
+        ],
+        relatedTechs: ['Django', 'Sequelize', 'TypeORM', 'Prisma', 'Node.js'],
+    },
+    {
+        id: 'docker',
+        name: 'Docker',
+        icon: 'python',
+        category: 'DevOps',
+        tagline: 'Build, ship, and run applications in containers',
+        description: 'Docker is a containerization platform that allows developers to package applications and dependencies into lightweight, portable containers. It ensures consistency across development, testing, and production environments.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 2900,
+        features: [
+            'Containerization',
+            'Image Registry',
+            'Container Orchestration',
+            'Multi-stage Builds',
+            'Volume Management',
+            'Networking',
+            'Security Scanning',
+            'Easy Deployment',
+        ],
+        useCases: [
+            'Microservices',
+            'CI/CD Pipelines',
+            'Development Environments',
+            'Production Deployment',
+            'Local Testing',
+            'Cloud Migration',
+        ],
+        benefits: [
+            'Consistency',
+            'Isolation',
+            'Scalability',
+            'Easy Deployment',
+            'Resource Efficiency',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '71K+' },
+            { label: 'Container Images', value: 'Millions' },
+            { label: 'Global Users', value: '15M+' },
+            { label: 'Enterprise Adoption', value: '90%' },
+        ],
+        ecosystem: [
+            {
+                category: 'Container Platform',
+                items: ['Docker Engine', 'Docker Compose', 'Docker Swarm'],
+            },
+            {
+                category: 'Registry',
+                items: ['Docker Hub', 'AWS ECR', 'Azure ACR', 'Private Registry'],
+            },
+            {
+                category: 'Orchestration',
+                items: ['Kubernetes', 'Docker Swarm', 'Nomad'],
+            },
+            {
+                category: 'DevOps',
+                items: ['Docker Desktop', 'Jenkins', 'GitHub Actions'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Consistency',
+                description: '"It works on my machine" problem solved',
+            },
+            {
+                title: 'Isolation',
+                description: 'Applications completely isolated from each other',
+            },
+            {
+                title: 'Scalability',
+                description: 'Easy horizontal scaling',
+            },
+            {
+                title: 'Industry Standard',
+                description: 'De facto standard for containerization',
+            },
+        ],
+        faq: [
+            {
+                question: 'Docker vs Virtual Machines?',
+                answer: 'Docker is lighter, faster, and uses fewer resources than VMs.',
+            },
+            {
+                question: 'Learning Docker?',
+                answer: 'Simple concepts, powerful tool. Basics take a few days.',
+            },
+            {
+                question: 'Docker for production?',
+                answer: 'Yes, used extensively in production with Docker Swarm or Kubernetes.',
+            },
+        ],
+        relatedTechs: ['Kubernetes', 'Docker Compose', 'Node.js', 'Python', 'CI/CD'],
+    },
+    {
+        id: 'kubernetes',
+        name: 'Kubernetes',
+        icon: 'python',
+        category: 'Orchestration',
+        tagline: 'Open-source container orchestration platform',
+        description: 'Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications. It handles the complexity of running containers at scale in production environments.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+        rating: 4.7,
+        reviews: 2400,
+        features: [
+            'Automated Deployment',
+            'Auto-scaling',
+            'Self-healing',
+            'Rolling Updates',
+            'Service Discovery',
+            'Load Balancing',
+            'Storage Orchestration',
+            'Secret Management',
+        ],
+        useCases: [
+            'Microservices',
+            'High-availability Apps',
+            'Distributed Systems',
+            'Cloud Native Apps',
+            'DevOps Automation',
+            'Complex Orchestration',
+        ],
+        benefits: [
+            'High Availability',
+            'Automatic Scaling',
+            'Self-healing',
+            'Declarative Config',
+            'Industry Standard',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '110K+' },
+            { label: 'Global Adoption', value: '95%' },
+            { label: 'Production Clusters', value: 'Millions' },
+            { label: 'Cloud Platforms', value: 'All Major' },
+        ],
+        ecosystem: [
+            {
+                category: 'Core',
+                items: ['kubectl', 'API Server', 'Etcd', 'Kubelet'],
+            },
+            {
+                category: 'Managed Services',
+                items: ['EKS', 'GKE', 'AKS', 'DigitalOcean Kubernetes'],
+            },
+            {
+                category: 'Package Management',
+                items: ['Helm', 'Kustomize', 'Operators'],
+            },
+            {
+                category: 'Monitoring',
+                items: ['Prometheus', 'Grafana', 'ELK Stack'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Industry Standard',
+                description: 'De facto standard for container orchestration',
+            },
+            {
+                title: 'Scalability',
+                description: 'Manages thousands of containers effortlessly',
+            },
+            {
+                title: 'Reliability',
+                description: 'Self-healing and high availability built-in',
+            },
+            {
+                title: 'Cloud Agnostic',
+                description: 'Runs anywhere - on-prem, cloud, hybrid',
+            },
+        ],
+        faq: [
+            {
+                question: 'Kubernetes learning curve?',
+                answer: 'Steep. But start with managed services (EKS, GKE) for easier onboarding.',
+            },
+            {
+                question: 'Kubernetes for small projects?',
+                answer: 'Overkill. Use for microservices at scale.',
+            },
+            {
+                question: 'Cost implications?',
+                answer: 'Can be expensive. Use auto-scaling and resource limits wisely.',
+            },
+        ],
+        relatedTechs: ['Docker', 'Helm', 'Prometheus', 'Istio', 'CI/CD'],
+    },
+    {
+        id: 'graphql',
+        name: 'GraphQL',
+        icon: 'react',
+        category: 'API Query Language',
+        tagline: 'A query language and runtime for APIs',
+        description: 'GraphQL is a query language and runtime that enables clients to request exactly the data they need. It provides a more efficient, powerful, and developer-friendly alternative to REST APIs.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.7,
+        reviews: 1900,
+        features: [
+            'Strongly Typed Schema',
+            'Single Endpoint',
+            'Efficient Queries',
+            'Real-time Subscriptions',
+            'Introspection',
+            'Developer Tools',
+            'No Over-fetching',
+            'Batching Support',
+        ],
+        useCases: [
+            'Mobile Backends',
+            'Real-time Applications',
+            'Aggregating Multiple APIs',
+            'Complex Data Requirements',
+            'Rapid Prototyping',
+            'Backend for Frontend',
+        ],
+        benefits: [
+            'Exact Data Fetching',
+            'Single Endpoint',
+            'Self-documenting',
+            'Developer Tools',
+            'Type Safe',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '21K+' },
+            { label: 'Companies Adopting', value: '5000+' },
+            { label: 'Schema Registry', value: 'Apollo' },
+            { label: 'Community Tools', value: '1000+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Servers',
+                items: ['Apollo Server', 'Hasura', 'GraphQL Yoga', 'Relay'],
+            },
+            {
+                category: 'Clients',
+                items: ['Apollo Client', 'Relay', 'SWR', 'urql'],
+            },
+            {
+                category: 'Tools',
+                items: ['GraphiQL', 'Apollo Studio', 'GraphQL Inspector'],
+            },
+            {
+                category: 'Database',
+                items: ['Hasura', 'PostGraphile', 'Dataloader'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Exact Data Fetching',
+                description: 'Get only the data you need, nothing more',
+            },
+            {
+                title: 'Single Endpoint',
+                description: 'All queries through one endpoint',
+            },
+            {
+                title: 'Self-documenting',
+                description: 'Schema is documentation',
+            },
+            {
+                title: 'Type Safe',
+                description: 'Strongly typed schema prevents errors',
+            },
+        ],
+        faq: [
+            {
+                question: 'GraphQL vs REST?',
+                answer: 'GraphQL is more flexible for clients. REST is simpler for simple APIs.',
+            },
+            {
+                question: 'Learning GraphQL?',
+                answer: 'Moderate curve. Concepts are intuitive for developers.',
+            },
+            {
+                question: 'Caching GraphQL?',
+                answer: 'Different than REST. Use Apollo Client for client caching.',
+            },
+        ],
+        relatedTechs: ['Apollo', 'Node.js', 'Relay', 'React'],
+    },
+    {
+        id: 'tailwind-css',
+        name: 'Tailwind CSS',
+        icon: 'react',
+        category: 'Styling Framework',
+        tagline: 'Utility-first CSS framework for rapidly building interfaces',
+        description: 'Tailwind CSS is a utility-first CSS framework that helps developers build modern designs without leaving their HTML. It provides low-level utility classes for creating custom designs.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 2600,
+        features: [
+            'Utility-First',
+            'Customizable',
+            'Responsive Design',
+            'Dark Mode',
+            'Plugins',
+            'Performance',
+            'PurgeCSS',
+            'Mobile First',
+        ],
+        useCases: [
+            'Modern Websites',
+            'Web Applications',
+            'Rapid Prototyping',
+            'Design Systems',
+            'Responsive UIs',
+            'Custom Components',
+        ],
+        benefits: [
+            'Rapid Development',
+            'Small Bundle Size',
+            'Consistent Design',
+            'Easy Customization',
+            'Great Community',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '80K+' },
+            { label: 'Weekly Downloads', value: '7M+' },
+            { label: 'Companies Using', value: '5000+' },
+            { label: 'Active Community', value: 'Very Large' },
+        ],
+        ecosystem: [
+            {
+                category: 'Extensions',
+                items: ['Tailwind UI', 'Headless UI', 'Tailwind Labs plugins'],
+            },
+            {
+                category: 'Tools',
+                items: ['Tailwind IntelliSense', 'Prettier plugin', 'PostCSS'],
+            },
+            {
+                category: 'Components',
+                items: ['shadcn/ui', 'Tailwind Components', 'daisyUI'],
+            },
+            {
+                category: 'Templates',
+                items: ['Tailwind Templates', 'UI Kits', 'Admin Dashboards'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Rapid Development',
+                description: 'Build UIs faster without writing CSS',
+            },
+            {
+                title: 'Small Bundle',
+                description: 'Only includes used styles',
+            },
+            {
+                title: 'Consistency',
+                description: 'Built-in design system',
+            },
+            {
+                title: 'Customizable',
+                description: 'Easily customize every aspect',
+            },
+        ],
+        faq: [
+            {
+                question: 'Tailwind vs Bootstrap?',
+                answer: 'Tailwind is utility-first, Bootstrap is component-based.',
+            },
+            {
+                question: 'Learning curve?',
+                answer: 'Easy, but requires learning utility class names.',
+            },
+            {
+                question: 'Dark mode?',
+                answer: 'Built-in support with dark: prefix.',
+            },
+        ],
+        relatedTechs: ['React', 'Next.js', 'Vue', 'PostCSS'],
+    },
+    {
+        id: 'jest',
+        name: 'Jest',
+        icon: 'react',
+        category: 'Testing Framework',
+        tagline: 'Delightful JavaScript Testing Framework',
+        description: 'Jest is a JavaScript testing framework with a focus on simplicity. It works with projects using Babel, TypeScript, Node, React, Angular, Vue, and more.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.8,
+        reviews: 2400,
+        features: [
+            'Zero Configuration',
+            'Snapshot Testing',
+            'Code Coverage',
+            'Watch Mode',
+            'TypeScript Support',
+            'Mocking',
+            'Parallel Tests',
+            'Great Error Messages',
+        ],
+        useCases: [
+            'Unit Testing',
+            'Integration Testing',
+            'Snapshot Testing',
+            'Component Testing',
+            'API Testing',
+            'E2E Testing',
+        ],
+        benefits: [
+            'Easy Setup',
+            'Fast Tests',
+            'Great DX',
+            'Built-in Tools',
+            'Comprehensive',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '43K+' },
+            { label: 'Weekly Downloads', value: '15M+' },
+            { label: 'Companies Using', value: '10K+' },
+            { label: 'Community Packages', value: '1000+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Configuration',
+                items: ['jest.config.js', 'Babel Config', 'TypeScript'],
+            },
+            {
+                category: 'Testing Libraries',
+                items: ['React Testing Library', 'Enzyme', '@testing-library/vue'],
+            },
+            {
+                category: 'Reporters',
+                items: ['jest-junit', 'jest-html-reporter', 'Coverage'],
+            },
+            {
+                category: 'CI Integration',
+                items: ['GitHub Actions', 'Jenkins', 'CircleCI'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Zero Configuration',
+                description: 'Works out of the box with sensible defaults',
+            },
+            {
+                title: 'All-in-One',
+                description: 'Includes test runner, assertions, mocks, coverage',
+            },
+            {
+                title: 'Fast',
+                description: 'Parallel test execution',
+            },
+            {
+                title: 'Great DX',
+                description: 'Beautiful error messages and watch mode',
+            },
+        ],
+        faq: [
+            {
+                question: 'Jest vs Mocha?',
+                answer: 'Jest has more features built-in. Mocha is more flexible.',
+            },
+            {
+                question: 'Snapshot testing?',
+                answer: 'Great for UI components. Requires careful maintenance.',
+            },
+            {
+                question: 'Performance?',
+                answer: 'Fast due to parallel execution and smart caching.',
+            },
+        ],
+        relatedTechs: ['React', 'TypeScript', 'React Testing Library', 'Babel'],
+    },
+    {
+        id: 'aws',
+        name: 'AWS (Amazon Web Services)',
+        icon: 'aws',
+        category: 'Cloud Platform',
+        tagline: 'Comprehensive cloud computing platform with global infrastructure',
+        description: 'AWS is the leading cloud computing platform offering 200+ services including compute, storage, databases, networking, machine learning, and analytics. It provides the flexibility needed to build enterprise-grade applications.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+        rating: 4.7,
+        reviews: 3100,
+        features: [
+            '200+ Services',
+            'Global Infrastructure',
+            'High Availability',
+            'Auto-scaling',
+            'Advanced Security',
+            'Pay-as-you-go',
+            'Managed Services',
+            'ML Services',
+        ],
+        useCases: [
+            'Web Hosting',
+            'Data Storage',
+            'Machine Learning',
+            'IoT Solutions',
+            'Disaster Recovery',
+            'Content Delivery',
+        ],
+        benefits: [
+            'Global Reach',
+            'Cost Flexibility',
+            'Highly Scalable',
+            'Security Features',
+            'Extensive Docs',
+        ],
+        stats: [
+            { label: 'Market Share', value: '32%' },
+            { label: 'Global Regions', value: '30+' },
+            { label: 'Services', value: '200+' },
+            { label: 'Customers', value: '1M+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Compute',
+                items: ['EC2', 'Lambda', 'ECS', 'EKS', 'Lightsail'],
+            },
+            {
+                category: 'Storage',
+                items: ['S3', 'EBS', 'EFS', 'Glacier'],
+            },
+            {
+                category: 'Database',
+                items: ['RDS', 'DynamoDB', 'ElastiCache', 'Aurora'],
+            },
+            {
+                category: 'Developer Tools',
+                items: ['CloudFormation', 'CodePipeline', 'CodeBuild'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Market Leader',
+                description: 'Most mature and comprehensive cloud platform',
+            },
+            {
+                title: 'Global Presence',
+                description: '30+ regions worldwide',
+            },
+            {
+                title: 'Comprehensive',
+                description: '200+ services covering every need',
+            },
+            {
+                title: 'Enterprise Ready',
+                description: 'Used by millions including Fortune 500',
+            },
+        ],
+        faq: [
+            {
+                question: 'AWS pricing?',
+                answer: 'Pay-as-you-go. Free tier available for new users.',
+            },
+            {
+                question: 'AWS learning?',
+                answer: 'Steep initially. AWS Certification helps validate skills.',
+            },
+            {
+                question: 'Alternatives?',
+                answer: 'Google Cloud, Azure, or hybrid approach.',
+            },
+        ],
+        relatedTechs: ['Docker', 'Kubernetes', 'Terraform', 'Lambda'],
+    },
+    {
+        id: 'firebase',
+        name: 'Firebase',
+        icon: 'python',
+        category: 'Backend-as-a-Service',
+        tagline: 'Build apps fast without managing infrastructure',
+        description: 'Firebase is a Google-backed platform providing backend services like authentication, real-time databases, hosting, cloud functions, and more. Perfect for rapid development without infrastructure management.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+        rating: 4.7,
+        reviews: 2100,
+        features: [
+            'Real-time Database',
+            'Authentication',
+            'Hosting',
+            'Cloud Functions',
+            'Analytics',
+            'Crash Reporting',
+            'Remote Config',
+            'A/B Testing',
+        ],
+        useCases: [
+            'MVP Development',
+            'Real-time Apps',
+            'Mobile Apps',
+            'Startup Projects',
+            'Web Applications',
+            'Progressive Web Apps',
+        ],
+        benefits: [
+            'No Backend Needed',
+            'Real-time Sync',
+            'Easy Setup',
+            'Scalable',
+            'Cost Effective',
+        ],
+        stats: [
+            { label: 'Projects Hosted', value: '10M+' },
+            { label: 'Active Users', value: '1M+' },
+            { label: 'Global Reach', value: '180+ Countries' },
+            { label: 'Uptime', value: '99.95%' },
+        ],
+        ecosystem: [
+            {
+                category: 'Core Services',
+                items: ['Realtime Database', 'Firestore', 'Authentication', 'Hosting'],
+            },
+            {
+                category: 'Cloud',
+                items: ['Cloud Functions', 'Cloud Run', 'Cloud Pub/Sub'],
+            },
+            {
+                category: 'Analytics',
+                items: ['Google Analytics', 'Crashlytics', 'Performance'],
+            },
+            {
+                category: 'SDK',
+                items: ['Web SDK', 'iOS SDK', 'Android SDK', 'Node.js'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'No Backend Needed',
+                description: 'Build full apps without server coding',
+            },
+            {
+                title: 'Real-time Sync',
+                description: 'Data syncs instantly across devices',
+            },
+            {
+                title: 'Easy Setup',
+                description: 'Get started in minutes',
+            },
+            {
+                title: 'Cost Effective',
+                description: 'Pay only for what you use',
+            },
+        ],
+        faq: [
+            {
+                question: 'Firebase vs traditional backend?',
+                answer: 'Firebase faster for startups. Traditional better for complex logic.',
+            },
+            {
+                question: 'Vendor lock-in?',
+                answer: 'Some consideration. But ease of use often worth it.',
+            },
+            {
+                question: 'Scaling?',
+                answer: 'Automatically scales. Pay more as usage increases.',
+            },
+        ],
+        relatedTechs: ['React', 'Vue', 'Flutter', 'React Native'],
+    },
+    {
+        id: 'tensorflow',
+        name: 'TensorFlow',
+        icon: 'python',
+        category: 'Machine Learning',
+        tagline: 'Open-source machine learning platform',
+        description: 'TensorFlow is an open-source machine learning platform developed by Google. It provides comprehensive tools for building and deploying ML models across various platforms and devices.',
+        image: 'https://images.unsplash.com/photo-1526374965328-7f5c713a6170?w=800&h=500&fit=crop',
+        rating: 4.7,
+        reviews: 1800,
+        features: [
+            'Flexible Architecture',
+            'Production Deployment',
+            'GPU/TPU Support',
+            'Multi-platform',
+            'Pre-built Models',
+            'TensorFlow Lite',
+            'TensorFlow.js',
+            'Keras Integration',
+        ],
+        useCases: [
+            'Deep Learning',
+            'Computer Vision',
+            'Natural Language Processing',
+            'Recommendation Systems',
+            'Time Series',
+            'Reinforcement Learning',
+        ],
+        benefits: [
+            'Industry Standard',
+            'Flexible & Powerful',
+            'Production Ready',
+            'Multi-platform',
+            'Active Community',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '185K+' },
+            { label: 'Research Papers', value: '50K+' },
+            { label: 'Companies Using', value: '10K+' },
+            { label: 'Models Available', value: '1000+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Core',
+                items: ['TensorFlow', 'Keras', 'TF.js', 'TF Lite'],
+            },
+            {
+                category: 'Modules',
+                items: ['TF Text', 'TF Recommenders', 'TF Federated'],
+            },
+            {
+                category: 'Tools',
+                items: ['TensorBoard', 'TF Hub', 'TF Datasets'],
+            },
+            {
+                category: 'Deployment',
+                items: ['TF Serving', 'TF Lite', 'TF.js', 'Edge TPU'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Industry Standard',
+                description: 'Most widely used ML framework',
+            },
+            {
+                title: 'Flexible',
+                description: 'Build simple or complex models',
+            },
+            {
+                title: 'Production Ready',
+                description: 'Deploy at scale in production',
+            },
+            {
+                title: 'Multi-platform',
+                description: 'Run on servers, mobile, edge devices',
+            },
+        ],
+        faq: [
+            {
+                question: 'TensorFlow vs PyTorch?',
+                answer: 'TensorFlow more production-ready. PyTorch more research-friendly.',
+            },
+            {
+                question: 'Learning curve?',
+                answer: 'Steep. Start with Keras for easier learning.',
+            },
+            {
+                question: 'For beginners?',
+                answer: 'Start with Keras. Provides higher-level API.',
+            },
+        ],
+        relatedTechs: ['Python', 'Keras', 'NumPy', 'Pandas', 'scikit-learn'],
+    },
+    {
+        id: 'nuxtjs',
+        name: 'Nuxt.js',
+        icon: 'angular',
+        category: 'Meta-Framework',
+        tagline: 'The intuitive Vue framework',
+        description: 'Nuxt is an intuitive Vue framework for building universal web applications. It provides SSR, static generation, and full-stack capabilities similar to Next.js but for Vue.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.7,
+        reviews: 1200,
+        features: [
+            'Server-Side Rendering',
+            'Static Generation',
+            'File-based Routing',
+            'Automatic Code Splitting',
+            'API Routes',
+            'Module System',
+            'Great Tooling',
+            'Easy Deployment',
+        ],
+        useCases: [
+            'Full-Stack Apps',
+            'E-commerce',
+            'Content Sites',
+            'JAMstack',
+            'SPAs',
+            'PWAs',
+        ],
+        benefits: [
+            'Vue + Full-Stack',
+            'Great DX',
+            'SEO Friendly',
+            'Easy to Learn',
+            'Active Community',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '51K+' },
+            { label: 'Weekly Downloads', value: '500K+' },
+            { label: 'Companies Using', value: '2000+' },
+            { label: 'Module Ecosystem', value: '100+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Modules',
+                items: ['Nuxt Auth', 'Nuxt i18n', 'Nuxt Image', 'Nuxt Content'],
+            },
+            {
+                category: 'Deployment',
+                items: ['Vercel', 'Netlify', 'AWS', 'Self-hosted'],
+            },
+            {
+                category: 'Database',
+                items: ['MongoDB', 'PostgreSQL', 'Firebase'],
+            },
+            {
+                category: 'Styling',
+                items: ['Tailwind CSS', 'Bootstrap Vue', 'Vuetify'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Vue Ecosystem',
+                description: 'Full power of Vue with full-stack capabilities',
+            },
+            {
+                title: 'Easy to Learn',
+                description: 'Gentler than Next.js',
+            },
+            {
+                title: 'Full-Stack',
+                description: 'Build complete apps in Vue',
+            },
+            {
+                title: 'Great DX',
+                description: 'Excellent developer experience',
+            },
+        ],
+        faq: [
+            {
+                question: 'Nuxt vs Next?',
+                answer: 'Both similar. Nuxt for Vue, Next for React. Choose framework preference.',
+            },
+            {
+                question: 'Nuxt 3?',
+                answer: 'Latest version with improved performance and features.',
+            },
+            {
+                question: 'Learning curve?',
+                answer: 'Easy if you know Vue. Steeper otherwise.',
+            },
+        ],
+        relatedTechs: ['Vue.js', 'Vue Router', 'Pinia', 'Tailwind CSS'],
+    },
+    {
+        id: 'redux',
+        name: 'Redux',
+        icon: 'react',
+        category: 'State Management',
+        tagline: 'Predictable state management for JavaScript applications',
+        description: 'Redux is a predictable state container for JavaScript applications. It helps maintain a single source of truth for your application state with unidirectional data flow.',
+        image: 'https://images.unsplash.com/photo-1633356713697-be0e3b9ef10f?w=800&h=500&fit=crop',
+        rating: 4.6,
+        reviews: 2000,
+        features: [
+            'Predictable State',
+            'Single Source of Truth',
+            'Time-Travel Debugging',
+            'Middleware System',
+            'DevTools Integration',
+            'Redux Toolkit',
+            'Selector Memoization',
+            'TypeScript Support',
+        ],
+        useCases: [
+            'Complex State',
+            'Enterprise Apps',
+            'Real-time Collab',
+            'Analytics',
+            'Undo/Redo',
+            'Multi-step Workflows',
+        ],
+        benefits: [
+            'Predictable',
+            'Debuggable',
+            'Time-Travel',
+            'Middleware Flexible',
+            'Strong Community',
+        ],
+        stats: [
+            { label: 'GitHub Stars', value: '60K+' },
+            { label: 'Weekly Downloads', value: '7M+' },
+            { label: 'Companies Using', value: '2000+' },
+            { label: 'Packages', value: '30+' },
+        ],
+        ecosystem: [
+            {
+                category: 'Core',
+                items: ['Redux', 'Redux Thunk', 'Redux Middleware'],
+            },
+            {
+                category: 'Advanced',
+                items: ['Redux Saga', 'Redux Observable', 'Redux Toolkit'],
+            },
+            {
+                category: 'Utilities',
+                items: ['Reselect', 'Immer', 'normalizr'],
+            },
+            {
+                category: 'React',
+                items: ['React-Redux', 'useSelector', 'useDispatch'],
+            },
+        ],
+        whyChoose: [
+            {
+                title: 'Predictable',
+                description: 'Single source of truth',
+            },
+            {
+                title: 'Debuggable',
+                description: 'Great Redux DevTools',
+            },
+            {
+                title: 'Time-Travel',
+                description: 'Debug with time-travel',
+            },
+            {
+                title: 'Enterprise',
+                description: 'Perfect for large apps',
+            },
+        ],
+        faq: [
+            {
+                question: 'Redux vs Context API?',
+                answer: 'Redux better for complex state. Context for simple state.',
+            },
+            {
+                question: 'Boilerplate?',
+                answer: 'Redux Toolkit significantly reduces boilerplate.',
+            },
+            {
+                question: 'Learning curve?',
+                answer: 'Moderate. Concepts are solid once understood.',
+            },
+        ],
+        relatedTechs: ['React', 'Redux Toolkit', 'React-Redux', 'Redux DevTools'],
+    },
+    ...missingTechs.map(createTechStub),
 ];
 
 export function EnhancedTechnologiesPage() {
-     const router = useRouter();
-     const [selectedTech, setSelectedTech] = useState<Technology>(technologiesData[0]);
-     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-     const [isInView, setIsInView] = useState(false);
-     const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-     const ref = useRef<HTMLDivElement>(null);
-     const dropdownRef = useRef<HTMLDivElement>(null);
+    const router = useRouter();
+    const [selectedTech, setSelectedTech] = useState<Technology>(technologiesData[0]);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isInView, setIsInView] = useState(false);
+    const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+    const ref = useRef<HTMLDivElement>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -1780,29 +4034,29 @@ export function EnhancedTechnologiesPage() {
             </section>
 
             {/* Related Technologies */}
-             <section className="relative z-10 py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-                 <h2 className="text-2xl font-bold mb-8">Related Technologies</h2>
-                 <div className="flex flex-wrap gap-4">
-                     {selectedTech.relatedTechs.map((tech) => (
-                         <button
-                             key={tech}
-                             onClick={() => {
-                                 const relatedTech = technologiesData.find(
-                                     t => t.name.toLowerCase() === tech.toLowerCase()
-                                 );
-                                 if (relatedTech) {
-                                     setSelectedTech(relatedTech);
-                                     setExpandedFaq(null);
-                                     window.scrollTo({ top: 0, behavior: 'smooth' });
-                                 }
-                             }}
-                             className="px-6 py-3 rounded-full bg-gradient-to-r from-white/10 to-white/5 border border-white/20 text-white font-medium hover:border-purple-400 hover:bg-purple-500/10 transition-all"
-                         >
-                             {tech}
-                         </button>
-                     ))}
-                 </div>
-             </section>
+            <section className="relative z-10 py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+                <h2 className="text-2xl font-bold mb-8">Related Technologies</h2>
+                <div className="flex flex-wrap gap-4">
+                    {selectedTech.relatedTechs.map((tech) => (
+                        <button
+                            key={tech}
+                            onClick={() => {
+                                const relatedTech = technologiesData.find(
+                                    t => t.name.toLowerCase() === tech.toLowerCase()
+                                );
+                                if (relatedTech) {
+                                    setSelectedTech(relatedTech);
+                                    setExpandedFaq(null);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                            }}
+                            className="px-6 py-3 rounded-full bg-gradient-to-r from-white/10 to-white/5 border border-white/20 text-white font-medium hover:border-purple-400 hover:bg-purple-500/10 transition-all"
+                        >
+                            {tech}
+                        </button>
+                    ))}
+                </div>
+            </section>
 
             {/* CTA Section */}
             <section className="relative z-10 py-20 px-6 lg:px-12 max-w-7xl mx-auto">

@@ -179,7 +179,7 @@ export default function AWSTechPage() {
             {
                 title: 'Multi-Service Mastery',
                 description:
-                    'Expertise across 200+ AWS services with knowledge of service integrations and best practices.',
+                    'Expertise across 20+ AWS services with knowledge of service integrations and best practices.',
             },
         ],
         keyFacts: [

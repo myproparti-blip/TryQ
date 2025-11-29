@@ -7,9 +7,9 @@ import { EnhancedHeroSection } from '@/components/about/enhanced-hero-section';
 import { EnhancedMissionSection } from '@/components/about/enhanced-mission-section';
 import { StorySection } from '@/components/about/story-section';
 import { TechnologiesPanel } from '@/components/about/technologies-panel';
-import { AwardsSection } from '@/components/about/awards-section';
+
 import { EnhancedImageCarousel } from '@/components/about/enhanced-image-carousel';
-import { VideoSection } from '@/components/about/video-section';
+
 import { EnhancedLeadershipSection } from '@/components/about/enhanced-leadership-section';
 import { TeamShowcase } from '@/components/team-showcase';
 
@@ -30,9 +30,6 @@ export default function AboutPage() {
                 {/* Story Section */}
                 <StorySection />
 
-                {/* Video Section */}
-                <VideoSection />
-
                 {/* Technologies Panel */}
                 <div id="technologies">
                   <TechnologiesPanel />
@@ -40,9 +37,6 @@ export default function AboutPage() {
 
                 {/* Enhanced Leadership Section */}
                 <TeamShowcase />
-
-                {/* Awards & Partners Section */}
-                <AwardsSection />
             </main>
             <AppverseFooter />
         </>

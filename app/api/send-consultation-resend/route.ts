@@ -32,10 +32,10 @@ export async function POST(request: NextRequest) {
     const userContent = `
     <h2>Consultation Request Received</h2>
     <p>Hi ${name},</p>
-    <p>Thank you for reaching out to TryQ Tech. We have received your consultation request.</p>
+    <p>Thank you for reaching out to TryQu Tech. We have received your consultation request.</p>
     <p><strong>Service of Interest:</strong> ${service}</p>
     <p>Our team will contact you within 24-48 hours.</p>
-    <p>Best regards,<br>TryQ Tech Team</p>
+    <p>Best regards,<br>TryQu Tech Team</p>
     `
 
     // Using Resend (if installed)

@@ -120,7 +120,7 @@ Key Implementation Details:
       results: [
         "Achieved HIPAA certification in 4 months",
         "Successfully integrated 20 different EHR systems",
-        "Onboarded 500+ healthcare providers in Year 1",
+        "Onboarded 30+ healthcare providers in Year 1",
         "Managing 100,000+ patient records securely",
         "Achieved SOC 2 Type II compliance",
         "Maintained 99.98% platform uptime",
@@ -136,7 +136,7 @@ Key Implementation Details:
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
       category: "Enterprise SaaS",
       shortDescription: "Legacy System Modernization",
-      fullDescription: `Enterprise SaaS Corp is a Fortune 500 company providing business intelligence and analytics software to enterprise clients. They had a 15-year-old monolithic application built on older technology stack serving 200+ employees and 500+ external clients.
+      fullDescription: `Enterprise SaaS Corp is a Fortune 500 company providing business intelligence and analytics software to enterprise clients. They had a 15-year-old monolithic application built on older technology stack serving 20+ employees and 30+ external clients.
 
 The Challenge:
 The legacy system was becoming a liability:
@@ -147,7 +147,7 @@ The legacy system was becoming a liability:
 - Difficult to onboard new developers due to complexity
 - Business needed to move faster with new features
 - Critical need to maintain 99.99% uptime during migration
-- 200+ internal employees and 500+ external clients dependent on the system
+- 20+ internal employees and 30+ external clients dependent on the system
 
 Why They Chose Us:
 - Deep expertise in large-scale system migrations
@@ -524,7 +524,7 @@ Technical Architecture:
                     <div className="grid md:grid-cols-3 gap-6">
                       <div>
                         <p className="text-gray-400 text-sm mb-2">Healthcare Providers Onboarded</p>
-                        <p className="text-2xl font-bold text-green-400">500+</p>
+                        <p className="text-2xl font-bold text-green-400">30+</p>
                         <p className="text-xs text-gray-500 mt-1">in first 12 months</p>
                       </div>
                       <div>

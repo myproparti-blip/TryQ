@@ -2,7 +2,7 @@ import { ConsultationDashboard } from "@/components/admin/consultation-dashboard
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Consultation Dashboard | TryQ Tech Admin",
+    title: "Consultation Dashboard | TryQu Tech Admin",
     description: "Real-time consultation dashboard for managing consultation requests",
     robots: {
         index: false,

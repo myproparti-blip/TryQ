@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ArrowRight, Code2, Cloud, Shield, Zap, X, Check } from "lucide-react"
+import { ArrowRight, Code2, Cloud, Shield, Zap, X, Check, Palette } from "lucide-react"
 
 interface GetStartedForm {
     name: string
@@ -55,18 +55,18 @@ export function ServicesHero() {
                             }`}
                     >
                         <div className="inline-block mb-4 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/5">
-                            <p className="text-sm font-semibold text-cyan-400">ENTERPRISE SOLUTIONS</p>
+                            <p className="text-sm font-semibold text-cyan-400">TryQu Tech</p>
                         </div>
 
                         <h1 className="mb-6 text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
                             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-                                Try Qu Services
+                                Enterprise Service Portfolio
                             </span>
-                            <span className="block text-white mt-2">Built for Scale & Security</span>
+                            <span className="block text-white mt-2">Comprehensive IT Development & Testing Solutions</span>
                         </h1>
 
                         <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-                            From cloud infrastructure to AI-driven automation, we deliver enterprise-grade solutions that scale with your business, protect your data, and drive innovation.
+                            Full-stack development, quality assurance, and testing services for modern software solutions. Expert teams delivering scalable, reliable applications.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -81,16 +81,15 @@ export function ServicesHero() {
                     </div>
 
                     {/* Service Icons Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-16">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-16">
                         {[
-                            { icon: Cloud, label: "Cloud Solutions", desc: "Multi-cloud & hybrid" },
-                            { icon: Shield, label: "Security", desc: "Enterprise protection" },
-                            { icon: Code2, label: "Development", desc: "Custom applications" },
-                            { icon: Zap, label: "AI & Automation", desc: "Intelligent systems" },
+                            { icon: Code2, label: "Full-Stack Development", desc: "End-to-end solutions" },
+                            { icon: Shield, label: "Quality Assurance", desc: "Comprehensive testing" },
+                            { icon: Zap, label: "CI/CD & DevOps", desc: "Automation & deployment" },
                         ].map((service, i) => (
                             <div
                                 key={i}
-                                className={`p-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 cursor-pointer group`}
+                                className={`p-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 group`}
                                 style={{
                                     animationDelay: `${i * 100}ms`,
                                 }}
@@ -122,7 +121,7 @@ export function ServicesHero() {
                         {/* Content */}
                         {!submitSuccess ? (
                             <form onSubmit={handleFormSubmit} className="p-8 space-y-4">
-                                <p className="text-gray-400 mb-6">Join hundreds of enterprises transforming with TryQu Tech.</p>
+                                <p className="text-gray-400 mb-6">Start your digital transformation journey. We'll guide the process every step.</p>
 
                                 <div>
                                     <label className="block text-sm font-semibold text-white mb-2">Full Name</label>
@@ -172,12 +171,10 @@ export function ServicesHero() {
                                         className="w-full px-4 py-2.5 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none focus:border-cyan-400/50 focus:bg-white/10 transition-all"
                                     >
                                         <option value="">Select a service</option>
-                                        <option value="cloud">Cloud Solutions</option>
-                                        <option value="security">Cybersecurity</option>
-                                        <option value="ai">AI & Automation</option>
-                                        <option value="development">Custom Development</option>
-                                        <option value="infrastructure">Infrastructure Management</option>
-                                        <option value="transformation">Digital Transformation</option>
+                                        <option value="development">Full-Stack Development</option>
+                                        <option value="qa">Quality Assurance & Testing</option>
+                                        <option value="devops">CI/CD & DevOps</option>
+                                        <option value="performance">Performance Testing</option>
                                     </select>
                                 </div>
 

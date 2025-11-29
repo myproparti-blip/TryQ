@@ -13,7 +13,7 @@ import { Camera, Grid2X2, Scissors, Wand2 } from "lucide-react"
 export const dynamic = "force-static"
 
 export const metadata: Metadata = {
-  title: "3D Product Rendering | TryQ tech - Enterprise 3D Solutions",
+  title: "3D Product Rendering | TryQu Tech - Enterprise 3D Solutions",
   description: "Professional 3D product rendering services for marketing materials, e-commerce, and digital presentations. Photorealistic renders for your business needs.",
 }
 
@@ -247,7 +247,7 @@ export default function Page() {
                 Ready to Showcase Your Products?
               </h2>
               <p className="text-neutral-300 text-lg max-w-2xl mx-auto">
-                Let TryQ tech create stunning 3D renders that will elevate your marketing materials and impress your customers.
+                Let TryQu Tech create stunning 3D renders that will elevate your marketing materials and impress your customers.
               </p>
               <Button
                 asChild

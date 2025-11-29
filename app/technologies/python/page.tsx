@@ -12,7 +12,7 @@ export default function PythonTechPage() {
         emoji: '🐍',
         icon: <Code2 className="w-6 h-6" />,
         shortDescription:
-            'Scale your Python development with nearshore talent. Our Python developers deliver enterprise-grade solutions across AI, data science, and backend systems.',
+            'Scale your Python development with nearshore talent. Our Python developers deliverTryQu Tech  across AI, data science, and backend systems.',
         heroTitle: 'Scale Your Python Development with Expert Nearshore Talent',
         heroSubtitle:
             'Our Python development services power machine learning platforms, data pipelines, and backend systems for Fortune 500 companies. We typically land our teams within 2 weeks, enabling you to accelerate AI projects, data engineering, and web backends.',

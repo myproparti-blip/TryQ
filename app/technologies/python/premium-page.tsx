@@ -16,7 +16,7 @@ export default function PythonPremiumTechPage() {
         heroSubtitle:
             'Trusted by leading companies for backend development, data engineering, and AI/ML applications. Our Python specialists deliver robust, scalable solutions that power millions of users globally.',
         heroDescription:
-            'From high-performance APIs and microservices to AI/ML pipelines and data engineering, Python is the language of choice for modern software development. Our expert team leverages Python\'s simplicity and power to deliver enterprise-grade solutions.',
+            'From high-performance APIs and microservices to AI/ML pipelines and data engineering, Python is the language of choice for modern software development. Our expert team leverages Python\'s simplicity and power to deliverTryQu Tech .',
         rating: 4.9,
         reviewCount: 85,
 

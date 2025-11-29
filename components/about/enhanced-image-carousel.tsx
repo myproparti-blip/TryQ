@@ -11,28 +11,28 @@ export function EnhancedImageCarousel() {
   const images = [
     {
       url: '/images/archviz/client-love-1.jpg',
-      title: 'Innovation Hub',
-      description: 'Cutting-edge technology solutions'
+      title: 'Web Development',
+      description: 'Responsive and performant web applications'
     },
     {
       url: '/images/archviz/client-love-2.jpg',
-      title: 'Cloud Infrastructure',
-      description: 'Scalable and secure cloud solutions'
+      title: 'Mobile Solutions',
+      description: 'Native and cross-platform app development'
     },
     {
       url: '/images/intuitive-1.png',
-      title: 'AI & Machine Learning',
-      description: 'Intelligent systems for tomorrow'
+      title: 'Full Stack Projects',
+      description: 'Complete end-to-end development'
     },
     {
       url: '/images/intuitive-2.png',
-      title: 'Cybersecurity',
-      description: 'Enterprise-grade protection'
+      title: 'MERN Stack',
+      description: 'Modern JavaScript-based applications'
     },
     {
       url: '/images/top-rated-1.png',
-      title: 'DevOps Excellence',
-      description: 'Continuous integration & delivery'
+      title: 'Scalable Systems',
+      description: 'Enterprise-grade architecture & deployment'
     }
   ];
 
@@ -61,11 +61,11 @@ export function EnhancedImageCarousel() {
         <div className="mb-16 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
-              Our Journey in Motion
+              Our Work in Action
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Explore the innovation, technology, and impact that defines our company
+            Explore the projects, expertise, and solutions we deliver for our clients
           </p>
         </div>
 

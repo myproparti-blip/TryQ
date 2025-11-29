@@ -14,17 +14,17 @@ export function VideoSection() {
   const videos = [
     {
       id: 1,
-      title: 'Company Culture',
+      title: 'Development Showcase',
       duration: '2:45',
-      thumbnail: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop',
-      alt: 'Company culture video preview',
+      thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&h=900&fit=crop',
+      alt: 'Web development showcase video preview',
     },
     {
       id: 2,
-      title: 'Innovation & Impact',
+      title: 'Client Success Stories',
       duration: '3:20',
-      thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop',
-      alt: 'Innovation and impact video preview',
+      thumbnail: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop',
+      alt: 'Client success stories video preview',
     },
   ];
 
@@ -35,13 +35,13 @@ export function VideoSection() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
-            See Our Impact
-          </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Watch how we transform businesses with intelligent, scalable technology solutions.
-          </p>
-        </div>
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
+              See What We Build
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Watch how we deliver powerful web and mobile solutions that drive business growth.
+            </p>
+          </div>
 
         {/* Two Video Containers */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">

@@ -32,7 +32,7 @@ export default function IntegrationDetail() {
               </h1>
 
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Connect with 500+ APIs and platforms. Real-time data sync with 99.9% uptime SLA. Eliminate data silos and enable seamless workflows.
+                Connect with 30+ APIs and platforms. Real-time data sync with 99.9% uptime SLA. Eliminate data silos and enable seamless workflows.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -50,7 +50,7 @@ export default function IntegrationDetail() {
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-4 mt-12">
                 {[
-                  { value: "500+", label: "APIs" },
+                  { value: "30+", label: "APIs" },
                   { value: "Real-time", label: "Sync" },
                   { value: "99.9%", label: "Uptime" },
                 ].map((stat, idx) => (
@@ -132,7 +132,7 @@ export default function IntegrationDetail() {
       <section className="py-24 px-4 border-t border-white/10">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-black text-white mb-12 text-center">
-            500+ Integrations Available
+            30+ Integrations Available
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

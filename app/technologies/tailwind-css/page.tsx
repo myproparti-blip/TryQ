@@ -235,7 +235,7 @@ export default function TailwindCSSTechPage() {
             {
                 title: 'Enterprise Design System',
                 description:
-                    'Built comprehensive design system using Tailwind for 500+ developers, reducing design time by 40%.',
+                    'Built comprehensive design system using Tailwind for 30+ developers, reducing design time by 40%.',
                 link: '#',
             },
             {

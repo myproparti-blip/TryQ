@@ -73,7 +73,7 @@ export function PremiumTrainingHero() {
         {/* Top Badge */}
         <div className="mb-8 inline-block">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 backdrop-blur-sm">
-            <span className="text-cyan-400 text-sm font-bold">✨ TryQ Tech
+            <span className="text-cyan-400 text-sm font-bold">✨ TryQu Tech
 </span>
           </div>
         </div>

@@ -109,7 +109,7 @@ export default function RevisionPolicyPage() {
                     Have questions about our revision policy or need clarification?
                   </p>
                   <p className="text-neutral-300">
-                    Email: <a href="mailto:trqtech@gmail.com" className="text-lime-300 underline">trqtech@gmail.com</a>
+                    Email: <a href="mailto:tryqutech@gmail.com" className="text-lime-300 underline">tryqutech@gmail.com</a>
                   </p>
                   <p className="text-neutral-400 text-sm mt-2">
                     We're committed to delivering quality IT solutions with transparent communication throughout the development process.

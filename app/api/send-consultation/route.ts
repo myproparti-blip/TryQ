@@ -5,16 +5,23 @@ import { broadcastConsultation } from '../consultations-stream/route'
 // Validate environment variables
 const validateEnv = () => {
     const { EMAIL_USER, EMAIL_PASSWORD, ADMIN_EMAIL } = process.env
+    const missing: string[] = []
 
-    if (!EMAIL_USER || !EMAIL_PASSWORD || !ADMIN_EMAIL) {
-        const missing = []
-        if (!EMAIL_USER) missing.push('EMAIL_USER')
-        if (!EMAIL_PASSWORD) missing.push('EMAIL_PASSWORD')
-        if (!ADMIN_EMAIL) missing.push('ADMIN_EMAIL')
+    if (!EMAIL_USER) missing.push('EMAIL_USER')
+    if (!EMAIL_PASSWORD) missing.push('EMAIL_PASSWORD')
+    if (!ADMIN_EMAIL) missing.push('ADMIN_EMAIL')
 
-        throw new Error(
-            `Missing environment variables: ${missing.join(', ')}. Check .env.local file.`
+    if (missing.length > 0) {
+        const error = new Error(
+            `Missing required environment variables: ${missing.join(', ')}. ` +
+            `Please add them to your .env.local file.\n` +
+            `Example:\n` +
+            `EMAIL_USER=your-email@gmail.com\n` +
+            `EMAIL_PASSWORD=your-app-password\n` +
+            `ADMIN_EMAIL=admin@tryqtech.com`
         )
+        error.name = 'ConfigError'
+        throw error
     }
 
     return { EMAIL_USER, EMAIL_PASSWORD, ADMIN_EMAIL }
@@ -87,7 +94,7 @@ export async function POST(request: NextRequest) {
         const userMailOptions = {
             from: EMAIL_USER,
             to: email,
-            subject: 'Consultation Request Received - TryQ Tech',
+            subject: 'Consultation Request Received - TryQu Tech',
             html: `
         <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
           <div style="background-color: white; padding: 30px; border-radius: 8px; max-width: 600px; margin: 0 auto;">
@@ -95,7 +102,7 @@ export async function POST(request: NextRequest) {
             
             <p style="color: #666; line-height: 1.6;">
               Hi ${name},<br><br>
-              Thank you for reaching out to TryQ Tech. We have received your consultation request and appreciate your interest in our services.
+              Thank you for reaching out to TryQu Tech. We have received your consultation request and appreciate your interest in our services.
             </p>
             
             <div style="margin: 20px 0; padding: 15px; background-color: #f0f9ff; border-left: 4px solid #0891b2;">
@@ -108,14 +115,14 @@ export async function POST(request: NextRequest) {
             <div style="margin: 20px 0; padding: 15px; background-color: #f9fafb; border-radius: 4px;">
               <h3 style="color: #333; margin-top: 0;">Quick Contact Options:</h3>
               <p style="color: #666;">
-                📞 Call us: +1 (800) TRYQ-TECH<br>
-                📧 Email us: trqtech@gmail.com<br>
+                📞 Call us:  9033452895<br>
+                📧 Email us: tryqutech@gmail.com<br>
                 💬 Live chat: Available 24/7
               </p>
             </div>
             
             <p style="color: #999; font-size: 12px; border-top: 1px solid #eee; padding-top: 10px;">
-              TryQ Tech - Enterprise Digital Solutions
+              TryQu Tech - Enterprise Digital Solutions
             </p>
           </div>
         </div>
@@ -151,24 +158,53 @@ export async function POST(request: NextRequest) {
             { status: 200 }
         )
     } catch (error) {
+        const isConfigError = error instanceof Error && error.name === 'ConfigError'
         const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-        console.error('Consultation API Error:', {
-            error: errorMessage,
+
+        // Detect specific error types
+        const isAuthError = errorMessage.includes('535') || errorMessage.includes('BadCredentials') || errorMessage.includes('Invalid login')
+        const isNetworkError = errorMessage.includes('ECONNREFUSED') || errorMessage.includes('getaddrinfo')
+
+        let logLevel = 'error'
+        let errorType = 'Runtime'
+
+        if (isConfigError) {
+            errorType = 'Configuration'
+            logLevel = 'warn'
+        } else if (isAuthError) {
+            errorType = 'Authentication'
+        } else if (isNetworkError) {
+            errorType = 'Network'
+        }
+
+        console.error('[Consultation API Error]', {
+            type: errorType,
+            message: errorMessage,
             timestamp: new Date().toISOString(),
-            env: {
-                EMAIL_USER: process.env.EMAIL_USER ? 'SET' : 'MISSING',
-                EMAIL_PASSWORD: process.env.EMAIL_PASSWORD ? 'SET' : 'MISSING',
-                ADMIN_EMAIL: process.env.ADMIN_EMAIL ? 'SET' : 'MISSING',
-            },
+            ...(process.env.NODE_ENV === 'development' && { stack: error instanceof Error ? error.stack : undefined }),
         })
+
+        // Return different status codes and messages based on error type
+        let statusCode = 500
+        let userMessage = 'Failed to send consultation request. Please try again later or contact us directly.'
+
+        if (isConfigError) {
+            statusCode = 503
+            userMessage = 'Email service is not currently configured. Please contact support.'
+        } else if (isAuthError) {
+            statusCode = 503
+            userMessage = 'Email service authentication failed. Please contact support or try calling us at 903-345-2895.'
+        } else if (isNetworkError) {
+            statusCode = 502
+            userMessage = 'Email service temporarily unavailable. Please try again in a moment.'
+        }
 
         return NextResponse.json(
             {
-                error: errorMessage.includes('Missing environment')
-                    ? errorMessage
-                    : 'Failed to send consultation request. Check server logs.'
+                error: userMessage,
+                ...(process.env.NODE_ENV === 'development' && { details: errorMessage, type: errorType }),
             },
-            { status: 500 }
+            { status: statusCode }
         )
     }
 }

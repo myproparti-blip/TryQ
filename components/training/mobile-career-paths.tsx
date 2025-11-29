@@ -3,13 +3,12 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { TrendingUp, DollarSign, Briefcase, Target } from 'lucide-react';
+import { TrendingUp, Briefcase, Target } from 'lucide-react';
 
 export function MobileCareerPaths() {
     const careerPaths = [
         {
             title: 'Frontend Engineer',
-            salary: '$100k - $160k',
             demand: 'Very High',
             description: 'Specialize in building interactive web interfaces with modern JavaScript frameworks',
             jobMarket: 'Hot Demand',
@@ -24,7 +23,6 @@ export function MobileCareerPaths() {
         },
         {
             title: 'Backend Engineer',
-            salary: '$105k - $170k',
             demand: 'Very High',
             description: 'Create robust backend systems using Node.js, Python with modern databases and APIs',
             jobMarket: 'Hot Demand',
@@ -39,7 +37,6 @@ export function MobileCareerPaths() {
         },
         {
             title: 'Full-Stack Developer',
-            salary: '$130k - $200k',
             demand: 'High',
             description: 'Develop complete applications from frontend to backend with cloud integration',
             jobMarket: 'Premium Demand',
@@ -54,7 +51,6 @@ export function MobileCareerPaths() {
         },
         {
             title: 'Mobile Developer',
-            salary: '$115k - $185k',
             demand: 'High',
             description: 'Create native and cross-platform mobile applications for iOS and Android',
             jobMarket: 'Growing Demand',
@@ -69,7 +65,6 @@ export function MobileCareerPaths() {
         },
         {
             title: 'DevOps Engineer',
-            salary: '$120k - $190k',
             demand: 'High',
             description: 'Manage infrastructure and deploy applications using Docker, Kubernetes, and cloud platforms',
             jobMarket: 'Premium Demand',
@@ -84,7 +79,6 @@ export function MobileCareerPaths() {
         },
         {
             title: 'Security Engineer',
-            salary: '$140k - $220k',
             demand: 'Medium-High',
             description: 'Protect applications and infrastructure against threats and ensure compliance standards',
             jobMarket: 'Specialized Demand',
@@ -126,10 +120,7 @@ export function MobileCareerPaths() {
                                 <CardTitle className="text-2xl mb-2">{path.title}</CardTitle>
                                 <p className="text-xs text-gray-400 mb-3">{path.description}</p>
                                 <div className="flex flex-wrap gap-2 mb-3">
-                                    <div className="flex items-center gap-2 text-green-400">
-                                        <DollarSign className="w-4 h-4" />
-                                        <span className="text-xs font-semibold">{path.salary}/year</span>
-                                    </div>
+    
                                     <div className="flex items-center gap-2 text-blue-400">
                                         <TrendingUp className="w-4 h-4" />
                                         <span className="text-xs font-semibold">{path.demand} Demand</span>

@@ -1,4 +1,4 @@
-# AGENTS.md - TryQ Tech Development Guide
+# AGENTS.md - TryQu Tech Development Guide
 
 ## Build & Run Commands
 
@@ -16,10 +16,12 @@ Note: No test runner configured. See tsconfig.json for strict type checking.
 **Next.js 14 App Router** project with TypeScript. Organized as:
 - `app/` - Page routes using App Router (layout.tsx, page.tsx per folder)
 - `components/` - React components (client/server), split into sections (ui/, about/, services/, technologies/, training/)
-- `lib/` - Utility functions and shared logic
-- `hooks/` - Custom React hooks
+- `lib/` - Utility functions, shared logic, and page context configuration
+- `hooks/` - Custom React hooks including `use-page-context` for content segregation
 - `styles/` - Global styles and Tailwind CSS
 - `public/` - Static assets (images, icons, videos)
+
+**Content Segregation System**: Each parent page displays only its core content using URL-based page detection via `usePageContext()` hook. See `CONTENT_SEGREGATION.md` for implementation details.
 
 **Tech Stack**: React 18, Next.js 14, TypeScript, Tailwind CSS 4, Radix UI, Zod, React Hook Form
 

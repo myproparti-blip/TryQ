@@ -81,8 +81,8 @@ export default function TermsPage() {
                    <h2 className="text-2xl font-semibold text-white">6. Contact Us</h2>
                    <p className="text-neutral-300">For questions about these Terms, contact us at:</p>
                    <p className="text-neutral-300">
-                     <a href="mailto:trqtech@gmail.com" className="text-lime-300 underline">
-                     trqtech@gmail.com
+                     <a href="mailto:tryqutech@gmail.com" className="text-lime-300 underline">
+                     tryqutech@gmail.com
                      </a>
                    </p>
                  </section>

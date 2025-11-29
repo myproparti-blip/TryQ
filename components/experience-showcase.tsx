@@ -8,37 +8,37 @@ export function ExperienceShowcase() {
     const experiences = [
         {
             id: 1,
-            title: "Global Reach",
-            subtitle: "Operating Across Continents",
+            title: "Global Infrastructure",
+            subtitle: "Multi-Region Operations",
             icon: Globe,
-            description: "Serving enterprises in 25+ countries with 24/7 support and localized expertise",
+            description: "Enterprise-grade operations in 5+ regions with 24/7 NOC support and local compliance expertise",
             gradient: "from-blue-600/20 to-blue-900/20",
             imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
         },
         {
             id: 2,
-            title: "Enterprise Experience",
-            subtitle: "10+ Years of Excellence",
+            title: "Enterprise Deployment",
+            subtitle: "Proven Success",
             icon: Briefcase,
-            description: "Transforming Fortune 500 companies with proven IT solutions and strategies",
+            description: "Delivered 50+ critical infrastructure projects and digital transformation initiatives for Fortune 500 enterprises",
             gradient: "from-purple-600/20 to-purple-900/20",
             imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
         },
         {
             id: 3,
-            title: "Award-Winning",
-            subtitle: "Industry Recognition",
+            title: "Industry Leadership",
+            subtitle: "SOC 2 & ISO Certified",
             icon: Award,
-            description: "Recognized leaders in cloud infrastructure, security, and digital transformation",
+            description: "Recognized for cloud modernization, cybersecurity excellence, and enterprise architecture best practices",
             gradient: "from-yellow-600/20 to-yellow-900/20",
             imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
         },
         {
             id: 4,
-            title: "Growth & Innovation",
-            subtitle: "Scaling Success",
+            title: "Business Impact",
+            subtitle: "Measurable ROI",
             icon: TrendingUp,
-            description: "Helping businesses grow 10x faster with intelligent automation and optimization",
+            description: "Average 3.5x ROI through cost optimization, automation, and performance improvements",
             gradient: "from-green-600/20 to-green-900/20",
             imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
         },
@@ -47,12 +47,12 @@ export function ExperienceShowcase() {
     return (
         <section className="container mx-auto px-4 py-20">
             <div className="mb-16 text-center">
-                <p className="text-lime-300 font-semibold mb-4">WHY CHOOSE US</p>
+                <p className="text-lime-300 font-semibold mb-4">WHY ENTERPRISES CHOOSE US</p>
                 <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-4">
-                    The TryQu Tech Experience
+                    Proven Enterprise Capabilities
                 </h2>
                 <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                    Premium IT solutions backed by global expertise, enterprise-proven reliability, and unwavering commitment to your success
+                    Mission-critical infrastructure, global operations, and strategic partnership for digital transformation success
                 </p>
             </div>
 

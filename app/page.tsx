@@ -21,7 +21,7 @@ export default function Page() {
         "@id": "https://theskitbit.com/",
         name: "TryQu Tech | Try Qu Solutions Made Simple, Secure & Scalable",
         description:
-            "From cloud infrastructure to AI-driven automation, TryQu Tech delivers Try Qu solutions that are reliable, secure, and built to transform your business.",
+            "From cloud infrastructure to comprehensive TryQu Tech, TryQu Tech delivers Try Qu solutions that are reliable, innovative, and built to transform your business.",
         url: "https://theskitbit.com/",
         mainEntity: {
             "@type": "Organization",
@@ -39,8 +39,8 @@ export default function Page() {
     const carouselImages = [
         {
             src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop&q=80",
-            alt: "Professional team collaborating on enterprise solutions",
-            title: "Enterprise Solutions",
+            alt: "Professional team collaborating on TryQu Tech",
+            title: "TryQu Tech",
             subtitle: "Transform your business with our advanced IT services",
         },
         {
@@ -56,10 +56,10 @@ export default function Page() {
             subtitle: "Enterprise-grade infrastructure for mission-critical workloads",
         },
         {
-            src: "https://images.unsplash.com/photo-1518611505868-d7b87f0e7b7f?w=1200&h=600&fit=crop&q=80",
-            alt: "Advanced security systems protecting digital assets",
-            title: "Security & Compliance",
-            subtitle: "Military-grade protection with full compliance certifications",
+            src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop&q=80",
+            alt: "Advanced analytics and business insights dashboard",
+            title: "Data & Analytics",
+            subtitle: "Transform data into actionable business intelligence",
         },
     ]
 
@@ -74,17 +74,17 @@ export default function Page() {
 
                 <Features />
 
-                {/* Premium Features Grid */}
+                {/* Premium Features Grid - Shows all features on home page */}
                 <PremiumFeaturesGrid />
 
-                {/* Premium Carousel Section */}
+                {/* Premium Carousel Section - Home page only */}
                 <section className="container mx-auto px-4 py-20">
                     <div className="mb-12">
                         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-4">
-                            Enterprise Solutions Built for Scale
+                            Technology Stack
                         </h2>
                         <p className="text-lg text-white/70 max-w-3xl">
-                            Discover our comprehensive portfolio of cloud infrastructure, security, and AI-driven automation solutions. From mission-critical data centers to intelligent business automation, we deliver enterprise-grade technology that powers transformation at scale.
+                            Discover our comprehensive portfolio of cloud infrastructure, TryQu Tech, and advanced analytics. From mission-critical data centers to business intelligence platforms, we deliver enterprise-grade technology that powers transformation at scale.
                         </p>
                     </div>
                     <PremiumCarousel images={carouselImages} autoPlay={true} interval={6000} height="h-[600px]" />

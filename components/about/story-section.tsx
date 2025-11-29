@@ -24,34 +24,34 @@ export function StorySection() {
 
   const milestones = [
     {
+      year: '2020',
+      title: 'Full Stack Excellence',
+      description: 'Established expertise in React, Vue, Angular for frontend. Node.js, Python, Java for backend development.',
+      icon: '💻',
+    },
+    {
       year: '2021',
-      title: 'Foundation',
-      description: 'Founded by industry veterans to reimagine enterprise technology.',
-      icon: '🚀',
+      title: 'Mobile Development',
+      description: 'Expanded to native iOS & Android, React Native, and Flutter for cross-platform mobile solutions.',
+      icon: '📱',
     },
     {
       year: '2022',
-      title: 'First Major Client',
-      description: 'Delivered cloud platform serving enterprise customers globally.',
-      icon: '⭐',
+      title: 'MERN Stack Mastery',
+      description: 'Specialized in MongoDB, Express, React, Node.js stack with deployment expertise on AWS, Azure, GCP.',
+      icon: '⚡',
     },
     {
       year: '2023',
-      title: 'Regional Expansion',
-      description: 'Expanded operations across multiple countries and regions.',
-      icon: '🌍',
-    },
-    {
-      year: '2024',
-      title: 'Cybersecurity Leader',
-      description: 'Recognized as top-tier provider protecting enterprise companies.',
-      icon: '🛡️',
+      title: '10+ Client Projects',
+      description: 'Delivered scalable solutions across startups and enterprises with diverse technical requirements.',
+      icon: '🎯',
     },
     {
       year: '2025',
-      title: 'Industry Leader',
-      description: 'Established as trusted innovator with proven track record.',
-      icon: '⚡',
+      title: 'Development Leaders',
+      description: 'Trusted partners for web and mobile development with proven track records in performance and code quality.',
+      icon: '⭐',
     },
   ];
 
@@ -66,10 +66,10 @@ export function StorySection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
-            Our Story
+            Our Journey in Development
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Four years of relentless innovation and proven expertise serving enterprise clients.
+            From foundational full stack skills to specialized mobile and MERN development, we've continuously evolved to serve our clients with cutting-edge solutions.
           </p>
         </div>
 
@@ -124,26 +124,26 @@ export function StorySection() {
         </div>
 
         {/* Impact Stats */}
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-center hover:border-cyan-500/50 transition-all duration-300">
-            <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-              25+
-            </div>
-            <p className="text-slate-300 mt-3">Client Companies</p>
-          </div>
-          <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-center hover:border-purple-500/50 transition-all duration-300">
-            <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-              50+
-            </div>
-            <p className="text-slate-300 mt-3">Talented Professionals</p>
-          </div>
-          <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-center hover:border-pink-500/50 transition-all duration-300">
-            <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-red-500">
-              $500M+
-            </div>
-            <p className="text-slate-300 mt-3">Client Infrastructure Value Protected</p>
-          </div>
-        </div>
+         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6">
+           <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-center hover:border-cyan-500/50 transition-all duration-300">
+             <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+               15+
+             </div>
+             <p className="text-slate-300 mt-3">Major Technologies</p>
+           </div>
+           <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-center hover:border-purple-500/50 transition-all duration-300">
+             <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+               18+
+             </div>
+             <p className="text-slate-300 mt-3">Enterprise Clients</p>
+           </div>
+           <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl text-center hover:border-pink-500/50 transition-all duration-300">
+             <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-red-500">
+               99.99%
+             </div>
+             <p className="text-slate-300 mt-3">Service Reliability</p>
+           </div>
+         </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>

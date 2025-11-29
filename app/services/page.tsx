@@ -10,13 +10,13 @@ import { AppverseFooter } from "@/components/appverse-footer"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: " TryQu Tech",
+  title: "IT Development & Testing Services | TryQu Tech",
   description:
-    "Comprehensive Try Qu services including cloud solutions, cybersecurity, AI automation, infrastructure management, and digital transformation. Trusted by Fortune 500 companies.",
+    "Full-stack development, quality assurance, testing, and DevOps services. Expert teams delivering scalable, reliable applications for enterprises.",
   openGraph: {
-    title: "Try Qu Services | Cloud, Security, AI & Infrastructure",
+    title: "Development & Testing Services | TryQu Tech",
     description:
-      "Discover our comprehensive IT services: cloud infrastructure, cybersecurity, AI-driven automation, and digital transformation solutions.",
+      "Comprehensive IT services: full-stack development, QA testing, CI/CD, DevOps, and performance optimization solutions.",
     url: "https://theskitbit.com/services",
   },
 }
@@ -28,9 +28,9 @@ export default function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://theskitbit.com/services",
-    name: "TryQu Tech Try Qu Services",
+    name: "TryQu Tech Services | Development, Testing & DevOps",
     description:
-      "Try Qu solutions including cloud infrastructure, cybersecurity, AI automation, and digital transformation",
+      "Full-stack development, quality assurance, testing, and DevOps services for enterprise applications",
     url: "https://theskitbit.com/services",
     areaServed: [
       {
@@ -54,20 +54,20 @@ export default function ServicesPage() {
   }
 
   const relatedTechnologies = [
-    'AWS',
-    'Microsoft Azure',
-    'Google Cloud Platform',
-    'Kubernetes',
-    'Docker',
     'React',
     'Node.js',
-    'Python',
+    'TypeScript',
+    'Jest',
+    'Cypress',
+    'Docker',
+    'Kubernetes',
+    'Jenkins',
+    'GitLab CI',
+    'GitHub Actions',
     'PostgreSQL',
     'MongoDB',
     'GraphQL',
-    'TypeScript',
-    'Terraform',
-    'Jenkins',
+    'REST APIs',
   ]
 
   return (

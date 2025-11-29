@@ -27,64 +27,64 @@ interface PillarCard {
 
 const pillars: PillarCard[] = [
   {
-    id: "scalability",
+    id: "development",
     icon: <TrendingUp className="w-12 h-12" />,
-    title: "Scalability",
-    shortDescription: "Enterprise-grade infrastructure that grows with your business",
+    title: "Full-Stack Development",
+    shortDescription: "End-to-end development services with modern frameworks and best practices",
     stats: [
-      { value: "10M+", label: "Users Supported" },
-      { value: "99.99%", label: "Uptime SLA" },
-      { value: "0.5s", label: "Response Time" },
+      { value: "200+", label: "Projects Delivered" },
+      { value: "99.2%", label: "Success Rate" },
+      { value: "2-4 weeks", label: "Avg Delivery Time" },
     ],
     color: "from-amber-400 to-orange-500",
     bgGradient: "from-amber-500/5 to-orange-500/5",
     borderColor: "border-amber-500/30 hover:border-amber-400/60",
-    href: "/services/scalability",
+    href: "/services/development",
   },
   {
-    id: "speed",
+    id: "testing",
     icon: <Zap className="w-12 h-12" />,
-    title: "Speed & Performance",
-    shortDescription: "Blazing-fast delivery optimized for every millisecond",
+    title: "Quality Assurance & Testing",
+    shortDescription: "Comprehensive testing strategies ensuring reliability and performance",
     stats: [
-      { value: "<50ms", label: "Latency" },
-      { value: "95+", label: "Lighthouse Score" },
-      { value: "2x", label: "Faster Deployments" },
+      { value: "90%+", label: "Test Coverage" },
+      { value: "Pre-release", label: "Bug Detection" },
+      { value: "5+ Types", label: "Testing Methods" },
     ],
     color: "from-yellow-300 to-amber-400",
     bgGradient: "from-yellow-400/5 to-amber-400/5",
     borderColor: "border-yellow-400/30 hover:border-yellow-300/60",
-    href: "/services/speed",
+    href: "/services/testing",
   },
   {
-    id: "integration",
+    id: "devops",
     icon: <Plug className="w-12 h-12" />,
-    title: "Integration Ready",
-    shortDescription: "Seamless connectivity with any system or third-party platform",
+    title: "CI/CD & DevOps",
+    shortDescription: "Automated deployment pipelines and infrastructure as code solutions",
     stats: [
-      { value: "500+", label: "API Integrations" },
-      { value: "Real-time", label: "Data Sync" },
-      { value: "99.9%", label: "Uptime" },
+      { value: "Daily", label: "Deployment Frequency" },
+      { value: "<1hr", label: "Time to Production" },
+      { value: "100%", label: "Automation Coverage" },
     ],
     color: "from-emerald-400 to-teal-500",
     bgGradient: "from-emerald-500/5 to-teal-500/5",
     borderColor: "border-emerald-500/30 hover:border-emerald-400/60",
-    href: "/services/integration",
+    href: "/services/devops",
   },
   {
-    id: "security",
+    id: "performance",
     icon: <Lock className="w-12 h-12" />,
-    title: "Security",
-    shortDescription: "Military-grade protection with zero-trust architecture",
+    title: "Performance Optimization",
+    shortDescription: "Application tuning and infrastructure optimization for peak performance",
     stats: [
-      { value: "SOC 2", label: "Certified" },
-      { value: "<5ms", label: "Threat Detection" },
-      { value: "256-bit", label: "Encryption" },
+      { value: "<100ms", label: "Response Time" },
+      { value: "100k+", label: "Concurrent Users" },
+      { value: "99.99%", label: "Uptime SLA" },
     ],
     color: "from-cyan-400 to-blue-500",
     bgGradient: "from-cyan-500/5 to-blue-500/5",
     borderColor: "border-cyan-500/30 hover:border-cyan-400/60",
-    href: "/services/security",
+    href: "/services/performance",
   },
 ]
 
@@ -102,19 +102,19 @@ export function ServicePillars() {
 
       <div className="relative container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-block mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30">
-            <p className="text-xs font-bold text-cyan-300 tracking-widest uppercase">
-              Core Pillars
-            </p>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight text-white mb-6">
-            Built on <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">4 Core Pillars</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Enterprise solutions engineered for the demands of modern business. Click any pillar to explore our comprehensive expertise.
-          </p>
-        </div>
+         <div className="text-center mb-20">
+           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30">
+             <p className="text-xs font-bold text-cyan-300 tracking-widest uppercase">
+               Core Services
+             </p>
+           </div>
+           <h2 className="text-5xl md:text-6xl font-black tracking-tight text-white mb-6">
+             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">4 Core Capabilities</span>
+           </h2>
+           <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+             Comprehensive IT services spanning development, testing, deployment, and optimization. Delivering excellence across the entire software lifecycle.
+           </p>
+         </div>
 
         {/* Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -123,7 +123,7 @@ export function ServicePillars() {
               <div
                 onMouseEnter={() => setHoveredId(pillar.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className={`group relative h-full p-8 rounded-2xl backdrop-blur-xl border transition-all duration-500 cursor-pointer overflow-hidden ${
+                className={`group relative h-full p-8 rounded-2xl backdrop-blur-xl border transition-all duration-500 overflow-hidden ${
                   hoveredId === pillar.id
                     ? `${pillar.borderColor} bg-gradient-to-br ${pillar.bgGradient} shadow-2xl`
                     : `border-white/10 bg-white/[0.02] hover:bg-white/[0.04]`
@@ -198,30 +198,30 @@ export function ServicePillars() {
         </div>
 
         {/* Bottom section with benefits */}
-        <div className="mt-20 pt-12 border-t border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Shield className="w-8 h-8" />,
-                title: "Enterprise-Grade",
-                description: "Built for mission-critical applications",
-              },
-              {
-                icon: <Workflow className="w-8 h-8" />,
-                title: "Seamless Integration",
-                description: "Works with your existing systems",
-              },
-              {
-                icon: <TrendingUp className="w-8 h-8" />,
-                title: "Future-Proof",
-                description: "Scales with your growth",
-              },
-              {
-                icon: <Gauge className="w-8 h-8" />,
-                title: "Fully Monitored",
-                description: "24/7 performance tracking",
-              },
-            ].map((benefit, idx) => (
+         <div className="mt-20 pt-12 border-t border-white/10">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+             {[
+               {
+                 icon: <Shield className="w-8 h-8" />,
+                 title: "Security-First",
+                 description: "OWASP compliance and secure coding practices",
+               },
+               {
+                 icon: <Workflow className="w-8 h-8" />,
+                 title: "Agile Delivery",
+                 description: "Iterative development with continuous feedback",
+               },
+               {
+                 icon: <TrendingUp className="w-8 h-8" />,
+                 title: "Quality Assured",
+                 description: "Rigorous testing at every stage",
+               },
+               {
+                 icon: <Gauge className="w-8 h-8" />,
+                 title: "Performance Driven",
+                 description: "Optimized for scale and speed",
+               },
+             ].map((benefit, idx) => (
               <div key={idx} className="group p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/[0.03]">
                 <div className="text-cyan-400 mb-3 group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}

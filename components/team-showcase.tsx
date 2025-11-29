@@ -9,25 +9,25 @@ export function TeamShowcase() {
         {
             id: 1,
             name: "Ashish Patel",
-            role: "Chief Executive Officer - India",
+            role: "Chief Executive Officer - India Region",
             icon: Users,
-            description: "Leading regional operations and market expansion across the Indian subcontinent",
+            description: "Enterprise strategy and operations across Asia Pacific. 15+ years in IT transformation and cloud infrastructure.",
            image: "/images/boss.jpeg",
         },
         {
             id: 2,
-            name: "Divya",
-            role: "Chief Executive Officer - USA",
+            name: "Abhishek",
+            role: "Chief Executive Officer - Americas",
             icon: Users,
-            description: "Driving strategic growth and market leadership across the United States region",
+            description: "Strategic leadership for North American market. Expertise in enterprise architecture and digital modernization.",
             image: "/images/teammembe.jpeg",
         },
         {
             id: 3,
-            name: "Abhishek",
-            role: "Chief Executive Officer - Canada",
+            name: "Divaya",
+            role: "Chief Executive Officer - Europe",
             icon: Users,
-            description: "Spearheading expansion and business development across Canadian territories",
+            description: "Regional expansion and regulatory compliance. Specializes in GDPR, enterprise governance, and cloud operations.",
             image: "/images/member.jpeg",
         },
         
@@ -37,10 +37,10 @@ export function TeamShowcase() {
         <section className="container mx-auto px-4 py-20">
             <div className="mb-16">
                 <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-4">
-                    Meet Our IT Elite Team
+                    Enterprise Leadership
                 </h2>
                 <p className="text-lg text-white/70">
-                    Experienced professionals dedicated to transforming your business through cutting-edge technology
+                    Strategic executives with 20+ years in digital transformation, cloud architecture, and TryQu Tech
                 </p>
             </div>
 

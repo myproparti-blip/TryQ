@@ -5,7 +5,7 @@ import IntegrationDetail from "@/components/services/pillars/integration-detail"
 
 export const metadata: Metadata = {
   title: "Integration Solutions | Seamless Connectivity",
-  description: "Connect with your existing systems seamlessly. 500+ API integrations available.",
+  description: "Connect with your existing systems seamlessly. 30+ API integrations available.",
 }
 
 export default function IntegrationPage() {

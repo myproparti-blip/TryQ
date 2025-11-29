@@ -169,10 +169,10 @@ export function PremiumTechDetailTemplate({
                 {/* Trust Section */}
                 <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl">
                     <p className="text-slate-300 mb-6">
-                        Our {name} team is trusted by <span className="text-purple-300 font-bold">1500+ companies worldwide</span>
+                        Our {name} team is trusted by <span className="text-purple-300 font-bold">130+ companies worldwide</span>
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-400">
-                        <span>✓ 500+ successful {name} projects</span>
+                        <span>✓ 30+ successful {name} projects</span>
                         <span>✓ 2-week team onboarding</span>
                         <span>✓ Enterprise-grade reliability</span>
                     </div>
@@ -298,7 +298,7 @@ export function PremiumTechDetailTemplate({
                     <div className="rounded-2xl overflow-hidden border border-white/10 h-80">
                         <img
                             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop"
-                            alt="Enterprise Solutions"
+                            alt="TryQu Tech"
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                     </div>
@@ -334,11 +334,11 @@ export function PremiumTechDetailTemplate({
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                            <div className="text-4xl font-bold text-purple-300 mb-2">500+</div>
+                            <div className="text-4xl font-bold text-purple-300 mb-2">30+</div>
                             <p className="text-slate-400">Successful Projects</p>
                         </div>
                         <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                            <div className="text-4xl font-bold text-purple-300 mb-2">1500+</div>
+                            <div className="text-4xl font-bold text-purple-300 mb-2">130+</div>
                             <p className="text-slate-400">Trusted Companies</p>
                         </div>
                         <div className="p-6 rounded-xl bg-white/5 border border-white/10">
