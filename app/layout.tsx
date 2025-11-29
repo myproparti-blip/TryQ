@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
         />
 
         {/* Font Preload */}
@@ -41,8 +41,20 @@ export default function RootLayout({
         />
 
         {/* Prevent Manual Zoom on Mobile */}
+        <style>{`
+          html, body {
+            touch-action: manipulation;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+          }
+          * {
+            touch-action: manipulation;
+          }
+        `}</style>
         <Script id="prevent-zoom" strategy="beforeInteractive">
           {`
+            // Prevent double-tap zoom
             let lastTouchEnd = 0;
             document.addEventListener('touchend', (e) => {
               const now = Date.now();
@@ -50,22 +62,25 @@ export default function RootLayout({
                 e.preventDefault();
               }
               lastTouchEnd = now;
-            }, false);
+            }, { passive: false });
 
+            // Prevent pinch zoom
+            document.addEventListener('touchmove', (e) => {
+              if (e.touches.length > 1) {
+                e.preventDefault();
+              }
+            }, { passive: false });
+
+            // Prevent keyboard zoom (Ctrl/Cmd + scroll)
             document.addEventListener('wheel', (e) => {
               if (e.ctrlKey || e.metaKey) {
                 e.preventDefault();
               }
             }, { passive: false });
 
+            // Prevent gesture zoom
             document.addEventListener('gesturestart', (e) => {
               e.preventDefault();
-            }, false);
-
-            document.addEventListener('touchmove', (e) => {
-              if (e.touches.length > 1) {
-                e.preventDefault();
-              }
             }, { passive: false });
           `}
         </Script>
