@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
 
         {/* Font Preload */}
@@ -40,84 +40,7 @@ export default function RootLayout({
           fetchPriority="high"
         />
 
-        {/* Prevent Manual Zoom on Mobile */}
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <style>{`
-         html, body, #__next {
-           touch-action: none !important;
-           width: 100%;
-           height: 100%;
-           overflow-x: hidden;
-           user-select: none;
-           -webkit-user-select: none;
-           -webkit-touch-callout: none;
-           -webkit-text-size-adjust: 100% !important;
-         }
-         * {
-           touch-action: none !important;
-         }
-         input, textarea, select {
-           touch-action: auto;
-         }
-        `}</style>
-        <Script id="prevent-zoom" strategy="beforeInteractive">
-          {`
-            // Prevent all zoom on Android and iOS
-            function disableZoom() {
-              // Pinch zoom
-              document.addEventListener('touchmove', (e) => {
-                if (e.touches.length > 1) {
-                  e.preventDefault();
-                }
-              }, { passive: false });
 
-              // Double-tap zoom
-              let lastTouchEnd = 0;
-              document.addEventListener('touchend', (e) => {
-                const now = Date.now();
-                if (now - lastTouchEnd <= 300) {
-                  e.preventDefault();
-                }
-                lastTouchEnd = now;
-              }, { passive: false });
-
-              // Wheel + Ctrl/Cmd zoom
-              document.addEventListener('wheel', (e) => {
-                if (e.ctrlKey || e.metaKey) {
-                  e.preventDefault();
-                }
-              }, { passive: false });
-
-              // iOS gesture zoom
-              document.addEventListener('gesturestart', (e) => {
-                e.preventDefault();
-              }, { passive: false });
-
-              // Lock zoom level
-              document.documentElement.style.zoom = 1;
-              document.body.style.zoom = 1;
-            }
-
-            // Run immediately
-            disableZoom();
-
-            // Run again on DOM ready
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', disableZoom);
-            }
-
-            // Monitor for zoom changes and reset
-            const observer = new MutationObserver(() => {
-              document.documentElement.style.zoom = 1;
-              document.body.style.zoom = 1;
-            });
-            observer.observe(document.documentElement, { 
-              attributes: true, 
-              attributeFilter: ['style'] 
-            });
-          `}
-        </Script>
 
         {/* Dynamic Favicon Script */}
         <Script id="dynamic-favicon" strategy="beforeInteractive">
