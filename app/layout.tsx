@@ -41,48 +41,62 @@ export default function RootLayout({
         />
 
         {/* Prevent Manual Zoom on Mobile */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <style>{`
-          html, body {
-            touch-action: manipulation;
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-          }
-          * {
-            touch-action: manipulation;
-          }
+         html, body {
+           touch-action: none;
+           width: 100%;
+           height: 100%;
+           overflow-x: hidden;
+           user-select: none;
+           -webkit-user-select: none;
+           -webkit-touch-callout: none;
+         }
+         * {
+           touch-action: none;
+         }
         `}</style>
         <Script id="prevent-zoom" strategy="beforeInteractive">
-          {`
-            // Prevent double-tap zoom
-            let lastTouchEnd = 0;
-            document.addEventListener('touchend', (e) => {
-              const now = Date.now();
-              if (now - lastTouchEnd <= 300) {
-                e.preventDefault();
-              }
-              lastTouchEnd = now;
-            }, { passive: false });
+         {`
+           // Disable all zoom functionality
+           document.documentElement.addEventListener('touchmove', (e) => {
+             if (e.touches.length > 1) {
+               e.preventDefault();
+             }
+           }, { passive: false });
 
-            // Prevent pinch zoom
-            document.addEventListener('touchmove', (e) => {
-              if (e.touches.length > 1) {
-                e.preventDefault();
-              }
-            }, { passive: false });
+           // Prevent double-tap zoom
+           let lastTouchEnd = 0;
+           document.documentElement.addEventListener('touchend', (e) => {
+             const now = Date.now();
+             if (now - lastTouchEnd <= 300) {
+               e.preventDefault();
+             }
+             lastTouchEnd = now;
+           }, { passive: false });
 
-            // Prevent keyboard zoom (Ctrl/Cmd + scroll)
-            document.addEventListener('wheel', (e) => {
-              if (e.ctrlKey || e.metaKey) {
-                e.preventDefault();
-              }
-            }, { passive: false });
+           // Prevent keyboard/mouse wheel zoom
+           document.documentElement.addEventListener('wheel', (e) => {
+             if (e.ctrlKey || e.metaKey) {
+               e.preventDefault();
+             }
+           }, { passive: false });
 
-            // Prevent gesture zoom
-            document.addEventListener('gesturestart', (e) => {
-              e.preventDefault();
-            }, { passive: false });
-          `}
+           // Prevent iOS gesture zoom
+           document.documentElement.addEventListener('gesturestart', (e) => {
+             e.preventDefault();
+           }, { passive: false });
+
+           // Lock viewport scale
+           if (document.readyState === 'loading') {
+             document.addEventListener('DOMContentLoaded', () => {
+               document.documentElement.style.zoom = 1;
+             });
+           } else {
+             document.documentElement.style.zoom = 1;
+           }
+         `}
         </Script>
 
         {/* Dynamic Favicon Script */}
