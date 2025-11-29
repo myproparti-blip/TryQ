@@ -40,6 +40,36 @@ export default function RootLayout({
           fetchPriority="high"
         />
 
+        {/* Prevent Manual Zoom on Mobile */}
+        <Script id="prevent-zoom" strategy="beforeInteractive">
+          {`
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', (e) => {
+              const now = Date.now();
+              if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+              }
+              lastTouchEnd = now;
+            }, false);
+
+            document.addEventListener('wheel', (e) => {
+              if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+              }
+            }, { passive: false });
+
+            document.addEventListener('gesturestart', (e) => {
+              e.preventDefault();
+            }, false);
+
+            document.addEventListener('touchmove', (e) => {
+              if (e.touches.length > 1) {
+                e.preventDefault();
+              }
+            }, { passive: false });
+          `}
+        </Script>
+
         {/* Dynamic Favicon Script */}
         <Script id="dynamic-favicon" strategy="beforeInteractive">
           {`
